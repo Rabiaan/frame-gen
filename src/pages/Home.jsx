@@ -278,10 +278,6 @@ function Home() {
           </div>
         </section>
         
-        {/* Bar Graph Section */}
-        <section className="bar-graph-section">
-          <BarGraph />
-        </section>
 
         {/* Portfolio */}
         <section
