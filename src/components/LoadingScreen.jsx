@@ -56,7 +56,7 @@ function LoadingScreen() {
         <div className="bar"></div>
       </div>
       <div className="loading-text font-syne text-[36px] font-semibold tracking-[4px]">
-        Code Hills
+        FrameGen
       </div>
     </div>
   );
