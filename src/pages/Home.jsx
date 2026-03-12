@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 import AnimatedJaggedGraph from '../components/AnimatedJaggedGraph.jsx';
-import BarGraph from '../components/BarGraph.jsx';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -229,7 +228,7 @@ function Home() {
                   <circle cx="50" cy="50" r="45" className="circle-bg" />
                   <circle cx="50" cy="50" r="45" className="circle-progress" style={{ strokeDashoffset: '70' }} />
                 </svg>
-                <div className="growth-percent text-[#00F0FF]">+24%</div>
+                <div className="growth-percent text-[#00F0FF]">+60%</div>
               </div>
               <div className="box-desc text-center">Average monthly client acquisition growth</div>
             </div>
@@ -278,6 +277,8 @@ function Home() {
           </div>
         </section>
         
+        {/* Bar Graph Section */}
+
 
         {/* Portfolio */}
         <section
@@ -298,7 +299,7 @@ function Home() {
                 impact.
               </h1>
               <div className="mb-4 flex flex-wrap gap-2 sm:mb-5">
-                {['Frontend Development', 'UI/UX Design', 'E-Commerce', 'Brand Identity'].map(
+                {['Frontend Development', 'UI/UX Design', 'E-Commerce', 'Brand Identity', 'Digital Marketing'].map(
                   (label) => (
                     <span
                       key={label}
@@ -317,13 +318,13 @@ function Home() {
               </p>
               <div className="hero-buttons flex flex-wrap gap-3 sm:gap-4">
                 <Link
-                  to="/projects/website-development"
+                  to="/digital-marketing"
                   className="btn-primary bg-[#7B61FF] px-6 py-3 font-syne text-[12px] text-white transition hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(123,97,255,0.28)] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                 >
                   View Portfolio
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/projects/website-development"
                   className="btn-secondary px-6 py-3 font-syne text-[12px] text-white transition hover:text-[#7B61FF] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                 >
                   Start Project →

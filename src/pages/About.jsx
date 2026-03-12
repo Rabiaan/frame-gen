@@ -17,7 +17,7 @@ const services = [
   },
   {
     icon: <FaFilm />,
-    title: 'CGI',
+    title: 'AI Video Generation',
     description: 'Computer-Generated Imagery for product visualization, architectural renders, and immersive experiences.',
   },
   {
@@ -135,16 +135,6 @@ function About() {
           Agency Expertise
         </h1>
         
-        {/* ChatGPT Spline Embed */}
-        <div className="mt-8 mb-12 h-[300px] sm:h-[450px] w-full relative contact-reveal rounded-[20px] overflow-hidden border border-white/10 bg-white/5 shadow-[0_0_50px_rgba(123,97,255,0.15)]">
-          <iframe 
-            src='https://my.spline.design/chatgptkeyboard-QVeXdhg8CegiPr2H29WJohxA/' 
-            frameBorder='0' 
-            width='100%' 
-            height='100%'
-            title="ChatGPT Keyboard Interaction"
-          ></iframe>
-        </div>
         {/* Divider */}
         <div className="mb-8 h-[1px] bg-white/20"></div>
         <div className="grid items-start gap-10 md:grid-cols-2">

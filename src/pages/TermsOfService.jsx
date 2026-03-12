@@ -273,7 +273,7 @@ const TermsOfService = () => {
       id: 13,
       title: "Limitation of Liability",
       icon: <Scale className="w-5 h-5" />,
-      content: "To the maximum extent permitted by law, FrameGen' total liability for all claims arising out of or relating to these Terms or the Services will not exceed the total fees you paid to FrameGen for the specific project giving rise to the claim in the 12 months before the event. CodeHills will not be liable for any indirect, incidental, consequential, special, or punitive damages, or for loss of profits, revenue, data, or business opportunities."
+      content: "To the maximum extent permitted by law, FrameGen' total liability for all claims arising out of or relating to these Terms or the Services will not exceed the total fees you paid to FrameGen for the specific project giving rise to the claim in the 12 months before the event. FrameGen will not be liable for any indirect, incidental, consequential, special, or punitive damages, or for loss of profits, revenue, data, or business opportunities."
     },
     {
       id: 14,

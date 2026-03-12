@@ -1,9 +1,9 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import './styles/globals.css';
-/* @import './styles/home.css';
+@import './styles/home.css';
 @import './styles/about.css';
 @import './styles/services.css';
 @import './styles/projects.css';

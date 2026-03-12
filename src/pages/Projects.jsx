@@ -32,7 +32,7 @@ const projectsData = [
     subtitle: 'FrameGen',
     text: 'Interactive Business Portfolio displaying Company work.',
     category: 'REACT',
-    link: 'https://framegen.vercel.app/',
+    link: 'https://visionex.vercel.app/',
   },
   {
     img: '/images/idtechpakistan.png',
