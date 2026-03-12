@@ -43,12 +43,12 @@ const projectsData = [
     link: 'https://asiagloryco.com/',
   },
   {
-    img: '/images/visionex.png',
+    img: '/images/codehills.png',
     title: 'React Business Portfolio',
     subtitle: 'Code Hills',
     text: 'Interactive Business Portfolio displaying Company work.',
     category: 'REACT',
-    link: 'https://visionex.vercel.app/',
+    link: 'https://codehills.vercel.app/',
   },
   {
     img: '/images/idtechpakistan.png',
