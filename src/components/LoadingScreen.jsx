@@ -1,16 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+
+// Global loading state that can be accessed by other components
+export const loadingState = {
+  isLoading: true,
+  listeners: [],
+  setLoading: function(loading) {
+    this.isLoading = loading;
+    this.listeners.forEach(fn => fn(loading));
+  },
+  subscribe: function(fn) {
+    this.listeners.push(fn);
+    return () => {
+      this.listeners = this.listeners.filter(f => f !== fn);
+    };
+  }
+};
 
 function LoadingScreen() {
   const [show, setShow] = useState(true);
   const [showText, setShowText] = useState(false);
+  const [, forceUpdate] = useState(0);
 
   useEffect(() => {
+    const unsubscribe = loadingState.subscribe((loading) => {
+      forceUpdate(n => n + 1);
+    });
+    
     const textTimer = setTimeout(() => setShowText(true), 350);
-    const hideTimer = setTimeout(() => setShow(false), 1500);
+    const hideTimer = setTimeout(() => {
+      setShow(false);
+      loadingState.setLoading(false);
+    }, 1500);
 
     return () => {
       clearTimeout(textTimer);
       clearTimeout(hideTimer);
+      unsubscribe();
     };
   }, []);
 

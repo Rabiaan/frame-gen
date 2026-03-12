@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import Spline from '@splinetool/react-spline';
 import AnimatedJaggedGraph from '../components/AnimatedJaggedGraph.jsx';
+
+// Lazy load Spline for better performance
+const Spline = lazy(() => import('@splinetool/react-spline'));
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -169,7 +171,9 @@ function Home() {
         {/* Top Spline Hero Section */}
         <section className="top-spline-hero">
           <div className="spline-background">
-            <Spline scene="https://prod.spline.design/ou6jXp9yZJVo41BN/scene.splinecode" />
+            <Suspense fallback={<div className="h-[500px] flex items-center justify-center"><div className="text-white">Loading...</div></div>}>
+              <Spline scene="https://prod.spline.design/ou6jXp9yZJVo41BN/scene.splinecode" />
+            </Suspense>
           </div>
           
           <div className="hero-overlay-content">
@@ -299,7 +303,7 @@ function Home() {
                 impact.
               </h1>
               <div className="mb-4 flex flex-wrap gap-2 sm:mb-5">
-                {['Frontend Development', 'UI/UX Design', 'E-Commerce', 'Brand Identity', 'Digital Marketing'].map(
+                {['Web Applications', 'WordPress & CMS', 'E-commerce Solutions', '3D & CGI Visualization', 'Motion Graphics', 'Brand Identity'].map(
                   (label) => (
                     <span
                       key={label}
@@ -321,13 +325,13 @@ function Home() {
                   to="/digital-marketing"
                   className="btn-primary bg-[#7B61FF] px-6 py-3 font-syne text-[12px] text-white transition hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(123,97,255,0.28)] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                 >
-                  View Portfolio
+                  Digital Marketing
                 </Link>
                 <Link
                   to="/projects/website-development"
                   className="btn-secondary px-6 py-3 font-syne text-[12px] text-white transition hover:text-[#7B61FF] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                 >
-                  Start Project →
+                  Website Development →
                 </Link>
               </div>
             </div>

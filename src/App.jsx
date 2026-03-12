@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import VerticalLines from './components/VerticalLines.jsx';
@@ -15,6 +15,17 @@ const DigitalMarketing = lazy(() => import('./pages/DigitalMarketing.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService.jsx'));
+
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -39,6 +50,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white relative">
+      <ScrollToTop />
       {!hideVerticalLines && <VerticalLines />}
       <LoadingScreen />
       {!isLoading && <Navbar />}

@@ -236,14 +236,14 @@ function Services() {
             <div className="text-sm text-gray-500">Timeline: 4-8 weeks</div>
           </div>
 
-          {/* CGI & 3D Visualization */}
+          {/* 3D & CGI Visualization */}
           <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-indigo-500/50 transition-all">
             <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5M7 10l-2 1m0 0l-2-1m2 1v2.5M7 4l-2 1m0 0l-2-1m2 1v2.5M20 4l-2 1m0 0l-2-1m2 1v2.5" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">CGI & 3D Visualization</h3>
+            <h3 className="text-2xl font-bold mb-3">3D & CGI Visualization</h3>
             <p className="text-gray-400 mb-6">Photorealistic 3D rendering and cinematic CGI for products, architecture, and marketing environments.</p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2 text-gray-300">

@@ -29,7 +29,7 @@ const projectsData = [
   {
     img: '/images/codehills.png',
     title: 'React Business Portfolio',
-    subtitle: 'FrameGen',
+    subtitle: 'Code Hills',
     text: 'Interactive Business Portfolio displaying Company work.',
     category: 'REACT',
     link: 'https://visionex.vercel.app/',

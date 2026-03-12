@@ -1,106 +1,44 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 
 const AnimatedJaggedGraph = ({ 
   baseColorBlue = '#00F0FF', // Cyan
   baseColorPink = '#7B61FF', // Purple (Website color)
-  pointsCount = 100,
-  jitterSpeed = 0.25,      // Increased speed
-  jitterAmount = 4         // Increased jitter for more zigzag
+  pointsCount = 20
 }) => {
   const containerRef = useRef(null);
-  const pathBlueRef = useRef(null);
-  const pathPinkRef = useRef(null);
 
-  // Generate initial points with a trend
-  const generatePoints = (count, startY, trendFn) => {
+  // Generate points with an upward trend for client growth
+  const generateGrowthPoints = (count, startY) => {
     return Array.from({ length: count }, (_, i) => {
       const x = (i / (count - 1)) * 100; // 0 to 100%
-      const y = startY + trendFn(i);
-      return { x, y, initialY: y };
+      // Create a jagged but overall upward trend (client growth)
+      const growthFactor = (count - i) * 0.5; // More growth toward the end
+      const jitter = Math.sin(i * 2) * 5 + Math.cos(i * 1.5) * 3;
+      const y = startY - growthFactor - jitter;
+      return { x, y };
     });
   };
 
-  // Trend functions for the two paths - starting from bottom (90) and going up (decreasing Y)
-  // Significantly increased frequency (0.8 -> 1.5) and amplitude (6 -> 10) for "more zigzag"
-  const trendBlue = (i) => Math.sin(i * 1.5) * 8 - i * 0.8;
-  const trendPink = (i) => Math.cos(i * 1.5) * 8 - i * 0.8;
+  const pointsBlue = useMemo(() => generateGrowthPoints(pointsCount, 95), [pointsCount]);
+  const pointsPink = useMemo(() => generateGrowthPoints(pointsCount, 100), [pointsCount]);
 
-  const pointsBlue = useMemo(() => generatePoints(pointsCount, 95, trendBlue), [pointsCount]);
-  const pointsPink = useMemo(() => generatePoints(pointsCount, 105, trendPink), [pointsCount]);
+  // Generate SVG path from points
+  const createPath = (points) => {
+    return points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`).join(' ');
+  };
 
-  const hasEntered = useRef(false);
+  const pathBlue = createPath(pointsBlue);
+  const pathPink = createPath(pointsPink);
 
-  useEffect(() => {
-    let animationId;
-    let startTime = null;
-    let progress = 0;
-    const duration = 1500; // 1.5s for the entry animation
-    const bottomY = 120;   // Starting positions below the visible area (SVG is 0-100)
+  // Create a filled area under the blue line for emphasis
+  const createAreaPath = (points) => {
+    const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${p.y}`).join(' ');
+    const lastPoint = points[points.length - 1];
+    const firstPoint = points[0];
+    return `${linePath} L ${lastPoint.x},100 L ${firstPoint.x},100 Z`;
+  };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasEntered.current) {
-          hasEntered.current = true;
-          startTime = performance.now();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-
-    const animate = (currentTime) => {
-      if (hasEntered.current) {
-        if (!startTime) startTime = currentTime;
-        const elapsed = currentTime - startTime;
-        progress = Math.min(elapsed / duration, 1);
-        
-        // Use a slight ease-out for the entry
-        const easeProgress = 1 - Math.pow(1 - progress, 3);
-        const timeFactor = currentTime * 0.002;
-
-        const updatePath = (points, pathElement) => {
-          if (!pathElement) return;
-          
-          const d = points.map((p, i) => {
-            // Constant subtle noise
-            const noise = Math.sin(timeFactor + i * 0.8) * jitterAmount + 
-                          Math.cos(timeFactor * 1.2 + i * 0.5) * (jitterAmount * 0.8);
-            
-            const x = p.x;
-            const targetY = p.initialY + noise;
-            // Animate from bottomY to targetY based on easeProgress
-            const currentY = bottomY + (targetY - bottomY) * easeProgress;
-            
-            return `${i === 0 ? 'M' : 'L'} ${x},${currentY}`;
-          }).join(' ');
-
-          pathElement.setAttribute('d', d);
-        };
-
-        updatePath(pointsBlue, pathBlueRef.current);
-        updatePath(pointsPink, pathPinkRef.current);
-      } else {
-        // Keep at bottom before entering
-        const hidePath = (points, pathElement) => {
-          if (!pathElement) return;
-          const d = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x},${bottomY}`).join(' ');
-          pathElement.setAttribute('d', d);
-        };
-        hidePath(pointsBlue, pathBlueRef.current);
-        hidePath(pointsPink, pathPinkRef.current);
-      }
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      observer.disconnect();
-    };
-  }, [pointsBlue, pointsPink, jitterAmount, jitterSpeed]);
+  const areaPath = createAreaPath(pointsBlue);
 
   return (
     <div ref={containerRef} className="w-full h-full relative overflow-hidden">
@@ -110,24 +48,50 @@ const AnimatedJaggedGraph = ({
         className="w-full h-full"
         style={{ filter: 'drop-shadow(0 0 8px rgba(0, 240, 255, 0.3))' }}
       >
+        {/* Filled area under the main line */}
         <path
-          ref={pathBlueRef}
+          d={areaPath}
+          fill="url(#blueGradient)"
+          opacity="0.2"
+        />
+        {/* Gradient definition */}
+        <defs>
+          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={baseColorBlue} stopOpacity="0.4" />
+            <stop offset="100%" stopColor={baseColorBlue} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {/* Main growth line - Blue */}
+        <path
+          d={pathBlue}
           fill="none"
           stroke={baseColorBlue}
-          strokeWidth="0.8"
+          strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="transition-opacity duration-500"
         />
+        {/* Secondary growth line - Pink */}
         <path
-          ref={pathPinkRef}
+          d={pathPink}
           fill="none"
           stroke={baseColorPink}
-          strokeWidth="0.8"
+          strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="transition-opacity duration-500"
+          opacity="0.7"
         />
+        {/* Point markers on the blue line */}
+        {pointsBlue.filter((_, i) => i % 4 === 0).map((p, i) => (
+          <circle
+            key={i}
+            cx={p.x}
+            cy={p.y}
+            r="1.5"
+            fill={baseColorBlue}
+            stroke="#080810"
+            strokeWidth="0.5"
+          />
+        ))}
       </svg>
     </div>
   );

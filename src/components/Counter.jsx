@@ -19,7 +19,7 @@ function Counter({ end, duration = 2000 }) {
     return () => clearInterval(timer);
   }, [end, duration]);
 
-  return <div className="font-sans text-[24px] text-[#FFFFFF]">{count}+</div>;
+  return <div className="text-[24px] text-[#FFFFFF]" style={{ fontFamily: 'DM Sans, sans-serif' }}>{count}+</div>;
 }
 
 export default Counter;
