@@ -325,14 +325,14 @@ function Home() {
           <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="portfolio-section">
               <h2 className="mb-2 text-[14px] text-[#aaaaaa] sm:text-[15px]">Portfolio</h2>
-              <h1
+              <h2
                 id="portfolio-heading"
                 className="mb-4 font-syne text-[32px] font-light leading-[1.1] sm:text-[40px] md:text-[50px] lg:text-[65px]"
               >
                 Our Work That
                 <br />
                 Delivers Results.
-              </h1>
+              </h2>
               <div className="mb-4 flex flex-wrap gap-2 sm:mb-5">
                 {['Web Applications', 'WordPress & CMS', 'E-commerce Solutions', '3D & CGI Visualization', 'Motion Graphics', 'Brand Identity'].map(
                   (label) => (
@@ -446,12 +446,12 @@ function Home() {
           <div className="flex flex-col gap-8 md:gap-12 lg:flex-row lg:items-start lg:justify-between"> {/* Increased gap */}
             <div className="w-full lg:max-w-[45%]"> {/* Reduced width to create more space */}
               <h2 className="mb-2 text-[14px] text-[#aaaaaa] sm:text-[15px]">Testimonials</h2>
-              <h1
+              <h2
                 id="testimonials-heading"
                 className="mb-4 font-syne text-[32px] font-light leading-[1.1] sm:text-[40px] md:text-[50px] lg:text-[65px]"
               >
                 Clients love FrameGen
-              </h1>
+              </h2>
               <p className="mb-4 text-[14px] text-[#cccccc] sm:text-[15px] md:text-[16px]">
                 Trusted by innovative companies, delivering exceptional digital experiences that
                 drive results.
@@ -557,7 +557,7 @@ function Home() {
           <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="w-full lg:max-w-[50%]">
               <h2 className="mb-2 text-[14px] text-[#aaaaaa] sm:text-[15px]">Services</h2>
-              <h1
+              <h2
                 id="services-heading"
                 className="mb-4 font-syne text-[32px] font-light leading-[1.1] sm:text-[40px] md:text-[50px] lg:text-[58px]"
               >
@@ -566,7 +566,7 @@ function Home() {
                 Something
                 <br />
                 Extraordinary
-              </h1>
+              </h2>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
                 <h3 className="mb-1 text-[16px] sm:text-[17px]">Website Development</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">

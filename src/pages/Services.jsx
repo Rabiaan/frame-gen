@@ -143,10 +143,14 @@ function Services() {
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       {/* Hero */}
       <section
-        aria-labelledby="services-hero-heading"  // change to about-hero-heading / contact-hero-heading / projects-heading depending on page
+        aria-labelledby="services-hero-heading"
         className="services-banner relative mb-20  overflow-hidden rounded-[20px] border border-white/5 bg-center bg-cover bg-fixed shadow-[0_0_40px_rgba(123,97,255,0.08)] px-6 md:px-20"
       >
-        <div className="hero-brand">
+        {/* Visually hidden H1 for SEO — the decorative banner text is aria-hidden */}
+        <h1 id="services-hero-heading" className="sr-only">
+          Digital Agency Services — Web Development, 3D CGI, Motion Graphics & Branding
+        </h1>
+        <div className="hero-brand" aria-hidden="true">
           OUR
           <br />
           SERVICES
