@@ -56,7 +56,21 @@ function AppContent() {
       {!isLoading && <Navbar />}
       
       <main className="relative z-10 pt-3">
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
+        <Suspense fallback={
+          <div className="min-h-screen flex items-center justify-center bg-[#0A0A0A]">
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex items-end gap-2 h-8">
+                {[0, 0.15, 0.3, 0.45].map((delay, i) => (
+                  <div
+                    key={i}
+                    className="w-1.5 rounded bg-gradient-to-t from-[#7B61FF] to-[#00F0FF]"
+                    style={{ height: '20px', animation: `bounce 1s ${delay}s infinite ease-in-out` }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        }>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

@@ -154,7 +154,7 @@ const projectsData = [
     category: 'TYPESCRIPT',
     link: 'tbhosters.vercel.app',
   },
-  
+
 ];
 
 function WebsiteDevelopment() {
@@ -229,7 +229,7 @@ function WebsiteDevelopment() {
           <spline-viewer url="https://prod.spline.design/Q2XQ2o4G0cZzWJy5/scene.splinecode" />
         </div>
         <div className="relative z-10 flex max-w-[1400px] flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          
+
         </div>
         <div className="hero-brand">
           WEBSITE
@@ -275,11 +275,10 @@ function WebsiteDevelopment() {
               key={btn.key}
               type="button"
               onClick={() => setFilter(btn.key)}
-              className={`rounded-full border px-5 py-2 text-[14px] transition ${
-                filter === btn.key
+              className={`rounded-full border px-5 py-2 text-[14px] transition ${filter === btn.key
                   ? 'border-[#7B61FF] bg-[#7B61FF] text-white'
                   : 'border-white/10 bg-white/5 text-white hover:border-[#7B61FF] hover:bg-[#7B61FF]'
-              }`}
+                }`}
             >
               {btn.label}
             </button>

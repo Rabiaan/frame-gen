@@ -82,16 +82,16 @@ function Navbar() {
               }}
             >
               Projects
-              <svg 
+              <svg
                 className={`h-4 w-4 transition-transform duration-200 ${projectsDropdown ? 'rotate-180' : ''}`}
-                fill="none" 
-                stroke="currentColor" 
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            
+
             {/* Desktop Dropdown */}
             {projectsDropdown && (
               <div className="absolute top-full left-0 mt-2 w-56 rounded-[15px] border border-white/10 bg-[rgba(12,12,12,0.95)] py-3 shadow-lg backdrop-blur-xl animate-fade-in">
@@ -136,31 +136,30 @@ function Navbar() {
 
       {/* Mobile dropdown */}
       <ul
-        className={`md:hidden ${
-          open
+        className={`md:hidden ${open
             ? 'max-h-[500px] border border-white/10 py-5 opacity-100'
             : 'max-h-0 border-0 py-0 opacity-0'
-        } absolute left-0 right-0 top-[calc(100%+14px)] flex flex-col items-center gap-4 rounded-[20px] bg-[rgba(12,12,12,0.92)] px-4 text-center shadow-lg backdrop-blur-[18px] transition-all duration-300 overflow-hidden`}
+          } absolute left-0 right-0 top-[calc(100%+14px)] flex flex-col items-center gap-4 rounded-[20px] bg-[rgba(12,12,12,0.92)] px-4 text-center shadow-lg backdrop-blur-[18px] transition-all duration-300 overflow-hidden`}
       >
         <li>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className={`${linkBase} ${isActive('/') ? activeLink : ''}`}
           >
             Home
           </Link>
         </li>
         <li>
-          <Link 
-            to="/about" 
+          <Link
+            to="/about"
             className={`${linkBase} ${isActive('/about') ? activeLink : ''}`}
           >
             About
           </Link>
         </li>
         <li>
-          <Link 
-            to="/services" 
+          <Link
+            to="/services"
             className={`${linkBase} ${isActive('/services') ? activeLink : ''}`}
           >
             Services
@@ -176,16 +175,16 @@ function Navbar() {
             }}
           >
             Projects
-            <svg 
+            <svg
               className={`h-4 w-4 transition-transform duration-200 ${projectsDropdown ? 'rotate-180' : ''}`}
-              fill="none" 
-              stroke="currentColor" 
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          
+
           {/* Mobile Dropdown */}
           {projectsDropdown && (
             <div className="ml-4 mt-2 flex w-[calc(100%-16px)] flex-col gap-2 rounded-[10px] border border-white/5 bg-white/5 p-3">
@@ -205,8 +204,8 @@ function Navbar() {
           )}
         </li>
         <li>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className={`${linkBase} ${isActive('/contact') ? activeLink : ''}`}
           >
             Contact Us

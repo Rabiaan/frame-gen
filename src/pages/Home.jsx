@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react';
+import React, { useEffect, useRef, lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import StatisticsGraph from '../components/StatisticsGraph.jsx';
 import MetricsPieChart from '../components/MetricsPieChart.jsx';
-
-// Lazy load Spline for better performance
-const Spline = lazy(() => import('@splinetool/react-spline'));
-import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -25,6 +21,9 @@ import p4 from '/images/portfolio4.jpg';
 import p5 from '/images/portfolio5.jpg';
 import '../styles/home.css';
 
+// Deferred Spline import — only fetched when triggered
+const Spline = lazy(() => import('@splinetool/react-spline'));
+
 // Register Chart.js components
 ChartJS.register(
   CategoryScale,
@@ -39,6 +38,9 @@ ChartJS.register(
 
 function Home() {
   const splineRef = useRef(null);
+  const heroRef = useRef(null);
+  // splineReady: false = placeholder shown, true = Spline component mounted
+  const [splineReady, setSplineReady] = useState(false);
 
   // Step chart data with 101 data points
   const chartData = {
@@ -85,9 +87,34 @@ function Home() {
     }
   };
 
-  // Load Spline scene
+  // Defer Spline loading: trigger after 2 seconds OR on first scroll,
+  // whichever comes first. This keeps TBT and LCP low.
   useEffect(() => {
-    document.title = "FrameGen — Web Development & Design Portfolio";
+    let triggered = false;
+    const triggerSpline = () => {
+      if (!triggered) {
+        triggered = true;
+        setSplineReady(true);
+        cleanup();
+      }
+    };
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', triggerSpline, { passive: true });
+      window.removeEventListener('touchstart', triggerSpline, { passive: true });
+      window.removeEventListener('mousemove', triggerSpline);
+    };
+    // Auto-trigger after 2s so non-interactive visitors still see Spline
+    const timer = setTimeout(triggerSpline, 2000);
+    // Also trigger immediately on first user interaction
+    window.addEventListener('scroll', triggerSpline, { passive: true });
+    window.addEventListener('touchstart', triggerSpline, { passive: true });
+    window.addEventListener('mousemove', triggerSpline);
+    return cleanup;
+  }, []);
+
+  useEffect(() => {
+    document.title = "FrameGen — Digital Agency | Web, 3D & Branding";
 
     // Smooth scroll for in-page anchors (if any)
     const anchorHandler = (e) => {
@@ -170,11 +197,26 @@ function Home() {
     <div className="relative z-10">
       <div className="mx-auto w-[calc(100%-20px)] max-w-[1400px] sm:w-[calc(100%-40px)]">
         {/* Top Spline Hero Section */}
-        <section className="top-spline-hero">
+        <section className="top-spline-hero" ref={heroRef}>
           <div className="spline-background">
-            <Suspense fallback={<div className="h-[500px] flex items-center justify-center"><div className="text-white">Loading...</div></div>}>
-              <Spline scene="https://prod.spline.design/ou6jXp9yZJVo41BN/scene.splinecode" />
-            </Suspense>
+            {splineReady ? (
+              /* Spline only mounts after user interaction or 2s delay */
+              <Suspense fallback={
+                <div
+                  className="w-full h-full"
+                  style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(123,97,255,0.18) 0%, rgba(10,10,10,0) 70%)' }}
+                />
+              }>
+                <Spline scene="https://prod.spline.design/ou6jXp9yZJVo41BN/scene.splinecode" />
+              </Suspense>
+            ) : (
+              /* Lightweight gradient placeholder — renders instantly, no JS blocked */
+              <div
+                className="w-full h-full"
+                style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(123,97,255,0.22) 0%, rgba(10,10,10,0) 70%)' }}
+                aria-hidden="true"
+              />
+            )}
           </div>
           
           <div className="hero-overlay-content">

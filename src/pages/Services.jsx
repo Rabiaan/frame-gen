@@ -6,31 +6,31 @@ const processPhases = [
     number: '01',
     color: '#3B82F6',
     title: 'Discovery',
-    desc: 'We begin by understanding your business goals, target audience, and project requirements through detailed discussions. This helps us identify the best creative and technical approach for your project.'
+    desc: 'We start with understanding your goals, audience, and challenges through detailed consultation.'
   },
   {
     number: '02',
     color: '#A855F7',
-    title: 'Strategy & Planning',
-    desc: 'Based on the discovery phase, we develop a clear strategy and project roadmap tailored to your objectives, ensuring every step aligns with your business goals.'
+    title: 'Strategy',
+    desc: 'Developing a comprehensive plan and approach tailored to your specific needs and objectives.'
   },
   {
     number: '03',
     color: '#10B981',
-    title: 'Creative Design',
-    desc: 'Our team develops visual concepts, design systems, and creative assets that define the look and feel of your project, while maintaining strong usability and brand consistency.'
+    title: 'Design',
+    desc: 'Creating visual concepts and wireframes with iterative feedback to refine the user experience.'
   },
   {
     number: '04',
     color: '#F59E0B',
-    title: 'Production & Development',
-    desc: 'We bring the concepts to life through development, design execution, animation, or content creation using modern tools and technologies while maintaining quality and performance.'
+    title: 'Development',
+    desc: 'Building the technical foundation through coding and integration with regular testing.'
   },
   {
     number: '05',
     color: '#EF4444',
-    title: 'Launch & Optimization',
-    desc: 'After testing and refinement, we launch the final solution and provide ongoing support, improvements, and optimization to ensure long-term success.'
+    title: 'Launch & Support',
+    desc: 'Delivering polished solutions with ongoing support and optimization for continued success.'
   },
 ];
 
@@ -418,12 +418,12 @@ function Services() {
         <div className="flex flex-col md:flex-row gap-8">
           {processPhases.map((phase) => (
             <div key={phase.number} className="services-reveal flex-1">
-              <div 
-                className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl text-xl font-bold" 
-                style={{ 
+              <div
+                className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl text-xl font-bold"
+                style={{
                   backgroundColor: `${phase.color}15`,
                   border: `2px solid ${phase.color}40`,
-                  color: phase.color 
+                  color: phase.color
                 }}
               >
                 {phase.number}
