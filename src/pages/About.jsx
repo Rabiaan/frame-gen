@@ -18,7 +18,7 @@ const services = [
   {
     icon: <FaFilm />,
     title: 'AI Video Generation',
-    description: 'Computer-Generated Imagery for product visualization, architectural renders, and immersive experiences.',
+    description: 'Realistic 3D visuals and cinematic CGI used for product marketing, architectural visualization, and immersive brand experiences.',
   },
   {
     icon: <FaPencilRuler />,
@@ -288,11 +288,10 @@ function About() {
             {/* Divider */}
             <div className="mb-8 h-[1px] bg-white/20"></div>
             <p className="about-description mb-6 text-[14px] leading-[1.6] text-[#cccccc]">
-              FrameGen began as a group of innovative developers and
-              designers, but we quickly realized that modern brands need more than just code. We've evolved into a 
-              full-service creative agency, bridging the gap between high-end software development, 
-              cinematic CGI, and high-conversion digital marketing. Today, we are a global partner 
-              delivering end-to-end digital transformations that empower businesses to lead in their industries.
+              FrameGen started with a simple goal — to create digital experiences that combine creativity, technology, and strategy.
+              What began as a small collaboration between designers and developers quickly evolved into a multidisciplinary studio. 
+              Today, FrameGen delivers high-performance websites, immersive 3D visuals, and impactful brand identities for businesses around the world.
+              Our mission is to help brands stand out in an increasingly competitive digital landscape through thoughtful design and modern technology.
             </p>
           </div>
           <div className="about-reveal h-[300px] sm:h-[400px] w-full relative">
@@ -306,6 +305,82 @@ function About() {
           </div>
         </div>
       </section>
+
+
+      {/* Our Approach */}
+      <section
+        aria-labelledby="approach-heading"
+        className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
+      >
+        <div className="mb-10 w-full md:max-w-[70%]">
+          <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Methodology</h2>
+          <h1
+            id="approach-heading"
+            className="mb-6 font-syne text-[40px] font-light leading-[1.06] md:text-[65px]"
+          >
+            Our Approach
+          </h1>
+          <p className="about-description text-[16px] leading-[1.6] text-[#cccccc]">
+            Every project begins with understanding your goals and challenges. We combine strategy, design, and development to create digital solutions that not only look impressive but also deliver measurable results.
+          </p>
+        </div>
+        
+        {/* Divider */}
+        <div className="mb-8 h-[1px] bg-white/20"></div>
+        
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            { title: 'Clarity', desc: 'Designs that communicate your message effectively' },
+            { title: 'Performance', desc: 'Websites optimized for speed, usability, and conversions' },
+            { title: 'Innovation', desc: 'Using modern technologies to create immersive digital experiences' }
+          ].map((principle, index) => (
+            <div 
+              key={index}
+              className="about-reveal rounded-[15px] border border-white/10 bg-white/5 p-6 transition hover:border-[#7B61FF]/30 hover:bg-white/10"
+            >
+              <h3 className="mb-3 text-[20px] font-medium text-[#7B61FF]">{principle.title}</h3>
+              <p className="text-[14px] leading-[1.6] text-[#cccccc]">{principle.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Our Specializations Refined */}
+      <section
+        aria-labelledby="specializations-heading"
+        className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
+      >
+        <div className="mb-10 w-full md:max-w-[70%]">
+          <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Expertise</h2>
+          <h1
+            id="specializations-heading"
+            className="mb-6 font-syne text-[40px] font-light leading-[1.06] md:text-[65px]"
+          >
+            Our Specializations
+          </h1>
+        </div>
+
+        {/* Divider */}
+        <div className="mb-8 h-[1px] bg-white/20"></div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            { title: 'Web Development', desc: 'High-performance, scalable websites and web applications' },
+            { title: '3D & Motion Graphics', desc: 'Realistic 3D visuals and cinematic CGI used for product marketing, architectural visualization, and immersive brand experiences.' },
+            { title: 'Brand Identity & Visual Design', desc: 'Logos, typography, color systems, and marketing visuals' },
+            { title: 'Digital Strategy & Marketing', desc: 'SEO, ads, and strategies designed to grow traffic and conversions' }
+          ].map((spec, index) => (
+            <div 
+              key={index}
+              className="about-reveal flex flex-col gap-2 rounded-[15px] border border-white/10 bg-white/5 p-6 transition hover:border-[#7B61FF]/30 hover:bg-white/10"
+            >
+              <h3 className="text-[18px] font-medium text-white">{spec.title}</h3>
+              <p className="text-[14px] leading-[1.6] text-[#cccccc]">{spec.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       {/* Our Team */}
       {/* <section

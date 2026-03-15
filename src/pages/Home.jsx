@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedJaggedGraph from '../components/AnimatedJaggedGraph.jsx';
+import StatisticsGraph from '../components/StatisticsGraph.jsx';
+import MetricsPieChart from '../components/MetricsPieChart.jsx';
 
 // Lazy load Spline for better performance
 const Spline = lazy(() => import('@splinetool/react-spline'));
@@ -177,24 +178,25 @@ function Home() {
           </div>
           
           <div className="hero-overlay-content">
-            <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 md:px-12 lg:px-20">
+            <div className="relative z-10 flex flex-col items-start text-left px-4 sm:px-6 md:px-12 lg:px-20">
               <div className="w-full">
                 <h1
                   id="hero-heading"
                   className="font-syne text-[32px] font-light leading-[1.1] sm:text-[40px] md:text-[56px] lg:text-[72px]"
                 >
-                  Experiences
-                  <br />
-                  That
-                  <br />
-                  Captivate
+                  Build Websites,<br /> 
+                  Brands & 3D <br />Experiences
+                  That <br />Grow Businesses
                 </h1>
-                <div className="hero-buttons mt-8 flex justify-center gap-3 sm:gap-4">
+                <p className="mt-4 text-[14px] text-[#aaaaaa] sm:text-[16px] md:text-[18px] max-w-[600px]">
+                  Custom websites, motion graphics, and digital branding designed to increase engagement and drive conversions.
+                </p>
+                <div className="hero-buttons mt-8 flex justify-start gap-3 sm:gap-4">
                   <Link
                     to="/contact"
-                    className="btn-primary bg-[#7B61FF] px-6 py-3 font-syne text-[12px] text-white shadow-[0_0_0_rgba(123,97,255,0.28)] transition hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(123,97,255,0.28)] sm:px-[35px] sm:py-[15px] sm:text-[14px] rounded-md"
+                    className="btn-primary bg-[#7B61FF] px-6 py-3 font-syne text-[12px] text-white shadow-[0_0_0_rgba(123,97,255,0.28)] transition hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(123,97,255,0.28)] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                   >
-                    Book a call
+                    Start your Project
                   </Link>
                   <Link
                     to="/services"
@@ -218,35 +220,30 @@ function Home() {
                 <div className="box-label text-[#7B61FF]">Client Success</div>
                 <div className="box-title text-[24px] md:text-[28px]">Delivering Proven Results</div>
               </div>
-              <div className="graph-container" style={{ height: '180px', padding: '10px 0' }}>
-                <AnimatedJaggedGraph />
+              <div className="graph-container" style={{ height: '220px', padding: '0 5px' }}>
+                <StatisticsGraph />
               </div>
-              <div className="box-value text-[#7B61FF]">98%</div>
             </div>
 
-            {/* Box 2: Monthly Growth */}
+
+            {/* Box 2: Trust Signals Chart */}
             <div className="grid-box box-growth reveal-card">
-              <div className="box-label">Monthly Growth</div>
-              <div className="growth-circle">
-                <svg viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" className="circle-bg" />
-                  <circle cx="50" cy="50" r="45" className="circle-progress" style={{ strokeDashoffset: '70' }} />
-                </svg>
-                <div className="growth-percent text-[#00F0FF]">+60%</div>
+              <div className="box-label">Key Metrics Impact</div>
+              <div className="flex-1 w-full min-h-0 pt-2">
+                <MetricsPieChart />
               </div>
-              <div className="box-desc text-center">Average monthly client acquisition growth</div>
             </div>
 
-            {/* Box 3: Best Choice 1 */}
+            {/* Box 3: Expert Team */}
             <div className="grid-box box-best-1 reveal-card">
               <div className="box-title">Expert Team</div>
-              <div className="box-desc">Our team consists of industry veterans with over 10 years of combined experience in full-stack development and UI/UX design. We pride ourselves on our meticulous attention to detail and our ability to turn complex problems into elegant, scalable solutions.</div>
+              <div className="box-desc">Our team of developers and designers combines years of experience in building high-performance websites, intuitive user interfaces, and engaging digital experiences for businesses worldwide. We pride ourselves on our meticulous attention to detail and ability to turn complex challenges into elegant solutions.</div>
             </div>
 
-            {/* Box 4: Best Choice 2 */}
+            {/* Box 4: Outcome-Driven Tech */}
             <div className="grid-box box-best-2 reveal-card">
-              <div className="box-title">Modern Tech</div>
-              <div className="box-desc">We leverage the latest advancements in web technology, including React 18, Next.js, Tailwinds CSS, and cloud-native architectures. Our tech stack is chosen specifically to ensure lightning-fast performance, robust security, and seamless scalability for your business.</div>
+              <div className="box-title">Performance-First Tech</div>
+              <div className="box-desc">We use modern technologies and optimized development practices to build fast, secure, and scalable websites that perform flawlessly across all devices. We focus on speed, security, and conversions to ensure your digital presence drives real business growth.</div>
             </div>
 
             {/* Box 5: Problems & Solutions */}
@@ -260,10 +257,10 @@ function Home() {
             <div className="grid-box box-trust reveal-card" id="trust-section">
               <div className="box-label">Global Trust</div>
               <div className="flex items-baseline gap-2">
-                <span className="box-value stat-number" data-target="500">0</span>
+                <span className="box-value stat-number" data-target="50">0</span>
                 <span className="text-[32px] font-bold text-[#7B61FF]">+</span>
               </div>
-              <div className="box-desc">Trusted by businesses worldwide to deliver excellence.</div>
+              <div className="box-desc">Trusted by 50+ businesses across multiple industries to deliver excellence.</div>
             </div>
 
             {/* Box 7: Best Choice 3 */}
@@ -272,12 +269,6 @@ function Home() {
               <div className="box-desc">Your business never sleeps, and neither does our commitment to your success. We provide round-the-clock monitoring, immediate troubleshooting, and continuous updates to ensure your digital assets are always performing at their peak, no matter the time zone.</div>
             </div>
 
-            {/* Box 8: Empty Placeholder */}
-            <div className="grid-box box-empty reveal-card border-dashed border-white/10">
-              <div className="flex h-full w-full items-center justify-center text-white/20 italic">
-                {/* User will add content later */}
-              </div>
-            </div>
           </div>
         </section>
         
@@ -296,11 +287,9 @@ function Home() {
                 id="portfolio-heading"
                 className="mb-4 font-syne text-[32px] font-light leading-[1.1] sm:text-[40px] md:text-[50px] lg:text-[65px]"
               >
-                Creative solutions
+                Our Work That
                 <br />
-                that make
-                <br />
-                impact.
+                Delivers Results.
               </h1>
               <div className="mb-4 flex flex-wrap gap-2 sm:mb-5">
                 {['Web Applications', 'WordPress & CMS', 'E-commerce Solutions', '3D & CGI Visualization', 'Motion Graphics', 'Brand Identity'].map(
@@ -473,28 +462,41 @@ function Home() {
               </div>
             </div>
 
-            {/* Testimonials Right - More spacing */}
             <div className="testimonials-right reveal-card mt-6 lg:mt-0 lg:w-[50%] lg:pl-8 xl:pl-12"> {/* Added padding on larger screens */}
               <div className="testimonial-slider h-[300px] overflow-hidden sm:h-[350px] md:h-[400px]">
                 <div className="testimonial-track flex flex-col animate-[slideUp_20s_linear_infinite]">
-                  {[1, 2, 3, 4].map((idx) => (
+                  {[
+                    {
+                      name: 'Mohsin Haroon',
+                      title: 'CEO, SamarTex',
+                      content: 'Working with FrameGen to build our eCommerce store was a seamless experience. The team understood our vision perfectly, created a visually stunning and highly functional website, and ensured a smooth checkout process for our customers. Managing products has never been easier. Highly recommended!'
+                    },
+                    {
+                      name: 'Fahad Abdul Aziz',
+                      title: 'RAAD AL ARABIA, Jeddah',
+                      content: 'FrameGen built a modern website for our cold storage business that improved our online credibility and made it easier for clients to understand our services. The team was professional, responsive, and attentive to every detail. Our online presence has significantly improved.'
+                    },
+                    {
+                      name: 'Muhammad Fayaz',
+                      title: 'Asia Glory Company',
+                      content: 'FrameGen built a modern, responsive, and user-friendly website for us. They understood our needs perfectly, delivered on time, and exceeded our expectations. Highly professional in web development, Do recommend!'
+                    }
+                  ].map((t, idx) => (
                     <div
                       key={idx}
                       className="testimonial-card mb-4 rounded-[10px] border border-white/10 bg-white/5 p-4 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition hover:shadow-[0_0_30px_rgba(123,97,255,0.12)] sm:mb-6 sm:p-5 md:mb-[30px] md:p-7"
                     >
                       <div className="testimonial-author text-[16px] sm:text-[17px] md:text-[18px]">
-                        {idx % 3 === 0 ? 'Mohsin Haroon': idx % 3 === 1 ? 'Fahad Abdul Aziz' : 'Muhammad Fayaz'}
+                        {t.name}
                       </div>
                       <div className="testimonial-author-title text-[13px] text-[#888888] sm:text-[14px]">
-                        {idx % 3 === 0 ? 'CEO, SamarTex' : idx % 3 === 1 ? 'RAAD AL ARABIA, Jeddah' : 'Asia Glory Company'}
+                        {t.title}
                       </div>
                       <div className="stars mb-3 text-[14px] text-[#FFD700] sm:mb-[14px] sm:text-[16px]">
                         5.0 ★★★★
                       </div>
                       <p className="testimonial-text text-[13px] leading-[1.6] text-[#cccccc] sm:text-[14px] sm:leading-[1.75] md:text-[15px]">
-                        {idx % 3 === 0
-                          ? 'Working with FrameGen to build our eCommerce store was a seamless experience. The team understood our vision perfectly, created a visually stunning and highly functional website, and ensured a smooth checkout process for our customers. Managing products has never been easier. Highly recommended!'
-                          : idx % 3 === 1 ? 'FrameGen delivered an exceptional website for our cold storage business. The site perfectly showcases our services, builds trust with clients, and provides clear information about our facilities. The team was professional, responsive, and attentive to every detail. Our online presence has improved' : 'FrameGen built a modern, responsive, and user-friendly website for us. They understood our needs perfectly, delivered on time, and exceeded our expectations. Highly professional in web development, Do recommend!'}
+                        {t.content}
                       </p>
                     </div>
                   ))}
@@ -503,6 +505,7 @@ function Home() {
             </div>
           </div>
         </section>
+
 
         {/* Services */}
         <section
@@ -523,15 +526,27 @@ function Home() {
                 Extraordinary
               </h1>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
-                <h3 className="mb-1 text-[16px] sm:text-[17px]">Creative Development</h3>
+                <h3 className="mb-1 text-[16px] sm:text-[17px]">Website Development</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  Crafting digital experiences that captivate and convert your audience.
+                  Custom websites and web applications built for performance and scalability.
                 </p>
               </div>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
-                <h3 className="mb-1 text-[16px] sm:text-[17px]">Full-Stack Solutions</h3>
+                <h3 className="mb-1 text-[16px] sm:text-[17px]">Brand Identity & Graphic Design</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  Complete digital solutions from strategy to deployment and beyond.
+                  Logos, brand systems, and marketing visuals that establish strong brand presence.
+                </p>
+              </div>
+              <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
+                <h3 className="mb-1 text-[16px] sm:text-[17px]">3D & Motion Graphics</h3>
+                <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
+                  Cinematic animations and CGI visuals that elevate digital experiences.
+                </p>
+              </div>
+              <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
+                <h3 className="mb-1 text-[16px] sm:text-[17px]">Digital Marketing & Growth</h3>
+                <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
+                  SEO and advertising strategies designed to grow traffic and conversions.
                 </p>
               </div>
               <div className="hero-buttons mt-4 flex flex-wrap gap-3 sm:gap-4">

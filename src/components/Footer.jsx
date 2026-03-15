@@ -14,11 +14,12 @@ function Footer() {
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Solutions We Offer</h3>
           <ul className="space-y-1 text-[#999999]">
-            <li className="text-[14px] sm:text-base">Web Development</li>
-            <li className="text-[14px] sm:text-base">UI/UX Design</li>
+            <li className="text-[14px] sm:text-base">Web Applications</li>
+            <li className="text-[14px] sm:text-base">WordPress & CMS</li>
+            <li className="text-[14px] sm:text-base">E-commerce Solutions</li>
+            <li className="text-[14px] sm:text-base">3D & CGI Visualization</li>
+            <li className="text-[14px] sm:text-base">Motion Graphics</li>
             <li className="text-[14px] sm:text-base">Brand Identity</li>
-            <li className="text-[14px] sm:text-base">Front-End Engineering</li>
-            <li className="text-[14px] sm:text-base">Website Redesign</li>
           </ul>
         </div>
 
