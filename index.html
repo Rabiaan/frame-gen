@@ -15,10 +15,34 @@
   <!-- DNS prefetch as fallback -->
   <link rel="dns-prefetch" href="https://prod.spline.design" />
 
-  <!-- Google Fonts with display=swap to prevent invisible text during load -->
+  <!-- Google Fonts: non-render-blocking via media=print trick -->
+  <!-- Preload the two heavy woff2 files identified in the critical path -->
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    rel="preload"
+    href="https://fonts.gstatic.com/s/syne/v22/8vIH7w4qzCVFVBbUAAt.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriOZSCHBeHFl0.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
+  <link
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
+  </noscript>
 
   <meta name="title" content="FrameGen — Digital Agency | Web, 3D & Brand Design">
   <meta name="description"
