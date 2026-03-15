@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '/images/codeHill_logo.png'; // TODO: Replace with FrameGen logo
+import logo from '/frame_gen.png';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
