@@ -10,14 +10,14 @@ const digitalProjectsData = [
     category: 'DIGITAL MARKETING',
     link: 'https://brandarchitectsconsulting.com/',
   },
-  {
-    img: '/images/synthesis.png',
-    title: '3D Animated Business Portfolio',
-    subtitle: 'Synthesis Engineering',
-    text: 'Interactive 3D animations and motion graphics for business showcase.',
-    category: 'ANIMATION',
-    link: 'https://synthesis-eng.vercel.app/index.html',
-  },
+  // {
+  //   img: '/images/synthesis.png',
+  //   title: '3D Animated Business Portfolio',
+  //   subtitle: 'Synthesis Engineering',
+  //   text: 'Interactive 3D animations and motion graphics for business showcase.',
+  //   category: 'ANIMATION',
+  //   link: 'https://synthesis-eng.vercel.app/index.html',
+  // },
   // Add more digital marketing and animation projects here as they are completed
 ];
 
