@@ -138,22 +138,22 @@ const projectsData = [
     category: 'HTML/CSS',
     link: '#',
   },
-  {
-    img: '/images/engineer-office.png',
-    title: 'Product Showcase Website',
-    subtitle: 'Engineers Office',
-    text: 'Professional Bootstrap website showcasing engineering products and services with modern design.',
-    category: 'HTML/CSS',
-    link: 'https://engineersoffice.pk/',
-  },
-  {
-    img: '/images/tbhosters.png',
-    title: 'Domain & Hosting Services',
-    subtitle: 'TBHosters',
-    text: 'TypeScript and Bootstrap website for domain availability checking and hosting plan offers.',
-    category: 'TYPESCRIPT',
-    link: 'tbhosters.vercel.app',
-  },
+  // {
+  //   img: '/images/engineer-office.png',
+  //   title: 'Product Showcase Website',
+  //   subtitle: 'Engineers Office',
+  //   text: 'Professional Bootstrap website showcasing engineering products and services with modern design.',
+  //   category: 'HTML/CSS',
+  //   link: 'https://engineersoffice.pk/',
+  // },
+  // {
+  //   img: '/images/tbhosters.png',
+  //   title: 'Domain & Hosting Services',
+  //   subtitle: 'TBHosters',
+  //   text: 'TypeScript and Bootstrap website for domain availability checking and hosting plan offers.',
+  //   category: 'TYPESCRIPT',
+  //   link: 'tbhosters.vercel.app',
+  // },
 
 ];
 
