@@ -1,0 +1,10 @@
+@import './styles/globals.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import './styles/home.css';
+@import './styles/about.css';
+@import './styles/services.css';
+@import './styles/projects.css';
+@import './styles/contact.css'; */
