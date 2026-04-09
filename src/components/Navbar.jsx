@@ -38,12 +38,14 @@ function Navbar() {
   return (
     <nav className="fixed top-[30px] left-1/2 z-[9999] w-[calc(100%-40px)] max-w-[1400px] -translate-x-1/2 rounded-[20px] border border-white/5 bg-[rgba(10,10,10,0.6)] backdrop-blur-[14px] px-7 py-4">
       <div className="flex w-full items-center justify-between">
-        <Link to="/" className="shrink-0">
+        <Link to="/" className="shrink-0 flex items-center gap-3">
+          
           <img
             src={logo}
             alt="FrameGen Logo"
             className="h-12 w-auto"
           />
+          <span className="hidden md:block text-2xl text-white">FRAME GEN</span>
         </Link>
 
         {/* Desktop links */}

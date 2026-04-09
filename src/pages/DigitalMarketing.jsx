@@ -3,22 +3,124 @@ import '../styles/projects.css';
 
 const digitalProjectsData = [
   {
-    img: '/images/brandarc.png',
-    title: 'Brand and Digital Marketing Agency',
-    subtitle: 'Brand Architect',
-    text: 'Complete brand identity and digital marketing strategy with custom WordPress development.',
-    category: 'DIGITAL MARKETING',
-    link: 'https://brandarchitectsconsulting.com/',
+    id: 0,
+    title: "Cola Next",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/246967861?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/246967861/Cola-Next"
   },
-  // {
-  //   img: '/images/synthesis.png',
-  //   title: '3D Animated Business Portfolio',
-  //   subtitle: 'Synthesis Engineering',
-  //   text: 'Interactive 3D animations and motion graphics for business showcase.',
-  //   category: 'ANIMATION',
-  //   link: 'https://synthesis-eng.vercel.app/index.html',
-  // },
-  // Add more digital marketing and animation projects here as they are completed
+  {
+    id: 1,
+    title: "Oreo Brand",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/245108345?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/245108345/Oreo"
+  },
+  {
+    id: 2,
+    title: "TUC Brand",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/242080387?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/242080387/TUC"
+  },
+  {
+    id: 3,
+    title: "Spotify",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/241789743?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/241789743/Spotify"
+  },
+  {
+    id: 4,
+    title: "DREAMTO",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/234347109?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/234347109/DREAMTO"
+  },
+  {
+    id: 5,
+    title: "McDonald's",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/233506297?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/233506297/McDonalds"
+  },
+  {
+    id: 6,
+    title: "Kingtox",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/219046293?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/219046293/Kingtox"
+  },
+  {
+    id: 7,
+    title: "KRONE",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/211855881?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/211855881/KRONE"
+  },
+  {
+    id: 8,
+    title: "Engro",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/221028855?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/221028855/Engro"
+  },
+  {
+    id: 9,
+    title: "Stay Green",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/234919057?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/234919057/Stay-Green"
+  },
+  {
+    id: 10,
+    title: "Quice",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.behance.net/embed/project/160876375?ilo0=1",
+    behanceUrl: "https://www.behance.net/gallery/160876375/Quice"
+  },
+  {
+    id: 11,
+    title: "National Foods",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7445135386613325824?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
+  {
+    id: 12,
+    title: "Tapal Danedar",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7442526485317382144?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
+  {
+    id: 13,
+    title: "Motion Design Work",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7437354859609120768?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
+  {
+    id: 14,
+    title: "Motion Graphics Showcase",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7434374901203099648?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
+  {
+    id: 15,
+    title: "Ferrari Edit",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7421466433840361472?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
+  {
+    id: 16,
+    title: "National Mayo",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7418905604255252480?compact=1",
+    behanceUrl: "https://www.linkedin.com/feed/"
+  },
 ];
 
 function DigitalMarketing() {
@@ -79,7 +181,7 @@ function DigitalMarketing() {
   }, []);
 
   const visibleProjects = digitalProjectsData.filter(
-    (p) => filter === 'all' || p.category.toLowerCase().replace(' ', '-') === filter,
+    (p) => filter === 'all' || p.category.toLowerCase().includes(filter.replace('-', ' ')),
   );
 
   return (
@@ -108,7 +210,7 @@ function DigitalMarketing() {
         className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
       >
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-[60%] md:max-w-[60%]">
+          <div className="max-w-[80%] md:max-w-[60%]">
             <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Our Work</h2>
             <h1
               id="projects-heading"
@@ -130,7 +232,6 @@ function DigitalMarketing() {
         <div className="mb-10 flex flex-wrap justify-center gap-3">
           {[
             { key: 'all', label: 'All' },
-            { key: 'digital-marketing', label: 'Digital Marketing' },
             { key: 'animation', label: 'Animation' },
           ].map((btn) => (
             <button
@@ -148,34 +249,71 @@ function DigitalMarketing() {
           ))}
         </div>
 
-        {/* Projects Grid - Mobile: 1 card | Tablet & Desktop: 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-10 max-w-[1500px] mx-auto">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-10 max-w-[1500px] mx-auto">
           {visibleProjects.map((p, index) => (
-            <a
+            <div
               key={index}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-reveal block rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.03] hover:border-[#7B61FF]"
+              className="project-reveal group flex flex-col rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.02] hover:border-[#7B61FF]"
             >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
-              />
+              <div className="relative mb-4 overflow-hidden rounded-[10px] bg-black/40 pt-[56.25%] shadow-inner border border-white/5">
+                {p.embedUrl ? (
+                  <iframe
+                    src={p.embedUrl}
+                    className="absolute inset-0 h-full w-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    scrolling="no"
+                    title={p.title}
+                    style={{ overflow: 'hidden' }}
+                  ></iframe>
+                ) : (
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                )}
+              </div>
 
-              <h3 className="mb-1 text-[19px] font-medium">
+              <h3 className="mb-1 text-[19px] font-medium text-white">
                 <span className="text-[#7B61FF] mr-2">•</span> {p.title}
               </h3>
 
-              <div className="mb-2 text-[16px] font-bold text-white/90">{p.subtitle}</div>
+              {p.subtitle && (
+                <div className="mb-2 text-[15px] font-bold text-white/70 uppercase tracking-tight">
+                  {p.subtitle}
+                </div>
+              )}
 
-              <p className="mb-3 text-[14.5px] leading-relaxed text-[#cccccc]">{p.text}</p>
+              {p.text && (
+                <p className="mb-4 text-[14px] leading-relaxed text-[#cccccc]">
+                  {p.text}
+                </p>
+              )}
 
-              <span className="text-[12.5px] uppercase tracking-wider text-[#7B61FF] font-medium">
-                {p.category}
-              </span>
-            </a>
+              <div className="mt-auto flex items-center justify-between">
+                <span className="text-[12px] uppercase tracking-wider text-[#7B61FF] font-semibold">
+                  {p.category}
+                </span>
+                
+                {(p.behanceUrl || p.link) && (
+                  <a
+                    href={p.behanceUrl || p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] font-medium text-white/80 hover:text-[#7B61FF] transition-colors flex items-center gap-1"
+                  >
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
         

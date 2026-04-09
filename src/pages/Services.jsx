@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/services.css';
+import Antigravity from '../components/Antigravity.jsx';
 
 const processPhases = [
   {
@@ -167,188 +168,137 @@ function Services() {
         <div className="mb-8 h-[1px] bg-white/20"></div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Web Applications */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-blue-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-blue-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#3B82F6" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.3} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">Web Applications</h3>
-            <p className="text-gray-400 mb-6">Custom web applications designed for speed, security, and seamless user experiences that support business growth</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                React & Next.js
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                API Integration
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                Scalable Backend
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                Cloud Hosting
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">Web Applications</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Custom web applications designed for speed, security, and seamless user experiences that support business growth</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>React &amp; Next.js</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>API Integration</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Scalable Backend</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Cloud Hosting</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 4-8 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 4-8 weeks</div>
           </div>
 
           {/* WordPress Development */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-violet-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-violet-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#A855F7" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.35} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">WordPress & CMS</h3>
-            <p className="text-gray-400 mb-6">Custom WordPress solutions, theme development, and manageable CMS platforms for seamless content control.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                Custom Theme Design
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                Elementor & Blocks
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                Plugin Customization
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                SEO Optimization
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">WordPress &amp; CMS</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Custom WordPress solutions, theme development, and manageable CMS platforms for seamless content control.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Custom Theme Design</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Elementor &amp; Blocks</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Plugin Customization</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>SEO Optimization</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 2-4 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 2-4 weeks</div>
           </div>
 
           {/* E-commerce Solutions */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-pink-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-pink-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#EC4899" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.4} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">E-commerce Solutions</h3>
-            <p className="text-gray-400 mb-6">Robust online stores built to convert, from Shopify setups to fully custom headless commerce architectures.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                Shopify & WooCommerce
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                Payment Gateways
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                Inventory Systems
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                Headless Commerce
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">E-commerce Solutions</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Robust online stores built to convert, from Shopify setups to fully custom headless commerce architectures.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Shopify &amp; WooCommerce</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Payment Gateways</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Inventory Systems</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Headless Commerce</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 4-8 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 4-8 weeks</div>
           </div>
 
           {/* 3D & CGI Visualization */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-indigo-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-indigo-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#6366F1" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.25} waveAmplitude={2} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5M7 10l-2 1m0 0l-2-1m2 1v2.5M7 4l-2 1m0 0l-2-1m2 1v2.5M20 4l-2 1m0 0l-2-1m2 1v2.5" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">3D & CGI Visualization</h3>
-            <p className="text-gray-400 mb-6">Photorealistic 3D rendering and cinematic CGI for products, architecture, and marketing environments.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                Product Design
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                Architectural Renders
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                CGI Animation
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-                VFX & Post-Production
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">3D &amp; CGI Visualization</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Photorealistic 3D rendering and cinematic CGI for products, architecture, and marketing environments.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Product Design</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Architectural Renders</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>CGI Animation</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>VFX &amp; Post-Production</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 3-6 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 3-6 weeks</div>
           </div>
 
           {/* Motion Graphics */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-orange-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-orange-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#F59E0B" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.5} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">Motion Graphics & 2D/3D Animation</h3>
-            <p className="text-gray-400 mb-6">Engaging motion graphics and custom animations that tell your brand story with fluid, cinematic movement.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                Explainer Videos
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                Logo Animation
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                UI Interaction Motion
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                Social Content
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">Motion Graphics &amp; 2D/3D Animation</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Engaging motion graphics and custom animations that tell your brand story with fluid, cinematic movement.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Explainer Videos</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Logo Animation</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>UI Interaction Motion</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Social Content</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 2-5 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 2-5 weeks</div>
           </div>
 
           {/* Brand Identity */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-teal-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-teal-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#14B8A6" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.35} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">Brand Identity & Visual Design</h3>
-            <p className="text-gray-400 mb-6">Comprehensive branding solutions including logo design, typography, color palettes, and full brand books.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-                Logo & Iconography
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-                Brand Guidelines
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-                Print & Digital Collateral
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-                Typography Systems
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">Brand Identity &amp; Visual Design</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Comprehensive branding solutions including logo design, typography, color palettes, and full brand books.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Logo &amp; Iconography</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Brand Guidelines</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Print &amp; Digital Collateral</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Typography Systems</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: 2-4 weeks</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: 2-4 weeks</div>
           </div>
 
           {/* Digital Ads */}
-          <div className="bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-cyan-500/50 transition-all">
-            <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 flex items-center justify-center">
+          <div className="relative bg-[#09090b] border border-gray-800 p-8 rounded-xl hover:border-cyan-500/50 transition-all overflow-hidden">
+            <div className="absolute inset-0 opacity-30 pointer-events-none">
+              <Antigravity count={80} color="#06B6D4" particleSize={1.5} magnetRadius={80} fieldStrength={8} waveSpeed={0.45} waveAmplitude={1.5} />
+            </div>
+            <div className="relative z-10 w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.003 9.003 0 0120.945 13H11V3.055z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
@@ -357,27 +307,15 @@ function Services() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 13h6.938c-.487 2.735-2.57 4.888-5.438 5.938V13z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-3">Digital Ads & Social Strategy</h3>
-            <p className="text-gray-400 mb-6">Strategic design and management of high-conversion ad campaigns across all major digital and social platforms.</p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                Facebook & IG Ads
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                Google Search/Display
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                Content Marketing Plan
-              </li>
-              <li className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                Conversion Optimization
-              </li>
+            <h3 className="relative z-10 text-2xl font-bold mb-3">Digital Ads &amp; Social Strategy</h3>
+            <p className="relative z-10 text-gray-400 mb-6">Strategic design and management of high-conversion ad campaigns across all major digital and social platforms.</p>
+            <ul className="relative z-10 space-y-2 mb-6">
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Facebook &amp; IG Ads</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Google Search/Display</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Content Marketing Plan</li>
+              <li className="flex items-center gap-2 text-gray-300"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Conversion Optimization</li>
             </ul>
-            <div className="text-sm text-gray-500">Timeline: Ongoing/Monthly</div>
+            <div className="relative z-10 text-sm text-gray-500">Timeline: Ongoing/Monthly</div>
           </div>
         </div>
       </section>
