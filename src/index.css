@@ -8,3 +8,18 @@
 @import './styles/services.css';
 @import './styles/projects.css';
 @import './styles/contact.css'; */
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+@keyframes border-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-border-rotate {
+  animation: border-rotate 6s linear infinite;
+}
