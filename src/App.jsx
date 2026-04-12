@@ -15,6 +15,10 @@ const DigitalMarketing = lazy(() => import('./pages/DigitalMarketing.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService.jsx'));
+const Blog = lazy(() => import('./pages/Blog.jsx'));
+const BlogWebsiteCost = lazy(() => import('./pages/BlogWebsiteCost.jsx'));
+const BlogChooseAgency = lazy(() => import('./pages/BlogChooseAgency.jsx'));
+const BlogNewWebsite = lazy(() => import('./pages/BlogNewWebsite.jsx'));
 
 // Scroll to top component
 function ScrollToTop() {
@@ -81,6 +85,10 @@ function AppContent() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/website-development-cost-pakistan" element={<BlogWebsiteCost />} />
+            <Route path="/blog/choose-digital-marketing-agency-pakistan" element={<BlogChooseAgency />} />
+            <Route path="/blog/signs-business-needs-new-website-2026" element={<BlogNewWebsite />} />
           </Routes>
         </Suspense>
       </main>

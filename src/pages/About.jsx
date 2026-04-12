@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO.jsx';
 import '../styles/about.css';
 import storyImage from '/images/services-image.png';
 import { FaJsSquare, FaReact, FaNodeJs, FaPaintBrush, FaDatabase, FaMobileAlt, FaLaptopCode, FaBullhorn, FaFilm, FaPencilRuler, FaCube } from 'react-icons/fa';
@@ -86,7 +87,7 @@ const techItems = [
 function About() {
   // Reveal animations for team members and value cards
   useEffect(() => {
-    document.title = "About Us — FrameGen";
+
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -109,6 +110,12 @@ function About() {
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="About Us — Premium Digital Agency"
+        description="Learn about FrameGen, a premium digital agency specializing in web development, 3D CGI, motion graphics, and brand identity design. Trusted by 50+ clients worldwide."
+        canonical="https://framegen.vercel.app/about"
+      />
+
       {/* Hero */}
       <section
         aria-labelledby="services-hero-heading"  // change to about-hero-heading / contact-hero-heading / projects-heading depending on page

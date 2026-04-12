@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO.jsx';
 import '../styles/services.css';
 import PatternCard from '../components/PatternCard.jsx';
 import { 
@@ -125,9 +126,9 @@ const whyItems = [
 ];
 
 function Services() {
-  // Reveal animations for cards and steps
+
   useEffect(() => {
-    document.title = "Our Services — FrameGen";
+
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -148,8 +149,41 @@ function Services() {
     return () => observer.disconnect();
   }, []);
 
+  const servicesSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Web Development',
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      areaServed: { '@type': 'Country', name: 'Pakistan' },
+      description: 'Custom web development including React apps, WordPress, and e-commerce solutions.',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Digital Marketing',
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      areaServed: { '@type': 'Country', name: 'Pakistan' },
+      description: 'SEO, social media advertising, and digital marketing strategies to grow your business.',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: '3D CGI & Motion Graphics',
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      description: 'Photorealistic 3D renders, CGI animation, and motion graphics for marketing.',
+    },
+  ];
+
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="Our Services — Web Dev, 3D CGI, Branding & Digital Marketing"
+        description="Explore FrameGen's full range of services: web development, 3D CGI visualization, motion graphics, brand identity design, and digital marketing in Pakistan."
+        canonical="https://framegen.vercel.app/services"
+        schema={servicesSchema}
+      />
+
       {/* Hero */}
       <section
         aria-labelledby="services-hero-heading"

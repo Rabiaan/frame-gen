@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO.jsx';
 import StatisticsGraph from '../components/StatisticsGraph.jsx';
 import MetricsPieChart from '../components/MetricsPieChart.jsx';
 import {
@@ -114,7 +115,6 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    document.title = "FrameGen — Digital Agency | Web, 3D & Branding";
 
     // Smooth scroll for in-page anchors (if any)
     const anchorHandler = (e) => {
@@ -193,8 +193,42 @@ function Home() {
   // Note: UnicornStudio removed due to memory issues
   // The external script was causing high memory usage
 
+  // Agency-level JSON-LD schema
+  const agencySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MarketingAgency',
+    name: 'FrameGen',
+    url: 'https://framegen.vercel.app',
+    logo: 'https://framegen.vercel.app/frame_gen.png',
+    description:
+      'FrameGen is a premium digital agency offering web development, 3D CGI visualization, motion graphics, brand identity, and digital marketing services.',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'PK',
+    },
+    sameAs: [],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Digital Agency Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '3D CGI Visualization' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motion Graphics' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Brand Identity Design' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Marketing' } },
+      ],
+    },
+  };
+
   return (
     <div className="relative z-10">
+      <SEO
+        title="Digital Agency | Web, 3D & Brand Design"
+        description="FrameGen is a premium digital agency offering web development, 3D CGI visualization, motion graphics, brand identity, and digital marketing services in Pakistan."
+        canonical="https://framegen.vercel.app"
+        schema={agencySchema}
+      />
+
       <div className="mx-auto w-[calc(100%-20px)] max-w-[1400px] sm:w-[calc(100%-40px)]">
         {/* Top Spline Hero Section */}
         <section className="top-spline-hero" ref={heroRef}>

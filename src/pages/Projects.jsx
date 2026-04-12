@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO.jsx';
 import '../styles/projects.css';
 
 const projectsData = [
@@ -128,9 +129,8 @@ const projectsData = [
 function Projects() {
   const [filter, setFilter] = useState('all');
 
-  // Reveal animations for project cards
   useEffect(() => {
-    document.title = "Our Projects — FrameGen";
+
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -188,6 +188,12 @@ function Projects() {
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="Our Projects — Portfolio of Web & Digital Work"
+        description="Browse FrameGen's portfolio: WordPress e-commerce stores, React web apps, HTML/CSS business sites, and digital marketing campaigns for clients worldwide."
+        canonical="https://framegen.vercel.app/projects"
+      />
+
       {/* Hero with Spline background */}
       <section
         aria-labelledby="projects-hero-heading"

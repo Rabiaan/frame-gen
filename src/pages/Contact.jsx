@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO.jsx';
 import emailjs from '@emailjs/browser';
 import '../styles/contact.css';
 
@@ -12,9 +13,8 @@ function Contact() {
 
   const [status, setStatus] = useState('');
 
-  // Reveal animation
   useEffect(() => {
-    document.title = "Contact Us — FrameGen";
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,8 +65,30 @@ function Contact() {
       });
   };
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact FrameGen',
+    url: 'https://framegen.vercel.app/contact',
+    description: 'Get in touch with FrameGen for web development, 3D CGI, branding, and digital marketing projects.',
+    mainEntity: {
+      '@type': 'MarketingAgency',
+      name: 'FrameGen',
+      email: 'framegen.dev@gmail.com',
+      url: 'https://framegen.vercel.app',
+      address: { '@type': 'PostalAddress', addressCountry: 'PK' },
+    },
+  };
+
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="Contact Us — Start Your Project"
+        description="Ready to start your project? Contact FrameGen for web development, 3D visuals, branding, and digital marketing services. Fast response guaranteed."
+        canonical="https://framegen.vercel.app/contact"
+        schema={contactSchema}
+      />
+
       {/* Hero */}
       <section
         aria-labelledby="services-hero-heading"  // change to about-hero-heading / contact-hero-heading / projects-heading depending on page
