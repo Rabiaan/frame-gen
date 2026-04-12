@@ -3,7 +3,7 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ9LP8PXW"></script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-ZTQ9LP8PXW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -24,34 +24,10 @@
   <!-- DNS prefetch as fallback -->
   <link rel="dns-prefetch" href="https://prod.spline.design" />
 
-  <!-- Google Fonts: non-render-blocking via media=print trick -->
-  <!-- Preload the two heavy woff2 files identified in the critical path -->
-  <link
-    rel="preload"
-    href="https://fonts.gstatic.com/s/syne/v22/8vIH7w4qzCVFVBbUAAt.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin />
-  <link
-    rel="preload"
-    href="https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriOZSCHBeHFl0.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin />
-  <link
-    rel="preload"
-    as="style"
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
-  <link
-    rel="stylesheet"
-    media="print"
-    onload="this.media='all'"
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" />
-  </noscript>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <meta name="title" content="FrameGen — Digital Agency | Web, 3D & Brand Design">
   <meta name="description"
@@ -85,10 +61,10 @@
     gtag('config', 'G-PZHHQEMKS9');
   </script>
   <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PZHHQEMKS9"></script>
-  <script type="module" crossorigin src="/assets/index-BfmkQTBw.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-spline-BS32aGJr.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-react-DY3JXqvS.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-router-CAXOy-oC.js">
+  <script type="module" crossorigin src="/assets/index-AGA8QWIG.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-charts-CW2VfrfB.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-DIBtUQbi.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-router-BL6SwTd1.js">
   <link rel="stylesheet" crossorigin href="/assets/index-CBQmBNVs.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>

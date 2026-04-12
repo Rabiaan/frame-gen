@@ -35,11 +35,8 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,   // smaller builds for production
     rollupOptions: {
-      external: ['@splinetool/runtime'],
       output: {
         manualChunks: {
-          // Isolate heavy 3D library so it never blocks the main bundle
-          'vendor-spline': ['@splinetool/react-spline'],
           // Isolate charting library
           'vendor-charts': ['chart.js', 'react-chartjs-2'],
           // Core React runtime in its own chunk
