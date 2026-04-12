@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO.jsx';
 import '../styles/projects.css';
 
 const digitalProjectsData = [
@@ -128,7 +129,6 @@ function DigitalMarketing() {
 
   // Reveal animations for project cards
   useEffect(() => {
-    document.title = "Digital Marketing & Animation Projects — FrameGen";
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -183,9 +183,24 @@ function DigitalMarketing() {
   const visibleProjects = digitalProjectsData.filter(
     (p) => filter === 'all' || p.category.toLowerCase().includes(filter.replace('-', ' ')),
   );
+  const marketingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Global Digital Marketing & Brand Strategy',
+    provider: { '@type': 'MarketingAgency', name: 'FrameGen' },
+    description: 'Data-driven digital marketing, brand strategy, and high-end animation services for global business growth.',
+    areaServed: 'Worldwide',
+  };
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="Global Digital Marketing & Brand Strategy — FrameGen"
+        description="Scale your business globally with ROI-driven digital marketing, high-end 3D animation, and data-backed brand strategies. Trusted by enterprise partners."
+        canonical="https://framegen.vercel.app/projects/digital-marketing"
+        schema={marketingSchema}
+      />
+
       {/* Hero with Spline background */}
       <section
         aria-labelledby="projects-hero-heading"
@@ -210,21 +225,33 @@ function DigitalMarketing() {
         className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
       >
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-[80%] md:max-w-[60%]">
-            <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Our Work</h2>
+          <div className="max-w-4xl">
+            <h2 className="mb-2 text-[15px] uppercase tracking-wider text-[#7B61FF]">Digital Excellence</h2>
             <h1
               id="projects-heading"
               className="mb-4 font-syne text-[40px] font-light leading-[1.06] md:text-[65px]"
             >
-              Creative Digital
+              ROI-Driven Marketing
               <br />
-              Marketing & Animation
+              & Global Brand Strategy
             </h1>
-            <p className="text-[14px] leading-[1.6] text-[#cccccc]">
-              Explore our portfolio of digital marketing campaigns, brand strategies, and animated content.
+            <p className="mb-8 text-[17px] leading-[1.7] text-[#cccccc]">
+              We don't just create "edits"—we build scalable marketing engines for business owners who demand measurable results. Our approach combines data-driven strategy with high-end 3D visuals to position your brand at the forefront of the global market.
             </p>
+            
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
+                <h3 className="mb-2 text-[18px] font-semibold text-white">Data-Backed Strategy</h3>
+                <p className="text-[14px] text-[#aaaaaa]">Every campaign is rooted in deep market analysis and performance metrics to ensure your investment scales efficiently.</p>
+              </div>
+              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
+                <h3 className="mb-2 text-[18px] font-semibold text-white">High-End Brand Assets</h3>
+                <p className="text-[14px] text-[#aaaaaa]">From 3D CGI to premium motion graphics, we produce visual content that builds immediate trust with global partners.</p>
+              </div>
+            </div>
           </div>
         </div>
+
         {/* Divider */}
         <div className="mb-8 h-[1px] bg-white/20"></div>
 
@@ -316,14 +343,22 @@ function DigitalMarketing() {
             </div>
           ))}
         </div>
-        
-        {visibleProjects.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-[18px] text-[#cccccc]">More projects coming soon!</p>
-            <p className="text-[14px] text-[#aaaaaa] mt-2">We're constantly working on exciting new digital marketing and animation projects.</p>
-          </div>
-        )}
       </section>
+
+      {/* CTA Section */}
+      <section className="mb-20 rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-12 text-center backdrop-blur-[20px]">
+        <h2 className="mb-4 font-syne text-[32px] font-light">Ready to Scale Profitably?</h2>
+        <p className="mb-8 mx-auto max-w-2xl text-[16px] text-[#aaaaaa]">
+          Let's discuss how we can implement a data-driven marketing system for your business. No fluff, just results.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block rounded-md bg-gradient-to-tr from-[#7B61FF] to-[#00F0FF] px-10 py-4 text-[15px] font-semibold text-white shadow-[0_0_20px_rgba(123,97,255,0.3)] transition hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(123,97,255,0.5)]"
+        >
+          Book a Strategic Consultation →
+        </a>
+      </section>
+
     </div>
   );
 }

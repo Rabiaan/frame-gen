@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/SEO.jsx';
 import '../styles/projects.css';
 
 const projectsData = [
@@ -162,7 +163,6 @@ function WebsiteDevelopment() {
 
   // Reveal animations for project cards
   useEffect(() => {
-    document.title = "Website Development Projects — FrameGen";
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -218,8 +218,25 @@ function WebsiteDevelopment() {
     (p) => filter === 'all' || p.category.toLowerCase().replace('/', '-') === filter,
   );
 
+
+  const webDevSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Enterprise Web Development & Custom Software',
+    provider: { '@type': 'MarketingAgency', name: 'FrameGen' },
+    description: 'Specializing in scalable React applications, custom WordPress ecosystems, and high-performance e-commerce solutions for global businesses.',
+    areaServed: 'Worldwide',
+  };
+
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
+      <SEO
+        title="Enterprise Web Development & Scalable Software — FrameGen"
+        description="High-performance React development, custom WordPress stores, and full-stack software solutions designed for global scale and business reliability."
+        canonical="https://framegen.vercel.app/projects/website-development"
+        schema={webDevSchema}
+      />
+
       {/* Hero with Spline background */}
       <section
         aria-labelledby="projects-hero-heading"
@@ -244,21 +261,37 @@ function WebsiteDevelopment() {
         className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
       >
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-[60%] md:max-w-[60%]">
-            <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Our Work</h2>
+          <div className="max-w-4xl">
+            <h2 className="mb-2 text-[15px] uppercase tracking-wider text-[#7B61FF]">Engineering Excellence</h2>
             <h1
               id="projects-heading"
               className="mb-4 font-syne text-[40px] font-light leading-[1.06] md:text-[65px]"
             >
-              Showcasing Our
+              Enterprise Web Development
               <br />
-              Best Web Projects
+              & Scalable Architecture
             </h1>
-            <p className="text-[14px] leading-[1.6] text-[#cccccc]">
-              Explore our portfolio of innovative web development projects built with cutting-edge technologies.
+            <p className="mb-8 text-[17px] leading-[1.7] text-[#cccccc]">
+              We build more than just "sites." We engineer fast, secure, and scalable web ecosystems that empower business owners to dominate their markets. From React-driven enterprise apps to custom high-performance e-commerce, our solutions are built for global scale.
             </p>
+            
+            <div className="mb-12 grid gap-6 md:grid-cols-3">
+              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
+                <h3 className="mb-2 text-[18px] font-semibold text-white">Custom Engineering</h3>
+                <p className="text-[14px] text-[#aaaaaa]">React, Next.js, and Node.js solutions built specifically for your business logic.</p>
+              </div>
+              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
+                <h3 className="mb-2 text-[18px] font-semibold text-white">Global Performance</h3>
+                <p className="text-[14px] text-[#aaaaaa]">Optimized for loading speed across continents, ensuring a zero-lag user experience.</p>
+              </div>
+              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
+                <h3 className="mb-2 text-[18px] font-semibold text-white">Security First</h3>
+                <p className="text-[14px] text-[#aaaaaa]">Enterprise-grade security protocols to protect your data and your customers' trust.</p>
+              </div>
+            </div>
           </div>
         </div>
+
         {/* Divider */}
         <div className="mb-8 h-[1px] bg-white/20"></div>
 
@@ -316,6 +349,21 @@ function WebsiteDevelopment() {
           ))}
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="mb-20 rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-12 text-center backdrop-blur-[20px]">
+        <h2 className="mb-4 font-syne text-[32px] font-light">Build a Faster, Better Business Site</h2>
+        <p className="mb-8 mx-auto max-w-2xl text-[16px] text-[#aaaaaa]">
+          Whether you're looking for a simple business site or a complex web application, we have the technical expertise to deliver.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block rounded-md bg-gradient-to-tr from-[#7B61FF] to-[#00F0FF] px-10 py-4 text-[15px] font-semibold text-white shadow-[0_0_20px_rgba(123,97,255,0.3)] transition hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(123,97,255,0.5)]"
+        >
+          Consult With an Engineer →
+        </a>
+      </section>
+
     </div>
   );
 }

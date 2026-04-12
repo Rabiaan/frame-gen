@@ -217,7 +217,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Syne', sans-serif; }
 }
 
 .hero-brand {
-    /* position: absolute; */
+    position: absolute;
     bottom: 8px;
     left: 18px;
     font-size: 100px !important;
