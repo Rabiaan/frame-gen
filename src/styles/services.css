@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0.9;
     pointer-events: none;
     z-index: 10;
-    font-size: 100px !important;
+    font-size: clamp(40px, 10vw, 100px);
     color: transparent;
     background: linear-gradient(#ffffffc2, #ffffffe6);
     -webkit-background-clip: text;
@@ -162,18 +162,21 @@ h1, h2, h3, h4, h5, h6 {
     .services-banner {
         padding: 60px 40px;
     }
-    .hero-brand {
-        font-size: 70px;
-    }
 }
 
 @media (max-width: 768px) {
     .services-banner {
-        min-height: 300px;
-        padding: 40px 20px;
+        min-height: 200px;
+        padding: 30px 16px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/services_banner.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     .hero-brand {
-        font-size: 40px;
+        left: 16px;
+        bottom: 16px;
+        font-size: clamp(28px, 14vw, 50px);
     }
     .core-expertise, .deliver, .process, .why-choose {
         padding: 40px 20px;

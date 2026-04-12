@@ -556,7 +556,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Syne', sans-serif; }
     .hero-left, .hero-subtitle, .projects-left, .hero-right { max-width: 100%; }
     .hero h1, .projects h1 { font-size: 40px; }
     .hero-subtitle { font-size: 15px; color: #bbb; max-width: 100%; width: auto; }
-    .hero-brand { font-size: 30px !important; left: 10px; bottom: 10px; color: transparent; background: linear-gradient(#ffffff80, #ffffffe6); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 0 10px rgba(255, 255, 255, .1)) drop-shadow(0 0 25px rgba(255, 255, 255, .05)); }
+    .hero-brand { position: absolute; font-size: 26px !important; left: 10px; bottom: 10px !important; color: transparent; background: linear-gradient(#ffffff80, #ffffffe6); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 0 10px rgba(255, 255, 255, .1)) drop-shadow(0 0 25px rgba(255, 255, 255, .05)); }
     .spline-container {scale: 0.9 !important;}
     .hero{
         height: 460px !important;

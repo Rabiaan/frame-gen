@@ -174,13 +174,13 @@ const DiagonalLinesPattern = () => (
           initial={{ width: 0, opacity: 0 }}
           animate={{ 
             width: '100%',
-            opacity: [0.05, 0.2, 0.05],
+            opacity: [0.1, 0.4, 0.1],
           }}
           transition={{ 
             width: { duration: 2, delay: i * 0.1, ease: "easeOut" },
             opacity: { repeat: Infinity, duration: 6, delay: i * 0.3 }
           }}
-          className="h-[1.5px] bg-[#3B82F6]/40 w-full"
+          className="h-[3px] bg-[#3B82F6]/60 w-full"
         />
       ))}
     </div>
