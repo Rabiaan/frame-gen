@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-Sitemap: https://visionex.vercel.app/sitemap.xml
+Sitemap: https://framegen.vercel.app/sitemap.xml

@@ -90,7 +90,7 @@ export default function BlogNewWebsite() {
         {signs.map((sign) => (
           <section
             key={sign.number}
-            className="rounded-[20px] border border-white/10 bg-white/5 p-6 md:p-8"
+            className="rounded-[20px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-[12px]"
             style={{ borderLeftColor: sign.color, borderLeftWidth: '3px' }}
           >
             <div className="mb-4 flex items-start gap-4">
@@ -113,7 +113,7 @@ export default function BlogNewWebsite() {
         ))}
 
         {/* What to Do Next */}
-        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8">
+        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-[12px]">
           <h2 className="mb-4 font-syne text-[24px] text-white">What Should You Do Next?</h2>
           <p className="mb-4">
             If you recognize even 2 of these signs, it's time to act. A properly built website is not an expense — it's an investment that generates leads while you sleep.
@@ -124,7 +124,7 @@ export default function BlogNewWebsite() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-8 text-center">
+        <section className="rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-8 text-center backdrop-blur-[12px]">
           <h2 className="mb-3 font-syne text-[26px]">Ready for a Website That Actually Works?</h2>
           <p className="mb-6 text-[15px] text-[#aaaaaa]">Get a free review of your current website and a transparent quote for a rebuild. No commitment.</p>
           <Link

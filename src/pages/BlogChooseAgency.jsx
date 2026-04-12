@@ -66,7 +66,7 @@ export default function BlogChooseAgency() {
       <div className="space-y-8 text-[16px] leading-[1.8] text-[#cccccc]">
 
         {/* Green Flags */}
-        <section>
+        <section className="backdrop-blur-[12px] bg-white/5 border border-white/10 rounded-[20px] p-6 md:p-8">
           <h2 className="mb-6 font-syne text-[26px] text-white">✅ Green Flags — Signs of a Trustworthy Agency</h2>
           <div className="space-y-4">
             {greenFlags.map((flag, i) => (
@@ -82,7 +82,7 @@ export default function BlogChooseAgency() {
         </section>
 
         {/* Red Flags */}
-        <section className="rounded-[16px] border border-[#EF4444]/20 bg-[#EF4444]/5 p-6 md:p-8">
+        <section className="rounded-[16px] border border-[#EF4444]/20 bg-[#EF4444]/5 p-6 md:p-8 backdrop-blur-[12px]">
           <h2 className="mb-5 font-syne text-[24px] text-white">🚩 Red Flags — Walk Away</h2>
           <div className="grid gap-3 md:grid-cols-2">
             {redFlags.map((flag) => (
@@ -95,7 +95,7 @@ export default function BlogChooseAgency() {
         </section>
 
         {/* Questions to Ask */}
-        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8">
+        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-[12px]">
           <h2 className="mb-5 font-syne text-[24px] text-white">Questions to Ask Before Signing</h2>
           <div className="space-y-4">
             {[
@@ -114,7 +114,7 @@ export default function BlogChooseAgency() {
         </section>
 
         {/* Service Types */}
-        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8">
+        <section className="rounded-[16px] border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-[12px]">
           <h2 className="mb-4 font-syne text-[24px] text-white">The Main Services to Look For</h2>
           <p className="mb-5">A full-service digital marketing agency should ideally cover all of these areas or partner with specialists:</p>
           <div className="grid gap-3 md:grid-cols-2">
@@ -128,7 +128,7 @@ export default function BlogChooseAgency() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-8 text-center">
+        <section className="rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-8 text-center backdrop-blur-[12px]">
           <h2 className="mb-3 font-syne text-[26px]">Think FrameGen Might Be a Fit?</h2>
           <p className="mb-6 text-[15px] text-[#aaaaaa]">We're happy to answer all these questions and show you real results from past clients. No pressure — just a conversation.</p>
           <Link

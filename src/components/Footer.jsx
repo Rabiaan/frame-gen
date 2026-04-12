@@ -27,7 +27,7 @@ function Footer() {
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Pages</h3>
           <ul className="mx-auto flex flex-wrap justify-center gap-2 md:mx-0 md:justify-start">
-            {["Home", "About", "Services", "Website Development", "Digital Marketing", "Contact"].map((page) => (
+            {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
               <li
                 key={page}
                 className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[12px] text-[#999999] backdrop-blur sm:text-[14px]"

@@ -4,16 +4,6 @@ import SEO from '../components/SEO.jsx';
 
 const posts = [
   {
-    slug: 'website-development-cost-pakistan',
-    category: 'Web Development',
-    categoryColor: '#7B61FF',
-    readTime: '5 min read',
-    date: 'April 2026',
-    title: 'How Much Does Website Development Cost in Pakistan?',
-    excerpt:
-      'Planning a new website but unsure about costs? We break down real pricing for WordPress, React, and e-commerce sites so you can budget confidently.',
-  },
-  {
     slug: 'choose-digital-marketing-agency-pakistan',
     category: 'Digital Marketing',
     categoryColor: '#00F0FF',
@@ -77,7 +67,7 @@ export default function Blog() {
           <Link
             key={post.slug}
             to={`/blog/${post.slug}`}
-            className="group flex flex-col rounded-[16px] border border-white/10 bg-white/5 p-6 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#7B61FF]/50 hover:shadow-[0_0_40px_rgba(123,97,255,0.18)]"
+            className="group flex flex-col rounded-[16px] border border-white/10 bg-white/5 p-6 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#7B61FF]/50 hover:shadow-[0_0_40px_rgba(123,97,255,0.18)] backdrop-blur-[12px]"
           >
             {/* Category badge */}
             <div className="mb-4 flex items-center justify-between">
@@ -104,7 +94,7 @@ export default function Blog() {
       </section>
 
       {/* CTA */}
-      <section className="mb-12 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-center shadow-[0_0_40px_rgba(123,97,255,0.08)]">
+      <section className="mb-12 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-center shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[12px]">
         <h2 className="mb-3 font-syne text-[28px] font-light">Want a Free Website Consultation?</h2>
         <p className="mb-6 text-[15px] text-[#aaaaaa]">Talk to our team about your project. No commitment required.</p>
         <Link

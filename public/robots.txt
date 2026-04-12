@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
 
-Sitemap: https://visionex.vercel.app/sitemap.xml
+# Block legal pages from indexing (thin content)
+Disallow: /privacy
+Disallow: /terms
+
+# Sitemap location
+Sitemap: https://framegen.vercel.app/sitemap.xml
