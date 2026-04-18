@@ -1,0 +1,190 @@
+/* src/styles/methodology-cards.css */
+.methodology-container {
+  max-width: 1280px;
+  width: 100%;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .methodology-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.methodology-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.methodology-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.methodology-card:hover::before {
+  left: 100%;
+  transition: left 0.7s ease;
+}
+
+.methodology-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(123, 97, 255, 0.3);
+}
+
+.meth-icon-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.meth-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.meth-bubbles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.meth-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: #7b61ff;
+  filter: blur(1px);
+  animation: methFloatUp linear infinite;
+  opacity: 0;
+}
+
+@keyframes methFloatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.meth-icon-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b61ff, #5b43d4);
+  box-shadow: 0 0 30px rgba(123, 97, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: methWaveMotion 3s ease-in-out infinite;
+}
+
+@keyframes methWaveMotion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.meth-icon-wrapper svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.meth-text-section {
+  text-align: center;
+}
+
+.meth-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  transition: color 0.3s;
+}
+
+.methodology-card:hover .meth-card-title {
+  color: #7b61ff;
+}
+
+.meth-card-description {
+  font-family: 'DM Sans', sans-serif;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.meth-bottom-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7b61ff, transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.methodology-card:hover .meth-bottom-border {
+  opacity: 1;
+}
