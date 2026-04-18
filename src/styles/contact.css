@@ -306,6 +306,10 @@ input, textarea, select {
     outline: none;
     transition: .3s;
 }
+select option {
+    background: #1a1a2e;
+    color: #c4b5fd;
+}
 input:focus, textarea:focus, select:focus {
     border-color: #7B61FF;
     box-shadow: 0 0 15px rgba(123,97,255,0.25);

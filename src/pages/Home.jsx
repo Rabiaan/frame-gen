@@ -183,6 +183,340 @@ function Home() {
     const counterSections = document.querySelectorAll('#testimonials-section, #trust-section');
     counterSections.forEach(section => counterObserver.observe(section));
 
+    // Feature Card Animations
+    // Animation 1: Bar Chart
+    const barHeights = [[55,40,70,50,65],[30,65,45,75,35],[70,30,55,40,60],[45,80,35,60,50],[60,50,75,30,70]];
+    let barFrame = 0;
+    function animateBars() {
+      const bars = document.querySelectorAll('#bar-chart-anim .bar');
+      if (bars.length) {
+        const next = barHeights[barFrame % barHeights.length];
+        bars.forEach((bar, i) => {
+          bar.style.transition = 'height 0.6s cubic-bezier(0.4,0,0.2,1)';
+          bar.style.height = next[i] + 'px';
+        });
+        barFrame++;
+      }
+    }
+    if (document.querySelector('#bar-chart-anim')) {
+      setInterval(animateBars, 5000);
+    }
+
+    // Animation 2: Icon Rows
+    function setupIconAnimation() {
+      const rows = [
+        { 
+          gearId: 'gear-top-anim', 
+          iconIds: ['ri1-anim','ri2-anim','ri3-anim'], 
+        },
+        { 
+          gearId: 'gear-bot-anim', 
+          iconIds: ['bi1-anim','bi2-anim','bi3-anim'], 
+        },
+      ];
+      
+      rows.forEach(row => {
+        let step = 0;
+        const gear = document.getElementById(row.gearId);
+        const icons = row.iconIds.map(id => document.getElementById(id)).filter(Boolean);
+        if (!gear || icons.length === 0) return;
+        
+        function cycle() {
+          if (step < icons.length) {
+            const el = icons[step];
+            if (el && gear) {
+              const gearRect = gear.getBoundingClientRect();
+              const elRect = el.getBoundingClientRect();
+              const dx = gearRect.left - elRect.left;
+              el.style.transition = 'transform 0.5s ease-in, opacity 0.4s ease-in';
+              el.style.transform = `translateX(${dx}px) scale(0.4)`;
+              el.style.opacity = '0';
+            }
+            step++;
+            setTimeout(cycle, 300);
+          } else {
+            gear.style.transition = 'transform 0.6s ease-in-out';
+            gear.style.transform = 'rotate(180deg)';
+            setTimeout(() => {
+              gear.style.transform = 'rotate(360deg)';
+              setTimeout(() => {
+                icons.forEach(el => {
+                  if (el) { 
+                    el.style.transition = 'none'; 
+                    el.style.transform = ''; 
+                    el.style.opacity = '1'; 
+                  }
+                });
+                gear.style.transition = 'none';
+                gear.style.transform = 'rotate(0deg)';
+                step = 0;
+                setTimeout(cycle, 1000);
+              }, 600);
+            }, 600);
+          }
+        }
+        setTimeout(cycle, row.gearId === 'gear-top-anim' ? 300 : 900);
+      });
+    }
+    if (document.querySelector('.icon-rows')) {
+      setupIconAnimation();
+    }
+
+    // Animation 3: Task Rows
+    const taskOrders = [[0,1,2,3],[2,0,3,1],[1,3,0,2],[3,1,2,0],[0,2,1,3]];
+    let taskFrame = 0;
+    function animateTasks() {
+      const taskListAni = document.getElementById('task-list-anim');
+      if (!taskListAni) return;
+      taskFrame = (taskFrame + 1) % taskOrders.length;
+      const order = taskOrders[taskFrame];
+      const taskRowsAni = ['tr0-anim','tr1-anim','tr2-anim','tr3-anim'].map(id => document.getElementById(id)).filter(Boolean);
+      if (taskRowsAni.length < 4) return;
+      const rowHeight = taskRowsAni[0].offsetHeight + 7;
+      const containerTop = taskListAni.getBoundingClientRect().top;
+      const currentPositions = taskRowsAni.map(r => r.getBoundingClientRect().top - containerTop);
+      taskRowsAni.forEach((row, i) => {
+        const targetIndex = order.indexOf(i);
+        const targetY = targetIndex * rowHeight;
+        const dy = targetY - currentPositions[i];
+        row.style.transition = 'transform 1.2s cubic-bezier(0.4,0,0.2,1)';
+        row.style.transform = `translateY(${dy}px)`;
+      });
+      setTimeout(() => {
+        taskRowsAni.forEach(r => { r.style.transition = 'none'; r.style.transform = ''; });
+        order.map(i => taskRowsAni[i]).forEach(r => { if (r) taskListAni.appendChild(r); });
+      }, 1300);
+    }
+    if (document.querySelector('#task-list-anim')) {
+      setInterval(animateTasks, 4000);
+    }
+
+    // Animation 4: Node Animation - Seamless Integration (Network animation)
+    (function(){
+      const cv   = document.getElementById('nc');
+      if (!cv) return;
+      const ctx  = cv.getContext('2d');
+      const wrap = cv.parentElement;
+      const PR = window.devicePixelRatio || 1;
+
+      let W, H;
+      function resize() {
+        const rect = wrap.getBoundingClientRect();
+        W = rect.width; H = rect.height;
+        cv.width = W * PR; cv.height = H * PR;
+        cv.style.width = W + 'px'; cv.style.height = H + 'px';
+        ctx.scale(PR, PR);
+      }
+      resize();
+
+      const nodeDefs = [
+        { px: 0.50, py: 0.50, r: 9 },
+        { px: 0.15, py: 0.22, r: 6.5 },
+        { px: 0.83, py: 0.20, r: 6.5 },
+        { px: 0.10, py: 0.76, r: 6 },
+        { px: 0.86, py: 0.74, r: 6 },
+        { px: 0.40, py: 0.10, r: 5.5 },
+        { px: 0.63, py: 0.88, r: 5.5 },
+      ];
+
+      const connDefs = [
+        { a:0, b:1, wamp:8,  wfreq:2.5 },
+        { a:0, b:2, wamp:7,  wfreq:2.5 },
+        { a:0, b:3, wamp:9,  wfreq:2.2 },
+        { a:0, b:4, wamp:8,  wfreq:2.2 },
+        { a:0, b:5, wamp:6,  wfreq:3   },
+        { a:0, b:6, wamp:7,  wfreq:2.8 },
+        { a:1, b:5, wamp:5,  wfreq:3   },
+        { a:2, b:5, wamp:6,  wfreq:3   },
+        { a:3, b:6, wamp:6,  wfreq:2.8 },
+        { a:4, b:6, wamp:5,  wfreq:2.8 },
+        { a:1, b:3, wamp:10, wfreq:2   },
+        { a:2, b:4, wamp:10, wfreq:2   },
+      ];
+
+      let nodes = [];
+      let conns = [];
+
+      function init() {
+        nodes = nodeDefs.map(d => ({
+          x: d.px * W, y: d.py * H, r: d.r,
+          lit: false, pulse: 0, scale: 0
+        }));
+        conns = connDefs.map(d => ({
+          ...d, progress: 0, active: false, waveOffset: 0
+        }));
+      }
+      init();
+
+      function wavyPath(x1, y1, x2, y2, amp, freq, progress, waveOffset) {
+        const dx = x2 - x1, dy = y2 - y1;
+        const len = Math.sqrt(dx*dx + dy*dy);
+        const nx = -dy / len, ny = dx / len;
+        const segments = Math.round(freq * 10);
+        const pts = [];
+        for (let i = 0; i <= segments; i++) {
+          const t = i / segments;
+          if (t > progress) break;
+          const px = x1 + dx * t;
+          const py = y1 + dy * t;
+          const wave = Math.sin(t * freq * Math.PI * 2 + waveOffset) * amp;
+          pts.push({ x: px + nx * wave, y: py + ny * wave });
+        }
+        return pts;
+      }
+
+      const animQueue = [
+        { type:'node', i:0 },
+        { type:'conn', i:0 }, { type:'conn', i:1 },
+        { type:'node', i:1 }, { type:'node', i:2 },
+        { type:'conn', i:2 }, { type:'conn', i:3 },
+        { type:'node', i:3 }, { type:'node', i:4 },
+        { type:'conn', i:4 }, { type:'conn', i:5 },
+        { type:'node', i:5 }, { type:'node', i:6 },
+        { type:'conn', i:6 }, { type:'conn', i:7 },
+        { type:'conn', i:8 }, { type:'conn', i:9 },
+        { type:'conn', i:10 }, { type:'conn', i:11 },
+      ];
+
+      let animIdx = 0;
+      let drawingConns = [];
+      const CONN_SPEED = 0.045;
+      const STEP_INTERVAL = 100;
+      let lastStep = 0;
+      let allDone = false;
+      let doneTime = 0;
+      const HOLD = 1400;
+      let globalTime = 0;
+
+      function loop(ts) {
+        if (!loop.last) loop.last = ts;
+        const dt = ts - loop.last;
+        loop.last = ts;
+        globalTime += dt * 0.002;
+
+        ctx.clearRect(0, 0, W, H);
+
+        drawingConns = drawingConns.filter(ci => {
+          conns[ci].progress += CONN_SPEED;
+          if (conns[ci].progress >= 1) { conns[ci].progress = 1; return false; }
+          return true;
+        });
+
+        if (!allDone && drawingConns.length === 0) {
+          if (ts - lastStep > STEP_INTERVAL && animIdx < animQueue.length) {
+            const step = animQueue[animIdx++];
+            if (step.type === 'node') {
+              nodes[step.i].lit = true;
+            } else {
+              conns[step.i].active = true;
+              drawingConns.push(step.i);
+            }
+            lastStep = ts;
+          } else if (animIdx >= animQueue.length && drawingConns.length === 0) {
+            allDone = true;
+            doneTime = ts;
+          }
+        }
+
+        if (allDone && ts - doneTime > HOLD) {
+          nodes.forEach(n => { n.lit = false; n.pulse = 0; n.scale = 0; });
+          conns.forEach(c => { c.progress = 0; c.active = false; });
+          animIdx = 0; drawingConns = []; allDone = false; lastStep = ts;
+        }
+
+        nodes.forEach(n => {
+          if (n.lit) n.scale = Math.min(n.scale + dt * 0.004, 1);
+        });
+
+        conns.forEach(c => {
+          if (!c.active && c.progress === 0) return;
+          c.waveOffset += dt * 0.003;
+          const na = nodes[c.a], nb = nodes[c.b];
+          const pts = wavyPath(na.x, na.y, nb.x, nb.y, c.wamp, c.wfreq, c.progress, c.waveOffset);
+          if (pts.length < 2) return;
+
+          ctx.beginPath();
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for (let k = 1; k < pts.length; k++) ctx.lineTo(pts[k].x, pts[k].y);
+          ctx.strokeStyle = '#2a2547';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          const grad = ctx.createLinearGradient(na.x, na.y, nb.x, nb.y);
+          grad.addColorStop(0, '#7b61ff33');
+          grad.addColorStop(0.5, '#7b61ffbb');
+          grad.addColorStop(1, '#7b61ff55');
+          ctx.beginPath();
+          ctx.moveTo(pts[0].x, pts[0].y);
+          for (let k = 1; k < pts.length; k++) ctx.lineTo(pts[k].x, pts[k].y);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.5;
+          ctx.shadowColor = '#7b61ff';
+          ctx.shadowBlur = 7;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
+
+          if (c.progress < 1) {
+            const tip = pts[pts.length - 1];
+            ctx.beginPath();
+            ctx.arc(tip.x, tip.y, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = '#7b61ff';
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        });
+
+        nodes.forEach(n => {
+          const s = n.scale;
+          if (s === 0) {
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r * 0.4, 0, Math.PI * 2);
+            ctx.fillStyle = '#2a2547';
+            ctx.fill();
+            return;
+          }
+
+          const aura = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 3.5);
+          aura.addColorStop(0, `rgba(123,97,255,${0.22 * s})`);
+          aura.addColorStop(1, 'rgba(123,97,255,0)');
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r * 3.5, 0, Math.PI * 2);
+          ctx.fillStyle = aura;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r * s, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(123,97,255,${0.85 * s})`;
+          ctx.lineWidth = 1.5;
+          ctx.shadowColor = '#7b61ff';
+          ctx.shadowBlur = 12;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
+
+          const fill = ctx.createRadialGradient(n.x - n.r*0.3, n.y - n.r*0.3, 0, n.x, n.y, n.r * s);
+          fill.addColorStop(0, `rgba(80,60,180,${s})`);
+          fill.addColorStop(1, `rgba(30,22,70,${s})`);
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r * s, 0, Math.PI * 2);
+          ctx.fillStyle = fill;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(n.x - n.r*0.25, n.y - n.r*0.25, n.r * 0.22 * s, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${0.5 * s})`;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(loop);
+      }
+
+      resize();
+      new ResizeObserver(() => { resize(); init(); }).observe(wrap);
+      requestAnimationFrame(loop);
+    })();
+
     return () => {
       anchors.forEach((a) => a.removeEventListener('click', anchorHandler));
       observer.disconnect();
@@ -310,27 +644,8 @@ function Home() {
               </div>
             </div>
 
-            {/* Box 3: Expert Team */}
-            <div className="grid-box box-best-1 reveal-card">
-              <div className="box-title">Expert Team</div>
-              <div className="box-desc">Our team of developers and designers combines years of experience in building high-performance websites, intuitive user interfaces, and engaging digital experiences for businesses worldwide. We pride ourselves on our meticulous attention to detail and ability to turn complex challenges into elegant solutions.</div>
-            </div>
-
-            {/* Box 4: Outcome-Driven Tech */}
-            <div className="grid-box box-best-2 reveal-card">
-              <div className="box-title">Performance-First Tech</div>
-              <div className="box-desc">We use modern technologies and optimized development practices to build fast, secure, and scalable websites that perform flawlessly across all devices. We focus on speed, security, and conversions to ensure your digital presence drives real business growth.</div>
-            </div>
-
-            {/* Box 5: Problems & Solutions */}
-            <div className="grid-box box-problems reveal-card">
-              <div className="box-label">Industry Impact</div>
-              <h3 className="box-title">Solving Core Challenges</h3>
-              <p className="box-desc">We don't just build websites; we solve business problems. Whether it's optimizing user conversion rates, architecting complex database structures, or ensuring 100% mobile responsiveness, we address the root causes of digital friction to drive real growth.</p>
-            </div>
-
-            {/* Box 6: Trust Counter */}
-            <div className="grid-box box-trust reveal-card" id="trust-section">
+            {/* Box 3: Global Trust (swapped from Box 6) */}
+            <div className="grid-box box-trust reveal-card" id="trust-section" style={{ gridColumn: 'span 1' }}>
               <div className="box-label">Global Trust</div>
               <div className="flex items-baseline gap-2">
                 <span className="box-value stat-number" data-target="50">0</span>
@@ -339,10 +654,84 @@ function Home() {
               <div className="box-desc">Trusted by 50+ businesses across multiple industries to deliver excellence.</div>
             </div>
 
-            {/* Box 7: Best Choice 3 */}
+            {/* Box 4: 24/7 Support (swapped from Box 7) */}
             <div className="grid-box box-best-3 reveal-card">
               <div className="box-title">24/7 Support</div>
               <div className="box-desc">Your business never sleeps, and neither does our commitment to your success. We provide round-the-clock monitoring, immediate troubleshooting, and continuous updates to ensure your digital assets are always performing at their peak, no matter the time zone.</div>
+            </div>
+
+            {/* Animation 1: Bar Chart - Performance-First Tech */}
+            <div className="grid-box box-best-1 reveal-card" style={{ gridColumn: 'span 1' }}>
+              <div className="box-label">Performance-First Tech</div>
+              <h3 className="box-title">Fast, Secure & Scalable</h3>
+              <div className="feature-card-anim" style={{ width: '100%', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
+                <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <div className="bar-chart" id="bar-chart-anim">
+                    <div className="bar" style={{ height: '55px' }}></div>
+                    <div className="bar" style={{ height: '40px' }}></div>
+                    <div className="bar active" style={{ height: '70px' }}></div>
+                    <div className="bar" style={{ height: '50px' }}></div>
+                    <div className="bar active" style={{ height: '65px' }}></div>
+                  </div>
+                  <div className="bar-base"></div>
+                  <div className="bar-btns">
+                    <div className="bar-btn active"></div>
+                    <div className="bar-btn"></div>
+                    <div className="bar-btn active"></div>
+                    <div className="bar-btn"></div>
+                    <div className="bar-btn"></div>
+                  </div>
+                </div>
+              </div>
+              <p className="box-desc mb-3">We use modern technologies and optimized development practices to build fast, secure, and scalable websites that perform flawlessly across all devices.</p>
+            </div>
+
+            {/* Animation 2: Icon Rows - Expert Team */}
+            <div className="grid-box box-best-2 reveal-card" style={{ gridColumn: 'span 1' }}>
+              <div className="box-label">Expert Team</div>
+              <h3 className="box-title">Years of Experience</h3>
+              <div className="feature-card-anim" style={{ width: '100%', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
+                <div className="icon-rows" id="icon-rows-anim">
+                  <div className="icon-row">
+                    <div className="icon-circle gear" id="gear-top-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M18.66 5.34l1.41-1.41"/></svg></div>
+                    <div className="icon-circle" id="ri1-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-6 4h6m-6 4h4"/></svg></div>
+                    <div className="icon-circle" id="ri2-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/></svg></div>
+                    <div className="icon-circle" id="ri3-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                  </div>
+                  <div className="icon-row">
+                    <div className="icon-circle" id="bi1-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                    <div className="icon-circle" id="bi2-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6m-6 4h6m-6 4h4"/></svg></div>
+                    <div className="icon-circle" id="bi3-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2H8a2 2 0 0 0-2 2v3h12V4a2 2 0 0 0-2-2z"/></svg></div>
+                    <div className="icon-circle gear" id="gear-bot-anim"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M18.66 5.34l1.41-1.41"/></svg></div>
+                  </div>
+                </div>
+              </div>
+              <p className="box-desc mb-3">Our team of developers and designers combines years of experience in building high-performance websites and intuitive user interfaces.</p>
+            </div>
+
+            {/* Animation 3: Task Rows - Industry Impact */}
+            <div className="grid-box box-problems reveal-card" style={{ gridColumn: 'span 1' }}>
+              <div className="box-label">Industry Impact</div>
+              <h3 className="box-title" style={{ marginBottom: '12px' }}>Solving Core Challenges</h3>
+              <div className="feature-card-anim" style={{ width: '100%', height: '120px', marginTop: '16px', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 8px' }}>
+                <div className="task-list" id="task-list-anim">
+                  <div className="task-row" id="tr0-anim"><div className="task-icon" style={{ background: '#7b61ff' }}></div><div className="task-bar-wrap"><div className="task-bar-fill" style={{ width: '72%' }}></div></div><div className="task-dot" style={{ background: '#3d2f7a' }}></div></div>
+                  <div className="task-row" id="tr1-anim"><div className="task-icon" style={{ background: '#5a45cc' }}></div><div className="task-bar-wrap"><div className="task-bar-fill" style={{ width: '55%', background: '#5a45cc' }}></div></div><div className="task-dot"></div></div>
+                  <div className="task-row" id="tr2-anim"><div className="task-icon" style={{ background: '#7b61ff' }}></div><div className="task-bar-wrap"><div className="task-bar-fill" style={{ width: '85%' }}></div></div><div className="task-dot" style={{ background: '#3d2f7a' }}></div></div>
+                  <div className="task-row" id="tr3-anim"><div className="task-icon" style={{ background: '#4a3899' }}></div><div className="task-bar-wrap"><div className="task-bar-fill" style={{ width: '40%', background: '#4a3899' }}></div></div><div className="task-dot"></div></div>
+                </div>
+              </div>
+              <p className="box-desc">We don't just build websites; we solve business problems. Whether it's optimizing user conversion rates, architecting complex database structures, or ensuring 100% mobile responsiveness, we address the root causes of digital friction to drive real growth.</p>
+            </div>
+
+            {/* Animation 4: Node Animation - Seamless Integration */}
+            <div className="grid-box reveal-card" style={{ gridColumn: 'span 1' }}>
+              <div className="box-label">Streamline Workflows</div>
+              <h3 className="box-title">Seamless Integration</h3>
+              <div className="feature-card-anim" style={{ width: '100%', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
+                <canvas id="nc" style={{ width: '100%', height: '100%' }}></canvas>
+              </div>
+              <p className="box-desc">We connect your tools and platforms for seamless data flow and improved productivity.</p>
             </div>
 
           </div>

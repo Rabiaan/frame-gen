@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO.jsx';
 import '../styles/services.css';
 import PatternCard from '../components/PatternCard.jsx';
+import OrbitalProcess from '../components/OrbitalProcess.jsx';
 import { 
   Globe, 
   Layout, 
@@ -11,38 +12,6 @@ import {
   Palette 
 } from 'lucide-react';
 
-const processPhases = [
-  {
-    number: '01',
-    color: '#3B82F6',
-    title: 'Discovery',
-    desc: 'We start with understanding your goals, audience, and challenges through detailed consultation.'
-  },
-  {
-    number: '02',
-    color: '#A855F7',
-    title: 'Strategy',
-    desc: 'Developing a comprehensive plan and approach tailored to your specific needs and objectives.'
-  },
-  {
-    number: '03',
-    color: '#10B981',
-    title: 'Design',
-    desc: 'Creating visual concepts and wireframes with iterative feedback to refine the user experience.'
-  },
-  {
-    number: '04',
-    color: '#F59E0B',
-    title: 'Development',
-    desc: 'Building the technical foundation through coding and integration with regular testing.'
-  },
-  {
-    number: '05',
-    color: '#EF4444',
-    title: 'Launch & Support',
-    desc: 'Delivering polished solutions with ongoing support and optimization for continued success.'
-  },
-];
 
 const deliverables = [
   {
@@ -301,37 +270,7 @@ function Services() {
         </div>
       </section>
 
-      {/* Process */}
-      <section
-        className="process mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
-      >
-        <div className="flex flex-col gap-2 mb-5">
-          <h2 className="text-left font-syne text-[36px] font-light">Our Process</h2>
-          <p className="text-[16px] leading-[1.6] text-[#cccccc] max-w-[800px]">
-            Our structured workflow ensures every project is delivered with clarity, quality, and measurable results.
-          </p>
-        </div>
-        {/* Divider */}
-        <div className="mb-8 h-[1px] bg-white/20"></div>
-        <div className="flex flex-col md:flex-row gap-8">
-          {processPhases.map((phase) => (
-            <div key={phase.number} className="services-reveal flex-1">
-              <div
-                className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl text-xl font-bold"
-                style={{
-                  backgroundColor: `${phase.color}15`,
-                  border: `2px solid ${phase.color}40`,
-                  color: phase.color
-                }}
-              >
-                {phase.number}
-              </div>
-              <h4 className="mb-2 text-xl font-medium">{phase.title}</h4>
-              <p className="text-[14px] text-[#cccccc]">{phase.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <OrbitalProcess />
 
       {/* Why Choose Us */}
       <section

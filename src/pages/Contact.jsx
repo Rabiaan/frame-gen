@@ -46,7 +46,7 @@ function Contact() {
 
     emailjs
       .send(
-        'service_g10k4dj',
+        'service_6h0tj3k',
         'template_x67c4vk',
         {
           from_name: formData.name,
@@ -69,13 +69,13 @@ function Contact() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact FrameGen',
-    url: 'https://framegen.vercel.app/contact',
+    url: 'https://frame-gen.com/contact',
     description: 'Get in touch with FrameGen for web development, 3D CGI, branding, and digital marketing projects.',
     mainEntity: {
       '@type': 'MarketingAgency',
       name: 'FrameGen',
-      email: 'framegen.dev@gmail.com',
-      url: 'https://framegen.vercel.app',
+      email: 'framegen.create@gmail.com',
+      url: 'https://frame-gen.com',
       address: { '@type': 'PostalAddress', addressCountry: 'PK' },
     },
   };
@@ -85,7 +85,7 @@ function Contact() {
       <SEO
         title="Contact Us — Start Your Project"
         description="Ready to start your project? Contact FrameGen for web development, 3D visuals, branding, and digital marketing services. Fast response guaranteed."
-        canonical="https://framegen.vercel.app/contact"
+        canonical="https://frame-gen.com/contact"
         schema={contactSchema}
       />
 
@@ -146,19 +146,21 @@ function Contact() {
 
           <div className="form-group mb-4">
             <label>What Are You Looking For?</label>
-            <select
+<select
               name="service"
               value={formData.service}
               onChange={handleChange}
               required
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-[#7B61FF] focus:ring-1 focus:ring-[#7B61FF] sm:px-5 sm:py-4"
             >
-              <option value="">Select one</option>
-              <option>Ecommerce</option>
-              <option>UI/UX Design</option>
-              <option>Blogs</option>
-              <option>WordPress Website</option>
-              <option>Front-End Development</option>
+              <option value="">Select a service</option>
+              <option>3D & CGI Visualization</option>
+              <option>Motion Graphics & 2D/3D Animation</option>
               <option>Web Applications</option>
+              <option>WordPress & CMS</option>
+              <option>E-commerce Solutions</option>
+              <option>Brand Identity & Visual Design</option>
+              <option>Digital Ads & Social Strategy</option>
             </select>
           </div>
 
@@ -192,7 +194,10 @@ function Contact() {
 
           <div className="space-y-3 text-[15px]">
             <div>
-              <span className="text-[#7B61FF]">Email:</span> framegen.dev@gmail.com
+              <span className="text-[#7B61FF]">Email:</span> framegen.create@gmail.com
+            </div>
+            <div>
+              <span className="text-[#7B61FF]">Phone:</span> +44 7733 035516
             </div>
           </div>
 

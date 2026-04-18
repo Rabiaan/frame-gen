@@ -62,7 +62,7 @@ function Footer() {
             </a>
 
             <a
-              href="mailto:contact@framegen.com"
+              href="mailto:framegen.create@gmail.com"
               className="footer-icon flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur transition hover:scale-110 hover:border-[#ff4444] hover:shadow-[0_0_20px_rgba(255,68,68,0.4)] sm:h-12 sm:w-12 sm:p-3"
             >
               <FaEnvelope className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" />

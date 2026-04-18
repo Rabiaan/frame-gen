@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO.jsx';
 import '../styles/about.css';
 import storyImage from '/images/services-image.png';
+import MethodologyCards from '../components/MethodologyCards.jsx';
 import { FaJsSquare, FaReact, FaNodeJs, FaPaintBrush, FaDatabase, FaMobileAlt, FaLaptopCode, FaBullhorn, FaFilm, FaPencilRuler, FaCube } from 'react-icons/fa';
 import Spline from '@splinetool/react-spline';
 
@@ -335,21 +336,7 @@ function About() {
         {/* Divider */}
         <div className="mb-8 h-[1px] bg-white/20"></div>
         
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { title: 'Clarity', desc: 'Designs that communicate your message effectively' },
-            { title: 'Performance', desc: 'Websites optimized for speed, usability, and conversions' },
-            { title: 'Innovation', desc: 'Using modern technologies to create immersive digital experiences' }
-          ].map((principle, index) => (
-            <div 
-              key={index}
-              className="about-reveal rounded-[15px] border border-white/10 bg-white/5 p-6 transition hover:border-[#7B61FF]/30 hover:bg-white/10"
-            >
-              <h3 className="mb-3 text-[20px] font-medium text-[#7B61FF]">{principle.title}</h3>
-              <p className="text-[14px] leading-[1.6] text-[#cccccc]">{principle.desc}</p>
-            </div>
-          ))}
-        </div>
+        <MethodologyCards />
       </section>
 
       {/* Our Specializations Refined */}
