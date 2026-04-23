@@ -47,10 +47,11 @@ function Contact() {
     emailjs
       .send(
         'service_6h0tj3k',
-        'template_x67c4vk',
+        'template_zuq7z3w',
         {
           from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           service: formData.service,
           message: formData.message,
         },
@@ -146,7 +147,7 @@ function Contact() {
 
           <div className="form-group mb-4">
             <label>What Are You Looking For?</label>
-<select
+            <select
               name="service"
               value={formData.service}
               onChange={handleChange}
