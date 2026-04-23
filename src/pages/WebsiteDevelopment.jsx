@@ -261,7 +261,7 @@ function WebsiteDevelopment() {
         className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
       >
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-4xl">
+          <div className="w-full">
             <h2 className="mb-2 text-[15px] uppercase tracking-wider text-[#7B61FF]">Engineering Excellence</h2>
             <h1
               id="projects-heading"

@@ -1,29 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
-
-const posts = [
-  {
-    slug: 'choose-digital-marketing-agency-pakistan',
-    category: 'Digital Marketing',
-    categoryColor: '#00F0FF',
-    readTime: '6 min read',
-    date: 'April 2026',
-    title: 'How to Choose a Digital Marketing Agency in Pakistan',
-    excerpt:
-      'With hundreds of agencies claiming to be the best, here\'s a practical checklist to find a team that actually delivers measurable results.',
-  },
-  {
-    slug: 'signs-business-needs-new-website-2026',
-    category: 'Business Growth',
-    categoryColor: '#10B981',
-    readTime: '4 min read',
-    date: 'April 2026',
-    title: '5 Signs Your Business Needs a New Website in 2026',
-    excerpt:
-      'Is your website costing you clients without you realising it? These five warning signs mean it\'s time for a serious upgrade.',
-  },
-];
+import { blogPosts as posts } from '../data/blogPosts.js';
 
 export default function Blog() {
   const blogSchema = {
@@ -83,7 +61,7 @@ export default function Blog() {
             <h2 className="mb-3 font-syne text-[20px] font-semibold leading-[1.3] text-white transition group-hover:text-[#7B61FF]">
               {post.title}
             </h2>
-            <p className="mb-6 flex-1 text-[14px] leading-[1.7] text-[#aaaaaa]">{post.excerpt}</p>
+            <p className="mb-6 flex-1 text-[14px] leading-[1.7] text-[#aaaaaa]">{post.excerpt || post.description}</p>
 
             <div className="flex items-center justify-between text-[13px] text-[#666]">
               <span>{post.date}</span>

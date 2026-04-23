@@ -195,8 +195,8 @@ function DigitalMarketing() {
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Global Digital Marketing & Brand Strategy — FrameGen"
-        description="Scale your business globally with ROI-driven digital marketing, high-end 3D animation, and data-backed brand strategies. Trusted by enterprise partners."
+        title="Best Digital Marketing Agency for Performance & SEO"
+        description="Rank higher and grow faster with FrameGen's expert digital marketing services. We offer performance marketing, technical SEO, and brand growth strategies globally."
         canonical="https://framegen.vercel.app/projects/digital-marketing"
         schema={marketingSchema}
       />

@@ -186,12 +186,27 @@ function Projects() {
     (p) => filter === 'all' || p.category.toLowerCase().replace('/', '-') === filter,
   );
 
+  const projectSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'FrameGen Digital Portfolio',
+    description: 'A collection of high-performance websites, e-commerce stores, and digital marketing strategies by FrameGen.',
+    itemListElement: projectsData.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.title,
+      description: p.text,
+      url: p.link !== '#' ? p.link : undefined
+    }))
+  };
+
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Our Projects — Portfolio of Web & Digital Work"
-        description="Browse FrameGen's portfolio: WordPress e-commerce stores, React web apps, HTML/CSS business sites, and digital marketing campaigns for clients worldwide."
+        title="Web Development & Digital Marketing Portfolio — FrameGen"
+        description="View our best work: high-converting e-commerce stores, React web applications, and SEO-optimized business websites. Proven results for global clients."
         canonical="https://framegen.vercel.app/projects"
+        schema={projectSchema}
       />
 
       {/* Hero with Spline background */}

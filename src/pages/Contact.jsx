@@ -52,17 +52,20 @@ function Contact() {
           from_name: formData.name,
           name: formData.name,
           email: formData.email,
+          from_email: formData.email,
           service: formData.service,
           message: formData.message,
         },
-        '1OgObupeDD-OMkFfU'
+        'xo4CnBO0QRQkyPu1f'
       )
-      .then(() => {
+      .then((result) => {
+        console.log('Email successfully sent:', result.text);
         setStatus('Message sent successfully');
         setFormData({ name: '', email: '', service: '', message: '' });
       })
-      .catch(() => {
-        setStatus('Something went wrong..  Please try again.');
+      .catch((error) => {
+        console.error('EmailJs Error:', error);
+        setStatus(`Error: ${error.text || 'Failed to send message.'}. Check your Public Key.`);
       });
   };
 

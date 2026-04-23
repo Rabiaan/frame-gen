@@ -109,12 +109,26 @@ function About() {
     return () => observer.disconnect();
   }, []);
 
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'FrameGen',
+    url: 'https://framegen.vercel.app',
+    logo: 'https://framegen.vercel.app/frame_gen.png',
+    description: 'FrameGen is a premier digital marketing and web development agency focusing on performance-driven solutions.',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'PK'
+    }
+  };
+
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="About Us — Premium Digital Agency"
-        description="Learn about FrameGen, a premium digital agency specializing in web development, 3D CGI, motion graphics, and brand identity design. Trusted by 50+ clients worldwide."
+        title="Top Digital Marketing & Web Agency in Pakistan"
+        description="Learn about FrameGen, a leading digital marketing agency in Pakistan. We specialize in SEO, high-performance web development, 3D CGI, and ROI-driven strategies."
         canonical="https://framegen.vercel.app/about"
+        schema={aboutSchema}
       />
 
       {/* Hero */}
