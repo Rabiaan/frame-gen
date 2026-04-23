@@ -125,7 +125,7 @@ function About() {
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Top Digital Marketing & Web Agency in Pakistan"
+        title="About — Top Digital Marketing & Web Agency in Pakistan"
         description="Learn about FrameGen, a leading digital marketing agency in Pakistan. We specialize in SEO, high-performance web development, 3D CGI, and ROI-driven strategies."
         canonical="https://framegen.vercel.app/about"
         schema={aboutSchema}

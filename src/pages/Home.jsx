@@ -146,7 +146,7 @@ function Home() {
     document
       .querySelectorAll('.reveal-card')
       .forEach((el) => {
-        el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1500');
+        el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
         observer.observe(el);
       });
 
@@ -192,14 +192,14 @@ function Home() {
       if (bars.length) {
         const next = barHeights[barFrame % barHeights.length];
         bars.forEach((bar, i) => {
-          bar.style.transition = 'height 6.0s cubic-bezier(0.4,0,0.2,1)';
+          bar.style.transition = 'height 0.6s cubic-bezier(0.4,0,0.2,1)';
           bar.style.height = next[i] + 'px';
         });
         barFrame++;
       }
     }
     if (document.querySelector('#bar-chart-anim')) {
-      setInterval(animateBars, 22000);
+      setInterval(animateBars, 5000);
     }
 
     // Animation 2: Icon Rows
@@ -228,14 +228,14 @@ function Home() {
               const gearRect = gear.getBoundingClientRect();
               const elRect = el.getBoundingClientRect();
               const dx = gearRect.left - elRect.left;
-              el.style.transition = 'transform 2.0s ease-in, opacity 1.5s ease-in';
+              el.style.transition = 'transform 0.5s ease-in, opacity 0.4s ease-in';
               el.style.transform = `translateX(${dx}px) scale(0.4)`;
               el.style.opacity = '0';
             }
             step++;
-            setTimeout(cycle, 1500);
+            setTimeout(cycle, 300);
           } else {
-            gear.style.transition = 'transform 2.5s ease-in-out';
+            gear.style.transition = 'transform 0.6s ease-in-out';
             gear.style.transform = 'rotate(180deg)';
             setTimeout(() => {
               gear.style.transform = 'rotate(360deg)';
@@ -250,12 +250,12 @@ function Home() {
                 gear.style.transition = 'none';
                 gear.style.transform = 'rotate(0deg)';
                 step = 0;
-                setTimeout(cycle, 5000);
-              }, 3000);
-            }, 3000);
+                setTimeout(cycle, 1000);
+              }, 600);
+            }, 600);
           }
         }
-        setTimeout(cycle, row.gearId === 'gear-top-anim' ? 1500 : 4000);
+        setTimeout(cycle, row.gearId === 'gear-top-anim' ? 300 : 900);
       });
     }
     if (document.querySelector('.icon-rows')) {
@@ -279,16 +279,16 @@ function Home() {
         const targetIndex = order.indexOf(i);
         const targetY = targetIndex * rowHeight;
         const dy = targetY - currentPositions[i];
-        row.style.transition = 'transform 6.0s cubic-bezier(0.4,0,0.2,1)';
+        row.style.transition = 'transform 1.2s cubic-bezier(0.4,0,0.2,1)';
         row.style.transform = `translateY(${dy}px)`;
       });
       setTimeout(() => {
         taskRowsAni.forEach(r => { r.style.transition = 'none'; r.style.transform = ''; });
         order.map(i => taskRowsAni[i]).forEach(r => { if (r) taskListAni.appendChild(r); });
-      }, 6500);
+      }, 1300);
     }
     if (document.querySelector('#task-list-anim')) {
-      setInterval(animateTasks, 15000);
+      setInterval(animateTasks, 4000);
     }
 
     // Animation 4: Node Animation - Seamless Integration (Network animation)
@@ -380,12 +380,12 @@ function Home() {
 
       let animIdx = 0;
       let drawingConns = [];
-      const CONN_SPEED = 0.005;
-      const STEP_INTERVAL = 800;
+      const CONN_SPEED = 0.045;
+      const STEP_INTERVAL = 100;
       let lastStep = 0;
       let allDone = false;
       let doneTime = 0;
-      const HOLD = 8000;
+      const HOLD = 1400;
       let globalTime = 0;
 
       function loop(ts) {
@@ -557,8 +557,8 @@ function Home() {
   return (
     <div className="relative z-10">
       <SEO
-        title="Digital Marketing, SEO & Web Development Agency"
-        description="FrameGen is a top-rated digital marketing agency specializing in ROI-driven performance marketing, expert SEO services, and premium web development. Scale your business today."
+        title="Digital Agency | Web, 3D & Brand Design"
+        description="FrameGen is a premium digital agency offering web development, 3D CGI visualization, motion graphics, brand identity, and digital marketing services in Pakistan."
         canonical="https://framegen.vercel.app"
         schema={agencySchema}
       />
