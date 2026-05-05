@@ -7,23 +7,23 @@ export default function Blog() {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'FrameGen Blog',
-    url: 'https://framegen.vercel.app/blog',
-    description: 'Expert insights on web development, digital marketing, and online growth from the FrameGen team.',
+    name: 'FrameGen Digital Insights',
+    url: 'https://www.frame-gen.com/blog',
+    description: 'Latest insights on digital marketing, web development, and 3D visualization from FrameGen experts.',
     publisher: {
-      '@type': 'MarketingAgency',
+      '@type': 'Organization',
       name: 'FrameGen',
-      url: 'https://framegen.vercel.app',
-      logo: 'https://framegen.vercel.app/frame_gen.png',
+      url: 'https://www.frame-gen.com',
+      logo: 'https://www.frame-gen.com/frame_gen.png',
     },
   };
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Blog — Web Dev, SEO & Marketing Insights"
-        description="Expert articles on website development costs, digital marketing strategy, and growth tips for businesses in Pakistan and beyond."
-        canonical="https://framegen.vercel.app/blog"
+        title="Digital Insights Blog — Marketing & Tech Trends"
+        description="Stay ahead with FrameGen's latest articles on SEO, web development, 3D CGI, and digital branding strategies."
+        canonical="https://www.frame-gen.com/blog"
         schema={blogSchema}
       />
 

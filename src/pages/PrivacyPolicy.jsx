@@ -180,133 +180,138 @@ const PrivacyPolicy = () => {
       id: 1,
       title: "Introduction",
       icon: <FileText className="w-5 h-5" />,
-      content: "FrameGen provides website design and development and related digital services. This Privacy Policy explains how we collect, use, disclose, and safeguard personal information when you visit our website or work with us as a client."
+      content: "Frame Gen ('we', 'us', 'our') is a full-service digital agency based in the United Kingdom, operating at frame-gen.com. We provide website design and development, 3D and CGI visualisation, motion graphics and animation, brand identity, e-commerce solutions, and digital advertising services to clients across the UK, USA, and internationally. This Privacy Policy explains how we collect, use, store, and protect your personal data when you visit our website or engage us for services."
     },
     {
       id: 2,
-      title: "Data Controller and Contact",
+      title: "Data Controller",
       icon: <Mail className="w-5 h-5" />,
-      content: "FrameGen is the data controller for personal data processed through this website and in connection with our services. For any questions about this Policy or your rights, contact us at: framegen.dev@gmail.com."
+      content: "Frame Gen is the data controller for all personal data processed through this website and in connection with our services.",
+      note: "Email: framegen.create@gmail.com | Website: frame-gen.com"
     },
     {
       id: 3,
       title: "Information We Collect",
       icon: <Eye className="w-5 h-5" />,
-      content: "We may collect the following categories of personal information when you contact us, request a quote, or use our services:",
+      content: "We may collect the following personal information:",
       list: [
-        "Contact details: name, email address, phone number, company name, role.",
-        "Project and account information: project requirements, content you provide, login details you share for development work.",
-        "Technical data: Browser type, device identifiers, pages viewed, access times, and referring URLs.",
-        "Billing details: billing name, address, fax number, limited payment information"
+        "Contact details: name, email address, phone number, company name, and job title.",
+        "Project and account information: project requirements, briefs, content you provide, and login credentials you share solely for the purpose of development or design work.",
+        "Technical data: browser type, device type, pages viewed, access times, IP address, and referring URLs, collected automatically when you visit our website.",
+        "Billing and payment details: billing name, billing address, and limited payment information processed via our payment provider. We do not store full card details."
       ]
     },
     {
       id: 4,
       title: "How We Collect Information",
       icon: <Users className="w-5 h-5" />,
-      content: "We collect information that you provide directly (for example via contact forms, email, chat, or during discovery and onboarding). We also collect certain info via FrameGen form that you fill on the contact page"
+      content: "We collect information you provide directly — for example, when you fill in our contact or quote request form, send us an email, engage us via our website chat, or during project onboarding and discovery calls. Technical data is collected automatically through our website."
     },
     {
       id: 5,
       title: "Legal Bases for Processing",
       icon: <CheckCircle className="w-5 h-5" />,
-      content: "We process your personal data based on:",
+      content: "We process your personal data under the following lawful bases as defined under UK GDPR and EU GDPR (Regulation 2016/679):",
       list: [
-        "Banking Information according to our company privacy policy/requirment",
-        "Performance of a contract or to take steps at your request before entering into a contract.",
-        "Our legitimate interests in operating, improving, and securing our services.",
-        "Your consent, such as for certain marketing",
-        "Legal obligations, such as Banking Taxation laws tax and accounting rules."
+        "Contract: To take steps at your request before entering into a contract and to perform our contractual obligations to you.",
+        "Legitimate interests: To operate, improve, and secure our services and communicate with prospects and clients in the normal course of business.",
+        "Legal obligation: To comply with applicable laws, including HMRC tax and financial record-keeping requirements.",
+        "Consent: For marketing communications, where you have opted in. You may withdraw consent at any time."
       ]
     },
     {
       id: 6,
-      title: "How We Use Personal Information",
+      title: "How We Use Your Information",
       icon: <Lock className="w-5 h-5" />,
-      content: "We use your information to:",
+      content: "We use your personal data to:",
       list: [
-        "Provide, manage, and deliver website development and related services.",
-        "Communicate about proposals, timelines, revisions, and support.",
+        "Provide, manage, and deliver our services including web development, branding, 3D visualisation, motion graphics, e-commerce, and digital advertising.",
+        "Communicate with you about proposals, project timelines, revisions, and ongoing support.",
         "Process invoices and payments.",
         "Improve our website, services, and user experience.",
-        "Send occasional updates or marketing if you have opted in or if permitted by law (you can opt out at any time).",
-        "Comply with legal and regulatory requirements."
+        "Send you occasional updates or marketing communications where you have opted in or where permitted by law.",
+        "Comply with legal and regulatory obligations."
       ]
     },
     {
       id: 7,
-      title: "Cookies and Similar Technologies",
+      title: "Cookies and Tracking Technologies",
       icon: <Globe className="w-5 h-5" />,
-      content: "Our website may use cookies and similar technologies to remember preferences, analyze traffic, and improve performance. Where required, you can manage cookie preferences via your browser settings or any cookie banner we provide, and you may disable non‑essential cookies, which could affect some site features."
+      content: "Our website may use cookies and similar technologies to remember preferences, analyse traffic, and improve performance. Where required by law, we will request your consent before placing non-essential cookies. You can manage or disable cookies at any time through your browser settings. Disabling non-essential cookies will not affect your ability to browse our website, though some features may be limited."
     },
     {
       id: 8,
       title: "Sharing of Information",
       icon: <Users className="w-5 h-5" />,
-      content: "We may share personal information with:",
+      content: "We do not sell your personal data. We may share your information only with:",
       list: [
-        "Service providers that help us operate our business (hosting, analytics, email delivery, project management, payment processors).",
-        "Professional advisers (such as lawyers and accountants) where reasonably necessary.",
-        "Authorities, regulators, or other third parties when required by law or to protect our rights, security, or users."
-      ],
-      note: "FrameGen does not sell personal information."
+        "Service providers that support our business operations, including web hosting providers, cloud storage, project management tools, email delivery services, and payment processors (such as Stripe). These providers are bound by data processing agreements and may only use your data to provide services to us.",
+        "Professional advisers such as accountants or legal counsel, where reasonably necessary.",
+        "Authorities or regulators where required by law, court order, or to protect the rights and security of Frame Gen or others."
+      ]
     },
     {
       id: 9,
       title: "International Data Transfers",
       icon: <Globe className="w-5 h-5" />,
-      content: "If personal data is transferred outside your country or the European Economic Area/UK, we use appropriate safeguards such as standard contractual clauses or transfer to countries recognized as providing adequate protection."
+      content: "Frame Gen operates from the UK and uses third-party tools and service providers that may process data outside the UK or European Economic Area, including in the United States (for example, via Google Workspace or Stripe). Where such transfers occur, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the UK ICO or the European Commission, or transfers to countries recognised as providing adequate protection."
     },
     {
       id: 10,
       title: "Data Retention",
       icon: <Clock className="w-5 h-5" />,
-      content: "We keep personal data only for as long as necessary for the purposes described in this Policy, including to meet legal, accounting, or reporting requirements. Retention periods may vary, for example project and billing records are commonly kept for several years under tax law. According to Domain & Hosting Company Policy"
+      content: "We retain personal data only for as long as necessary for the purposes described in this Policy. As a general guide:",
+      list: [
+        "Client project files and correspondence are retained for a minimum of 3 years after project completion.",
+        "Billing records and financial data are retained for 7 years in compliance with HMRC requirements.",
+        "Enquiries that did not result in a project are retained for up to 12 months."
+      ],
+      note: "When data is no longer required, it is securely deleted or anonymised."
     },
     {
       id: 11,
       title: "Your Rights",
       icon: <Shield className="w-5 h-5" />,
-      content: "Depending on your location, you may have the right to request:",
+      content: "Depending on your location, you may have the right to:",
       list: [
-        "Access to your personal data.",
-        "Correction of inaccurate or incomplete data.",
-        "Deletion of your data.",
-        "Restriction or objection to certain processing.",
-        "Data portability.",
-        "Withdrawal of consent where processing is based on consent."
+        "Access the personal data we hold about you.",
+        "Request correction of inaccurate or incomplete data.",
+        "Request deletion of your data ('right to be forgotten').",
+        "Restrict or object to certain types of processing.",
+        "Request portability of your data in a structured, machine-readable format.",
+        "Withdraw consent at any time where processing is based on consent."
       ],
-      note: "To exercise these rights, contact us using the details above."
+      note: "To exercise any of these rights, contact us at framegen.create@gmail.com. We will respond within 30 days."
     },
     {
       id: 12,
       title: "Security",
       icon: <Lock className="w-5 h-5" />,
-      content: "We use reasonable technical and organizational measures to protect personal information against unauthorized access, loss, misuse, or alteration. No online transmission or storage system is completely secure, so we cannot guarantee absolute security."
+      content: "We use appropriate technical and organisational measures to protect your personal information against unauthorised access, loss, misuse, or alteration. These include access controls, encrypted communications, and secure cloud storage. No online transmission or storage system is completely secure, and we cannot guarantee absolute security."
     },
     {
       id: 13,
-      title: "Third‑Party Links",
+      title: "Third-Party Links",
       icon: <Globe className="w-5 h-5" />,
-      content: "Our website may contain links to third‑party websites, tools, or services. This Privacy Policy does not apply to those third parties, and you should review their privacy policies before providing information."
+      content: "Our website may contain links to third-party websites, tools, or platforms. This Privacy Policy does not apply to those third parties. We encourage you to review their privacy policies before submitting any personal information."
     },
     {
       id: 14,
       title: "Children's Privacy",
       icon: <Users className="w-5 h-5" />,
-      content: "Our services are intended for business users and are not directed to children under 16. We do not knowingly collect personal information from children, and will delete such data if we become aware of it."
+      content: "Our services are intended for business clients and are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware that we have collected data from a child, we will delete it promptly."
     },
     {
       id: 15,
-      title: "Changes to This Privacy Policy",
+      title: "Changes to This Policy",
       icon: <FileText className="w-5 h-5" />,
-      content: "We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, or legal requirements. The \"Last updated\" date will indicate the latest version, and continued use of our website or services after changes means you accept the updated Policy."
+      content: "We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, or legal requirements. The 'Last updated' date at the top of this page will reflect the most recent version. Continued use of our website or services after any changes constitutes acceptance of the updated Policy. For significant changes, we will notify active clients directly."
     },
     {
       id: 16,
       title: "Contact Us",
       icon: <Mail className="w-5 h-5" />,
-      content: "For questions, requests, or complaints about this Privacy Policy or our data practices, you can contact FrameGen at contact@framegen.dev."
+      content: "For any questions, requests, or complaints about this Privacy Policy or how we handle your data, please contact Frame Gen at framegen.create@gmail.com."
     }
   ];
 

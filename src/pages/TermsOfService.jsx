@@ -183,127 +183,148 @@ const TermsOfService = () => {
       id: 1,
       title: "Introduction",
       icon: <FileText className="w-5 h-5" />,
-      content: "These Terms of Service ('Terms') govern your use of the FrameGen website and all website design, development, and related services we provide. By using our website, requesting a quote, or engaging FrameGen for services, you agree to be bound by these Terms."
+      content: "These Terms of Service ('Terms') govern your use of the Frame Gen website at frame-gen.com and all services we provide. By visiting our website, submitting a quote request, or engaging Frame Gen for any services, you agree to be bound by these Terms. Please read them carefully before proceeding."
     },
     {
       id: 2,
-      title: "Services",
-      icon: <Code className="w-5 h-5" />,
-      content: "FrameGen provides services such as: website UI/UX design, website development, frontend and backend integration, and related digital services (collectively, the 'Services'). Specific project deliverables, timelines, and fees will be defined in proposals, order forms, or project agreements between you and FrameGen."
+      title: "About Us",
+      icon: <Globe className="w-5 h-5" />,
+      content: "Frame Gen ('we', 'us', 'our') is a full-service digital agency based in the United Kingdom. We provide website design and development, 3D and CGI visualisation, motion graphics and animation, brand identity, e-commerce solutions, and digital advertising services.",
+      note: "Email: framegen.create@gmail.com | Website: frame-gen.com"
     },
     {
       id: 3,
-      title: "Eligibility and Account",
-      icon: <Users className="w-5 h-5" />,
-      content: "You must be at least 18 years old and have the authority to enter into a binding agreement to use our Services. If you act on behalf of a company or organization, you represent that you are authorized to bind that entity to these Terms."
+      title: "Services",
+      icon: <Briefcase className="w-5 h-5" />,
+      content: "Frame Gen provides the following services (collectively, the 'Services'):",
+      list: [
+        "Website UI/UX design and development",
+        "Frontend and backend development (React, Next.js, WordPress, CMS)",
+        "E-commerce development (Shopify, WooCommerce)",
+        "3D visualisation and CGI rendering",
+        "Motion graphics and animation",
+        "Brand identity and visual design",
+        "Digital advertising and social media strategy"
+      ],
+      note: "Specific deliverables, timelines, and fees are defined in project agreements."
     },
     {
       id: 4,
-      title: "Client Responsibilities",
-      icon: <Briefcase className="w-5 h-5" />,
-      content: "You agree to:",
-      list: [
-        "Provide accurate and complete information needed to scope and deliver the Services.",
-        "Supply all required content (texts, images, logos, videos, branding assets) and confirm you have the necessary rights and permissions.",
-        "Review and approve deliverables within reasonable timeframes so projects can progress.",
-        "Keep any login credentials you share with us secure and only share them through agreed secure channels."
-      ]
+      title: "Eligibility",
+      icon: <Users className="w-5 h-5" />,
+      content: "You must be at least 18 years old and have full legal authority to enter into a binding contract to use our Services. If you are acting on behalf of a company or organisation, you confirm that you are authorised to bind that entity to these Terms."
     },
     {
       id: 5,
-      title: "Fees, Payment, and Taxes",
-      icon: <DollarSign className="w-5 h-5" />,
-      content: "Fees and payment terms are set out in the applicable proposal, invoice, or contract. Unless otherwise specified, fees exclude applicable taxes, which you are responsible for paying, and work may be paused for overdue payments."
-    },
-    {
-      id: 6,
-      title: "Scope Changes and Additional Work",
-      icon: <Wrench className="w-5 h-5" />,
-      content: "Changes in project requirements, additional features, or revisions beyond agreed rounds may require a change order, additional fees, and revised timelines. FrameGen will inform you of such changes and obtain your approval before proceeding with additional work."
-    },
-    {
-      id: 7,
-      title: "Intellectual Property",
-      icon: <FileText className="w-5 h-5" />,
-      content: "Unless otherwise agreed in writing:",
+      title: "Client Responsibilities",
+      icon: <Terminal className="w-5 h-5" />,
+      content: "To allow us to deliver your project effectively, you agree to:",
       list: [
-        "Upon full payment of all outstanding amounts, you receive the rights or license described in your project agreement to use the final website and deliverables for your business.",
-        "FrameGen retains ownership of pre‑existing tools, code libraries, components, designs, and know‑how used in delivering the Services.",
-        "FrameGen may showcase non‑confidential parts of the project (for example screenshots, logos, or links) in its portfolio and marketing materials, unless you expressly request otherwise in writing."
+        "Provide accurate, complete, and timely information required to scope and deliver the Services.",
+        "Supply all required content (text, images, logos, etc.) and confirm ownership/rights.",
+        "Review and provide feedback or approval within agreed timeframes.",
+        "Keep any login credentials shared secure.",
+        "Ensure the website or deliverables comply with applicable laws in your jurisdiction."
       ]
     },
     {
+      id: 6,
+      title: "Fees, Payment, and Taxes",
+      icon: <DollarSign className="w-5 h-5" />,
+      content: "Fees and payment schedules are set out in the applicable proposal or invoice. Unless otherwise stated:",
+      list: [
+        "A deposit (typically 50%) is required before work commences.",
+        "Invoices are due within 14 days of the invoice date.",
+        "Frame Gen reserves the right to pause work on unpaid projects.",
+        "All fees quoted are exclusive of VAT or applicable taxes.",
+        "Refunds are not available once work has commenced."
+      ]
+    },
+    {
+      id: 7,
+      title: "Scope Changes and Additional Work",
+      icon: <Wrench className="w-5 h-5" />,
+      content: "Changes in project requirements, additional features, or revisions beyond agreed rounds may require additional fees and revised timelines. Frame Gen will notify you of such changes and obtain approval via email or change order before proceeding."
+    },
+    {
       id: 8,
-      title: "Third‑Party Services and Dependencies",
-      icon: <Globe className="w-5 h-5" />,
-      content: "Projects may rely on third‑party services or products such as hosting providers, domain registrars, CMS platforms, themes, plugins, analytics tools, or payment gateways. Your use of any third‑party services is subject to their own terms and privacy policies, and FrameGen is not responsible for their availability, security, or performance."
+      title: "Intellectual Property",
+      icon: <Shield className="w-5 h-5" />,
+      content: "Unless otherwise agreed in writing:",
+      list: [
+        "Upon full payment, you are granted the license to use the final deliverables for your business.",
+        "Frame Gen retains ownership of pre-existing tools, code frameworks, and methodologies.",
+        "Third-party assets (fonts, plugins, etc.) remain subject to their own licenses.",
+        "Frame Gen reserves the right to display non-confidential elements in its portfolio."
+      ]
     },
     {
       id: 9,
-      title: "Maintenance, Support, and Hosting",
-      icon: <Terminal className="w-5 h-5" />,
-      content: "Ongoing maintenance, support, content updates, or hosting are not automatically included in every project. Such services are only provided if explicitly included in the proposal or purchased under a separate maintenance/support plan, whose terms will define the exact scope."
+      title: "Confidentiality",
+      icon: <Lock className="w-5 h-5" />,
+      content: "Both parties agree to keep confidential any non-public business, technical, or financial information disclosed in connection with the Services. This obligation survives termination of these Terms."
     },
     {
       id: 10,
-      title: "Acceptable Use",
-      icon: <Scale className="w-5 h-5" />,
-      content: "You agree not to use any website or deliverables created by FrameGen to:",
-      list: [
-        "Violate any applicable law or regulation.",
-        "Distribute malware, spam, or malicious code.",
-        "Infringe intellectual property or other rights of others.",
-        "Host or promote illegal, hateful, or abusive content."
-      ],
-      note: "FrameGen may suspend or refuse Services where a project is used in ways that violate this clause or applicable law."
+      title: "Third-Party Services and Platforms",
+      icon: <Globe className="w-5 h-5" />,
+      content: "Your project may integrate with third-party services (hosting, domain, Shopify, WordPress, etc.). Your use of these services is governed by the provider's own terms. Frame Gen is not responsible for their availability, security, or performance."
     },
     {
       id: 11,
-      title: "Confidentiality",
-      icon: <Lock className="w-5 h-5" />,
-      content: "Each party must treat non‑public business, technical, or financial information received from the other as confidential and use it only to perform or receive the Services, except where disclosure is required by law."
+      title: "Maintenance, Support, and Hosting",
+      icon: <Book className="w-5 h-5" />,
+      content: "Ongoing maintenance, support, and hosting are not included in a one-time project fee unless explicitly stated. Such services are available under a separate maintenance or retainer agreement."
     },
     {
       id: 12,
-      title: "Disclaimers",
-      icon: <Book className="w-5 h-5" />,
-      content: "To the fullest extent permitted by law, the Services and deliverables are provided 'as is' and 'as available', without warranties of any kind, whether express or implied (including implied warranties of merchantability, fitness for a particular purpose, and non‑infringement). FrameGen does not guarantee that any website will be error‑free, uninterrupted, or achieve specific traffic, ranking, or revenue results."
+      title: "Acceptable Use",
+      icon: <Scale className="w-5 h-5" />,
+      content: "You agree not to use any deliverables to violate laws, distribute malware, infringe rights, or host illegal content. Frame Gen may suspend services for violations of this clause."
     },
     {
       id: 13,
-      title: "Limitation of Liability",
+      title: "Disclaimers",
       icon: <Scale className="w-5 h-5" />,
-      content: "To the maximum extent permitted by law, FrameGen' total liability for all claims arising out of or relating to these Terms or the Services will not exceed the total fees you paid to FrameGen for the specific project giving rise to the claim in the 12 months before the event. FrameGen will not be liable for any indirect, incidental, consequential, special, or punitive damages, or for loss of profits, revenue, data, or business opportunities."
+      content: "Services and deliverables are provided 'as is' and 'as available' without warranties of any kind. Frame Gen does not guarantee that any website will be error-free or achieve specific ranking or revenue results."
     },
     {
       id: 14,
-      title: "Indemnification",
-      icon: <Shield className="w-5 h-5" />,
-      content: "You agree to indemnify and hold harmless FrameGen, its owners, employees, and contractors from any claims, damages, or expenses arising from: (a) content you provide; (b) your misuse of the Services or deliverables; or (c) your breach of these Terms or applicable law."
+      title: "Limitation of Liability",
+      icon: <Scale className="w-5 h-5" />,
+      content: "To the maximum extent permitted by law, Frame Gen's total liability will not exceed the total fees paid by you for the specific project in the 12 months preceding the claim.",
+      note: "Frame Gen is not liable for indirect, incidental, or consequential damages."
     },
     {
       id: 15,
-      title: "Term and Termination",
-      icon: <Clock className="w-5 h-5" />,
-      content: "These Terms apply from the moment you first use our website or engage our Services and continue until terminated according to this section. A project or contract may be terminated in accordance with its specific termination clause, or if not specified, by reasonable written notice; in all cases, you remain responsible for fees due for work already performed, and certain clauses (such as intellectual property, fees, limitations of liability, and indemnification) will survive termination."
+      title: "Indemnification",
+      icon: <Shield className="w-5 h-5" />,
+      content: "You agree to indemnify Frame Gen from claims arising from content you provide, misuse of services, or breach of these Terms."
     },
     {
       id: 16,
-      title: "Governing Law and Jurisdiction",
-      icon: <Globe className="w-5 h-5" />,
-      content: "These Terms are governed by the laws of the Netherlands, without regard to conflict of law rules. Any disputes will be brought before the courts of Amsterdam, unless mandatory law specifies a different forum."
+      title: "Term and Termination",
+      icon: <Clock className="w-5 h-5" />,
+      content: "Either party may terminate by providing reasonable written notice. You remain liable for fees due for work completed up to the date of termination.",
+      note: "Certain clauses (IP, Confidentiality, Liability, etc.) survive termination."
     },
     {
       id: 17,
-      title: "Changes to These Terms",
-      icon: <FileText className="w-5 h-5" />,
-      content: "FrameGen may update these Terms from time to time; the latest version will be posted on this page with an updated 'Last updated' date. Continued use of the website or Services after changes become effective constitutes acceptance of the revised Terms."
+      title: "Governing Law and Jurisdiction",
+      icon: <Globe className="w-5 h-5" />,
+      content: "These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales."
     },
     {
       id: 18,
+      title: "Changes to These Terms",
+      icon: <FileText className="w-5 h-5" />,
+      content: "Frame Gen may update these Terms from time to time. Continued use of our website or Services after changes constitutes your acceptance of the updated Terms."
+    },
+    {
+      id: 19,
       title: "Contact",
       icon: <Mail className="w-5 h-5" />,
-      content: "If you have questions about these Terms or our Services, you can contact FrameGen at contact@framegen.dev."
+      content: "For any questions or concerns about these Terms, please contact Frame Gen at framegen.create@gmail.com."
     }
   ];
 

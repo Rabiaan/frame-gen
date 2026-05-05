@@ -530,17 +530,22 @@ function Home() {
   // Agency-level JSON-LD schema
   const agencySchema = {
     '@context': 'https://schema.org',
-    '@type': 'MarketingAgency',
+    '@type': 'Organization',
     name: 'FrameGen',
-    url: 'https://framegen.vercel.app',
-    logo: 'https://framegen.vercel.app/frame_gen.png',
+    url: 'https://www.frame-gen.com',
+    logo: 'https://www.frame-gen.com/frame_gen.png',
     description:
-      'FrameGen is a premium digital agency offering web development, 3D CGI visualization, motion graphics, brand identity, and digital marketing services.',
+      'FrameGen is a digital agency offering web development, 3D CGI visualization, motion graphics, brand identity and digital marketing services.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'PK',
     },
-    sameAs: [],
+    sameAs: [
+      'https://www.linkedin.com/company/framegen',
+      'https://www.instagram.com/frame_gen_/',
+      'https://twitter.com/framegen',
+      'https://www.facebook.com/profile.php?id=61589079031778',
+    ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Digital Agency Services',
@@ -558,8 +563,8 @@ function Home() {
     <div className="relative z-10">
       <SEO
         title="Digital Agency | Web, 3D & Brand Design"
-        description="FrameGen is a premium digital agency offering web development, 3D CGI visualization, motion graphics, brand identity, and digital marketing services in Pakistan."
-        canonical="https://framegen.vercel.app"
+        description="FrameGen is a digital agency offering web development, 3D CGI visualization, motion graphics, brand identity and digital marketing services."
+        canonical="https://www.frame-gen.com"
         schema={agencySchema}
       />
 
@@ -799,8 +804,9 @@ function Home() {
                 </span>
                 <img
                   src={p1}
-                  alt="Portfolio 1"
+                  alt="E-commerce and Web Application UI Design Portfolio"
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full rounded-[12px] object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:grayscale-0 sm:rounded-[14px]"
                 />
               </div>
@@ -812,8 +818,9 @@ function Home() {
                 </span>
                 <img
                   src={p2}
-                  alt="Portfolio 2"
+                  alt="Modern Dashboard and Front-end Development Interface"
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full rounded-[12px] object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:grayscale-0 sm:rounded-[14px]"
                 />
               </div>
@@ -825,8 +832,9 @@ function Home() {
                 </span>
                 <img
                   src={p3}
-                  alt="Portfolio 3"
+                  alt="Global E-commerce Solution and Online Store Platform"
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full rounded-[12px] object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:grayscale-0 sm:rounded-[14px]"
                 />
               </div>
@@ -838,8 +846,9 @@ function Home() {
                 </span>
                 <img
                   src={p5}
-                  alt="Portfolio 4"
+                  alt="Custom Web Development and Scalable Application Architecture"
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full rounded-[12px] object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:grayscale-0 sm:rounded-[14px]"
                 />
               </div>
@@ -851,8 +860,9 @@ function Home() {
                 </span>
                 <img
                   src={p4}
-                  alt="Portfolio 5"
+                  alt="Premium Brand Identity and Visual Design Assets"
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full rounded-[12px] object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:grayscale-0 sm:rounded-[14px]"
                 />
               </div>
@@ -993,25 +1003,25 @@ function Home() {
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
                 <h3 className="mb-1 text-[16px] sm:text-[17px]">Website Development</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  Custom websites and web applications built for performance and scalability.
+                  We build custom React and Next.js web applications engineered for speed, security, and conversion. Every web application we deliver includes API integration, scalable backend architecture, and cloud hosting on enterprise-grade infrastructure. Our e-commerce clients see measurable improvements in load time and checkout completion rates.
                 </p>
               </div>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
                 <h3 className="mb-1 text-[16px] sm:text-[17px]">Brand Identity & Graphic Design</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  Logos, brand systems, and marketing visuals that establish strong brand presence.
+                  Our brand identity process starts with strategic research and ends with a complete visual system — logo, typography, color palette, and brand guidelines — that positions your company as an industry leader. We design brand assets that work consistently across digital, print, and environmental applications.
                 </p>
               </div>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
                 <h3 className="mb-1 text-[16px] sm:text-[17px]">3D & Motion Graphics</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  Cinematic animations and CGI visuals that elevate digital experiences.
+                  From photorealistic product renders to cinematic explainer videos, our 3D and motion graphics team creates visuals that captivate audiences and communicate complex ideas with clarity. We work with Blender, Cinema 4D, and After Effects to deliver broadcast-quality output.
                 </p>
               </div>
               <div className="service-item reveal-card mb-3 rounded-[10px] border border-white/15 bg-white/5 p-4 sm:mb-4 sm:p-5">
                 <h3 className="mb-1 text-[16px] sm:text-[17px]">Digital Marketing & Growth</h3>
                 <p className="text-[13px] text-[#cccccc] sm:text-[14px]">
-                  SEO and advertising strategies designed to grow traffic and conversions.
+                  Our digital marketing strategies combine SEO, paid search, social media advertising, and conversion rate optimization to deliver measurable ROI. We build data-driven campaigns that increase qualified traffic, reduce customer acquisition costs, and scale revenue.
                 </p>
               </div>
               <div className="hero-buttons mt-4 flex flex-wrap gap-3 sm:gap-4">
@@ -1034,8 +1044,10 @@ function Home() {
             <div className="services-right reveal-card mt-6 flex w-full items-center justify-center lg:mt-0 lg:w-[50%] lg:self-center">
               <img
                 src={servicesImage}
-                alt="Services mockup"
+                alt="Digital Agency Services Mockup - Web, 3D, and Marketing"
                 className="max-h-[300px] w-[140%] max-w-[140%] rounded-[10px] object-contain transition duration-300 hover:-translate-y-5 sm:max-h-[350px] md:max-h-[420px] md:w-[120%] md:max-w-[120%] lg:w-full lg:max-w-[480px]"
+                decoding="async"
+                loading="lazy"
               />
             </div>
           </div>

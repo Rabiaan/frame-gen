@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,34 +46,54 @@ function Footer() {
         {/* Connect With Us */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Connect With Us</h3>
-          <div className="flex justify-center gap-3 md:justify-start">
+          <div className="flex flex-col gap-4 items-center md:items-start">
             <a
-              href="#"
-              className="footer-icon flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur transition hover:scale-110 hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] sm:h-12 sm:w-12 sm:p-3"
+              href="https://www.linkedin.com/company/framegen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
-              <FaGithub className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" />
+              <FaLinkedin className="h-5 w-5" />
+              <span className="text-[15px] sm:text-[16px]">LinkedIn</span>
             </a>
 
             <a
-              href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
-              className="footer-icon flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur transition hover:scale-110 hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.4)] sm:h-12 sm:w-12 sm:p-3"
+              href="https://www.instagram.com/frame_gen_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
-              <FaLinkedin className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" />
+              <FaInstagram className="h-5 w-5" />
+              <span className="text-[15px] sm:text-[16px]">Instagram</span>
+            </a>
+
+            <a
+              href="https://twitter.com/framegen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+            >
+              <FaTwitter className="h-5 w-5" />
+              <span className="text-[15px] sm:text-[16px]">Twitter</span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/profile.php?id=61589079031778"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+            >
+              <FaFacebook className="h-5 w-5" />
+              <span className="text-[15px] sm:text-[16px]">Facebook</span>
             </a>
 
             <a
               href="mailto:framegen.create@gmail.com"
-              className="footer-icon flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur transition hover:scale-110 hover:border-[#ff4444] hover:shadow-[0_0_20px_rgba(255,68,68,0.4)] sm:h-12 sm:w-12 sm:p-3"
+              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
-              <FaEnvelope className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" />
+              <FaEnvelope className="h-5 w-5" />
+              <span className="text-[15px] sm:text-[16px]">Email</span>
             </a>
-
-            {/* <a
-              href="#"
-              className="footer-icon flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white backdrop-blur transition hover:scale-110 hover:border-[#1DA1F2] hover:shadow-[0_0_20px_rgba(29,161,242,0.4)] sm:h-12 sm:w-12 sm:p-3"
-            >
-              <FaTwitter className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" />
-            </a> */}
           </div>
         </div>
       </div>

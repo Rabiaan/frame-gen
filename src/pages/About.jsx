@@ -113,21 +113,28 @@ function About() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'FrameGen',
-    url: 'https://framegen.vercel.app',
-    logo: 'https://framegen.vercel.app/frame_gen.png',
-    description: 'FrameGen is a premier digital marketing and web development agency focusing on performance-driven solutions.',
+    url: 'https://www.frame-gen.com',
+    logo: 'https://www.frame-gen.com/frame_gen.png',
+    description:
+      'FrameGen is a digital agency offering web development, 3D CGI visualization, motion graphics, brand identity and digital marketing services.',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'PK'
-    }
+      addressCountry: 'PK',
+    },
+    sameAs: [
+      'https://www.linkedin.com/company/framegen',
+      'https://www.instagram.com/frame_gen_/',
+      'https://twitter.com/framegen',
+      'https://www.facebook.com/profile.php?id=61589079031778',
+    ],
   };
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="About — Top Digital Marketing & Web Agency in Pakistan"
-        description="Learn about FrameGen, a leading digital marketing agency in Pakistan. We specialize in SEO, high-performance web development, 3D CGI, and ROI-driven strategies."
-        canonical="https://framegen.vercel.app/about"
+        title="About Us — Our Team, Mission & Digital Expertise"
+        description="Learn about FrameGen, a leading digital agency specializing in web development, 3D CGI, and brand design. Discover our mission to empower businesses through innovation."
+        canonical="https://www.frame-gen.com/about"
         schema={aboutSchema}
       />
 
@@ -320,8 +327,10 @@ function About() {
             <div className="h-full w-full rounded-[10px] border border-white/10 bg-white/5 overflow-hidden shadow-[0_0_30px_rgba(123,97,255,0.18)]">
               <img 
                 src={storyImage} 
-                alt="FrameGen Services" 
+                alt="FrameGen Digital Agency Services - Web, 3D and Brand Strategy" 
                 className="h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
               />
             </div>
           </div>

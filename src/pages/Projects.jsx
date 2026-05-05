@@ -203,9 +203,9 @@ function Projects() {
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Web Development & Digital Marketing Portfolio — FrameGen"
-        description="View our best work: high-converting e-commerce stores, React web applications, and SEO-optimized business websites. Proven results for global clients."
-        canonical="https://framegen.vercel.app/projects"
+        title="Our Portfolio — Web Dev, 3D & Brand Projects"
+        description="Explore FrameGen's portfolio of successful projects, including custom web applications, photorealistic 3D visuals, and impactful brand identities."
+        canonical="https://www.frame-gen.com/projects"
         schema={projectSchema}
       />
 
@@ -285,8 +285,10 @@ function Projects() {
             >
               <img
                 src={p.img}
-                alt={p.title}
+                alt={`${p.title} - ${p.category} project by FrameGen`}
                 className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
+                decoding="async"
+                loading="lazy"
               />
 
               <h3 className="mb-1 text-[19px] font-medium">

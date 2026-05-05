@@ -231,9 +231,9 @@ function WebsiteDevelopment() {
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Enterprise Web Development & Scalable Software — FrameGen"
-        description="High-performance React development, custom WordPress stores, and full-stack software solutions designed for global scale and business reliability."
-        canonical="https://framegen.vercel.app/projects/website-development"
+        title="Website Development Projects — Custom Solutions"
+        description="See how FrameGen builds high-performance React and Next.js web applications designed for business growth and scalability."
+        canonical="https://www.frame-gen.com/projects/website-development"
         schema={webDevSchema}
       />
 
@@ -330,8 +330,10 @@ function WebsiteDevelopment() {
             >
               <img
                 src={p.img}
-                alt={p.title}
+                alt={`${p.title} - Website Development project by FrameGen`}
                 className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
+                decoding="async"
+                loading="lazy"
               />
 
               <h3 className="mb-1 text-[19px] font-medium">

@@ -123,7 +123,7 @@ function Services() {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: 'Web Development',
-      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://www.frame-gen.com' },
       areaServed: { '@type': 'Country', name: 'Pakistan' },
       description: 'Custom web development including React apps, WordPress, and e-commerce solutions.',
     },
@@ -131,7 +131,7 @@ function Services() {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: 'Digital Marketing',
-      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://www.frame-gen.com' },
       areaServed: { '@type': 'Country', name: 'Pakistan' },
       description: 'SEO, social media advertising, and digital marketing strategies to grow your business.',
     },
@@ -139,7 +139,7 @@ function Services() {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: '3D CGI & Motion Graphics',
-      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+      provider: { '@type': 'MarketingAgency', name: 'FrameGen', url: 'https://www.frame-gen.com' },
       description: 'Photorealistic 3D renders, CGI animation, and motion graphics for marketing.',
     },
   ];
@@ -149,7 +149,7 @@ function Services() {
       <SEO
         title="Our Services — Web Dev, 3D CGI, Branding & Digital Marketing"
         description="Explore FrameGen's full range of services: web development, 3D CGI visualization, motion graphics, brand identity design, and digital marketing in Pakistan."
-        canonical="https://framegen.vercel.app/services"
+        canonical="https://www.frame-gen.com/services"
         schema={servicesSchema}
       />
 

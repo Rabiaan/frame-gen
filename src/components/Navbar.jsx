@@ -42,8 +42,10 @@ function Navbar() {
           
           <img
             src={logo}
-            alt="FrameGen Logo"
+            alt="FrameGen Digital Agency Logo"
             className="h-12 w-auto"
+            decoding="async"
+            loading="eager"
           />
           <span className="hidden md:block text-2xl text-white">FRAME GEN</span>
         </Link>

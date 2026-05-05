@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://framegen.vercel.app/sitemap.xml
+Sitemap: https://www.frame-gen.com/sitemap.xml

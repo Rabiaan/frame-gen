@@ -1,6 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import sitemap from 'vite-plugin-sitemap'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
+const prerender = require('vite-plugin-prerender')
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // All app routes for sitemap generation
 const routes = [
@@ -21,12 +29,27 @@ export default defineConfig({
   plugins: [
     react(),
     sitemap({
-      hostname: 'https://framegen.vercel.app',
+      hostname: 'https://www.frame-gen.com',
       dynamicRoutes: routes,
       changefreq: 'weekly',
       priority: 0.8,
       lastmod: new Date().toISOString().split('T')[0],
       exclude: ['/privacy', '/terms'],
+    }),
+    prerender({
+      staticDir: path.join(__dirname, 'dist'),
+      routes: routes,
+      rendererOptions: {
+        maxConcurrentRoutes: 1,
+        renderAfterTime: 5000,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
+      postProcess(renderedRoute) {
+        // Remove script tags to avoid double hydration issues if needed
+        // but here we just want to ensure it runs
+        console.log(`[prerender] Rendered: ${renderedRoute.route}`);
+        return renderedRoute;
+      },
     }),
   ],
   base: '/',

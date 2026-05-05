@@ -15,13 +15,13 @@ export default function SEO({
   title,
   description,
   canonical,
-  ogImage = 'https://framegen.vercel.app/frame_gen.png',
+  ogImage = 'https://www.frame-gen.com/frame_gen.png',
   schema,
   noIndex = false,
 }) {
   const fullTitle = title
     ? `${title} | FrameGen`
-    : 'FrameGen — Digital Agency | Web, 3D & Brand Design';
+    : 'Digital Agency | Web, 3D & Brand Design | FrameGen';
 
   const schemaArray = schema
     ? Array.isArray(schema)

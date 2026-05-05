@@ -16,22 +16,22 @@ export default function BlogPost() {
     '@type': 'Article',
     headline: post.title,
     description: post.description,
-    author: { '@type': 'Organization', name: 'FrameGen', url: 'https://framegen.vercel.app' },
+    author: { '@type': 'Organization', name: 'FrameGen', url: 'https://www.frame-gen.com' },
     publisher: {
       '@type': 'Organization',
       name: 'FrameGen',
-      logo: { '@type': 'ImageObject', url: 'https://framegen.vercel.app/frame_gen.png' },
+      logo: { '@type': 'ImageObject', url: 'https://www.frame-gen.com/frame_gen.png' },
     },
-    datePublished: '2026-04-12', // Simplified for dynamic
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://framegen.vercel.app/blog/${post.slug}` },
+    datePublished: post.date,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.frame-gen.com/blog/${post.slug}` },
   };
 
   return (
-    <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[900px] text-white pb-20">
+    <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
         title={post.title}
-        description={post.description}
-        canonical={`https://framegen.vercel.app/blog/${post.slug}`}
+        description={post.excerpt}
+        canonical={`https://www.frame-gen.com/blog/${post.slug}`}
         schema={articleSchema}
       />
 

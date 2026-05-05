@@ -6,4 +6,4 @@ Disallow: /privacy
 Disallow: /terms
 
 # Sitemap location
-Sitemap: https://framegen.vercel.app/sitemap.xml
+Sitemap: https://www.frame-gen.com/sitemap.xml

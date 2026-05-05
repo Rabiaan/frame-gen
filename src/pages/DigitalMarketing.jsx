@@ -195,9 +195,9 @@ function DigitalMarketing() {
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Best Digital Marketing Agency for Performance & SEO"
-        description="Rank higher and grow faster with FrameGen's expert digital marketing services. We offer performance marketing, technical SEO, and brand growth strategies globally."
-        canonical="https://framegen.vercel.app/projects/digital-marketing"
+        title="Digital Marketing Projects — Growth & ROI"
+        description="Explore FrameGen's digital marketing success stories, from high-ROI SEO campaigns to conversion-focused social advertising."
+        canonical="https://www.frame-gen.com/projects/digital-marketing"
         schema={marketingSchema}
       />
 
@@ -297,8 +297,10 @@ function DigitalMarketing() {
                 ) : (
                   <img
                     src={p.img}
-                    alt={p.title}
+                    alt={`${p.title} - Digital Marketing project by FrameGen`}
                     className="absolute inset-0 h-full w-full object-cover"
+                    decoding="async"
+                    loading="lazy"
                   />
                 )}
               </div>
