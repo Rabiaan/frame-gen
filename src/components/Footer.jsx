@@ -26,27 +26,27 @@ function Footer() {
         {/* Pages */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Pages</h3>
-           <ul className="flex flex-wrap gap-2 md:mx-0 md:justify-start justify-start">
-             {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
-               <li
-                 key={page}
-                 className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
-               >
-                 <Link
-                   to={page === "Home" ? "/" : page === "Website Development" ? "/projects/website-development" : page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
-                   className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
-                 >
-                   {page}
-                 </Link>
-               </li>
-             ))}
-           </ul>
+            <ul className="mx-auto flex flex-wrap justify-center gap-2 md:mx-0 md:justify-start">
+              {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
+                <li
+                  key={page}
+                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
+                >
+                  <Link
+                    to={page === "Home" ? "/" : page === "Website Development" ? "/projects/website-development" : page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
+                    className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+                  >
+                    {page}
+                  </Link>
+                </li>
+              ))}
+            </ul>
         </div>
 
         {/* Connect With Us */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Connect With Us</h3>
-           <div className="flex flex-col gap-4 items-start md:items-start">
+            <div className="flex flex-col gap-4 items-center md:items-start">
              <a
                href="https://www.linkedin.com/company/framegen"
                target="_blank"
