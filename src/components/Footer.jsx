@@ -54,7 +54,7 @@ function Footer() {
               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
               <FaLinkedin className="h-5 w-5" />
-              <span className="text-[15px] sm:text-[16px]">LinkedIn</span>
+              <span className="text-[14px] sm:text-[15px]">LinkedIn</span>
             </a>
 
             <a
@@ -64,7 +64,7 @@ function Footer() {
               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
               <FaInstagram className="h-5 w-5" />
-              <span className="text-[15px] sm:text-[16px]">Instagram</span>
+              <span className="text-[14px] sm:text-[15px]">Instagram</span>
             </a>
 
             <a
@@ -74,7 +74,7 @@ function Footer() {
               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
             >
               <FaTwitter className="h-5 w-5" />
-              <span className="text-[15px] sm:text-[16px]">Twitter</span>
+              <span className="text-[14px] sm:text-[15px]">Twitter</span>
             </a>
 
             <a

@@ -8,7 +8,7 @@ const projectsData = [
     title: 'Full Stack Fitness Management App',
     subtitle: 'Fitness Pro',
     text: 'Comprehensive fitness management application with workout tracking, membership management, and progress analytics.',
-    category: 'HTML/CSS',
+    category: 'TypeScript',
     link: 'https://fitness-pro-production.up.railway.app/',
   },
   {
