@@ -13,87 +13,87 @@ function Footer() {
         {/* Solutions We Offer */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Solutions We Offer</h3>
-          <ul className="space-y-1 text-[#999999]">
-            <li className="text-[14px] sm:text-base">Web Applications</li>
-            <li className="text-[14px] sm:text-base">WordPress & CMS</li>
-            <li className="text-[14px] sm:text-base">E-commerce Solutions</li>
-            <li className="text-[14px] sm:text-base">3D & CGI Visualization</li>
-            <li className="text-[14px] sm:text-base">Motion Graphics</li>
-            <li className="text-[14px] sm:text-base">Brand Identity</li>
-          </ul>
+           <ul className="space-y-1 text-[#999999]">
+             <li className="text-[13px] sm:text-[14px]">Web Applications</li>
+             <li className="text-[13px] sm:text-[14px]">WordPress & CMS</li>
+             <li className="text-[13px] sm:text-[14px]">E-commerce Solutions</li>
+             <li className="text-[13px] sm:text-[14px]">3D & CGI Visualization</li>
+             <li className="text-[13px] sm:text-[14px]">Motion Graphics</li>
+             <li className="text-[13px] sm:text-[14px]">Brand Identity</li>
+           </ul>
         </div>
 
         {/* Pages */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Pages</h3>
-          <ul className="mx-auto flex flex-wrap justify-center gap-2 md:mx-0 md:justify-start">
-            {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
-              <li
-                key={page}
-                className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[12px] text-[#999999] backdrop-blur sm:text-[14px]"
-              >
-                <Link
-                  to={page === "Home" ? "/" : page === "Website Development" ? "/projects/website-development" : page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
-                  className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
-                >
-                  {page}
-                </Link>
-              </li>
-            ))}
-          </ul>
+           <ul className="flex flex-wrap gap-2 md:mx-0 md:justify-start justify-start">
+             {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
+               <li
+                 key={page}
+                 className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
+               >
+                 <Link
+                   to={page === "Home" ? "/" : page === "Website Development" ? "/projects/website-development" : page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
+                   className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+                 >
+                   {page}
+                 </Link>
+               </li>
+             ))}
+           </ul>
         </div>
 
         {/* Connect With Us */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Connect With Us</h3>
-          <div className="flex flex-col gap-4 items-center md:items-start">
-            <a
-              href="https://www.linkedin.com/company/framegen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
-            >
-              <FaLinkedin className="h-5 w-5" />
-              <span className="text-[14px] sm:text-[15px]">LinkedIn</span>
-            </a>
+           <div className="flex flex-col gap-4 items-start md:items-start">
+             <a
+               href="https://www.linkedin.com/company/framegen"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+             >
+               <FaLinkedin className="h-5 w-5" />
+               <span className="text-[13px] sm:text-[14px]">LinkedIn</span>
+             </a>
 
-            <a
-              href="https://www.instagram.com/frame_gen_/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
-            >
-              <FaInstagram className="h-5 w-5" />
-              <span className="text-[14px] sm:text-[15px]">Instagram</span>
-            </a>
+             <a
+               href="https://www.instagram.com/frame_gen_/"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+             >
+               <FaInstagram className="h-5 w-5" />
+               <span className="text-[13px] sm:text-[14px]">Instagram</span>
+             </a>
 
-            <a
-              href="https://twitter.com/framegen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
-            >
-              <FaTwitter className="h-5 w-5" />
-              <span className="text-[14px] sm:text-[15px]">Twitter</span>
-            </a>
+             <a
+               href="https://twitter.com/framegen"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+             >
+               <FaTwitter className="h-5 w-5" />
+               <span className="text-[13px] sm:text-[14px]">Twitter</span>
+             </a>
 
-            <a
-              href="https://www.facebook.com/profile.php?id=61589079031778"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
-            >
-              <FaFacebook className="h-5 w-5" />
-              <span className="text-[15px] sm:text-[16px]">Facebook</span>
-            </a>
+             <a
+               href="https://www.facebook.com/profile.php?id=61589079031778"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+             >
+               <FaFacebook className="h-5 w-5" />
+               <span className="text-[13px] sm:text-[14px]">Facebook</span>
+             </a>
 
-            <a
-              href="mailto:framegen.create@gmail.com"
-              className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
-            >
-              <FaEnvelope className="h-5 w-5" />
-              <span className="text-[15px] sm:text-[16px]">Email</span>
-            </a>
+             <a
+               href="mailto:framegen.create@gmail.com"
+               className="footer-link flex items-center gap-3 text-[#dddddd] transition hover:text-white hover:underline decoration-white underline-offset-4"
+             >
+               <FaEnvelope className="h-5 w-5" />
+               <span className="text-[13px] sm:text-[14px]">Email</span>
+             </a>
           </div>
         </div>
       </div>
