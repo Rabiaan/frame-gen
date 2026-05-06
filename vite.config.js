@@ -42,7 +42,15 @@ export default defineConfig({
       rendererOptions: {
         maxConcurrentRoutes: 1,
         renderAfterTime: 5000,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--headless',
+          '--single-process',
+          '--no-zygote',
+        ],
       },
       postProcess(renderedRoute) {
         // Remove script tags to avoid double hydration issues if needed
