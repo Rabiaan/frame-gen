@@ -26,40 +26,16 @@ const routes = [
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    sitemap({
-      hostname: 'https://www.frame-gen.com',
-      dynamicRoutes: routes,
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date().toISOString().split('T')[0],
-      exclude: ['/privacy', '/terms'],
-    }),
-    prerender({
-      staticDir: path.join(__dirname, 'dist'),
-      routes: routes,
-      rendererOptions: {
-        maxConcurrentRoutes: 1,
-        renderAfterTime: 5000,
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-gpu',
-          '--headless',
-          '--single-process',
-          '--no-zygote',
-        ],
-      },
-      postProcess(renderedRoute) {
-        // Remove script tags to avoid double hydration issues if needed
-        // but here we just want to ensure it runs
-        console.log(`[prerender] Rendered: ${renderedRoute.route}`);
-        return renderedRoute;
-      },
-    }),
-  ],
+    plugins: [
+      react(),
+      sitemap({
+        hostname: 'https://www.frame-gen.com',
+        changefreq: 'weekly',
+        priority: 0.8,
+        lastmod: new Date().toISOString().split('T')[0],
+        exclude: ['/privacy', '/terms'],
+      }),
+    ],
   base: '/',
   build: {
     outDir: 'dist',
