@@ -9,7 +9,7 @@ const projectsData = [
     subtitle: 'Arcvault',
     text: 'React construction website with 3D scroll effects showcasing architectural projects and building services.',
     category: 'REACT',
-    link: 'https://arcvault-mu.vercel.app/',
+    link: 'https://arcvault-livid.vercel.app/',
   },
   {
     img: '/images/fitness-pro.png',
