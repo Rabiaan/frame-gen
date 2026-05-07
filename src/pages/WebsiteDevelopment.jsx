@@ -4,6 +4,14 @@ import '../styles/projects.css';
 
 const projectsData = [
   {
+    img: '/images/arcvault.png',
+    title: 'React Construction Website',
+    subtitle: 'Arcvault',
+    text: 'React construction website with 3D scroll effects showcasing architectural projects and building services.',
+    category: 'REACT',
+    link: 'https://arcvault-mu.vercel.app/',
+  },
+  {
     img: '/images/fitness-pro.png',
     title: 'Full Stack Fitness Management App',
     subtitle: 'Fitness Pro',
@@ -34,6 +42,14 @@ const projectsData = [
     text: 'Professional ecommerce website with Wordpress.',
     category: 'WORDPRESS',
     link: 'https://samartex.store/',
+  },
+  {
+    img: '/images/streetora.png',
+    title: 'E-commerce Platform',
+    subtitle: 'Streetora',
+    text: 'E-commerce platform for street fashion with modern design and shopping cart functionality.',
+    category: 'WORDPRESS',
+    link: 'https://streetora.store/',
   },
   {
     img: '/images/asiaglory.png',
