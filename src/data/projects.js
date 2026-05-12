@@ -52,7 +52,7 @@ export const projectsData = [
     subtitle: 'SamarTex',
     text: 'Professional ecommerce website with Wordpress.',
     category: 'WORDPRESS',
-    link: 'https://samartex.store/',
+    link: 'https://samartex.store/home/',
     images: ['/images/samartex.png', '/images/portfolio2.jpg', '/images/portfolio3.jpg'],
     fontHeading: 'Playfair Display',
     fontBody: 'Lato',
