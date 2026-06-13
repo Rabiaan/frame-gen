@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       {/* Main Footer Content */}
-      <div className="mx-auto mt-20 mb-8 grid w-[calc(100%-40px)] max-w-[1400px] grid-cols-1 gap-8 border-t border-white/5 px-5 pt-10 pb-12 text-sm text-white sm:w-[calc(100%-80px)] md:grid-cols-3 md:px-10 lg:w-[calc(100%-200px)]">
+      <div className="mx-auto mt-20 mb-8 grid w-[calc(100%-40px)] max-w-[1400px] grid-cols-1 gap-8 border-t border-white/5 px-5 pt-10 pb-12 text-sm text-white md:grid-cols-3 md:px-10">
         
         {/* Solutions We Offer */}
         <div className="space-y-3 text-center md:text-left">
@@ -26,21 +26,56 @@ function Footer() {
         {/* Pages */}
         <div className="space-y-3 text-center md:text-left">
           <h3 className="text-[16px] font-medium text-[#cccccc] sm:text-[18px]">Pages</h3>
-            <ul className="mx-auto flex flex-wrap justify-center gap-2 md:mx-0 md:justify-start">
-              {["Home", "About", "Services", "Blog", "Website Development", "Digital Marketing", "Contact"].map((page) => (
-                <li
-                  key={page}
-                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
-                >
-                  <Link
-                    to={page === "Home" ? "/" : page === "Website Development" ? "/projects/website-development" : page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
-                    className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+            <div className="flex flex-col gap-2 mx-auto md:mx-0">
+              {/* Line 1 */}
+              <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
+                {["Home", "About", "Services"].map((page) => (
+                  <li
+                    key={page}
+                    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
                   >
-                    {page}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Link
+                      to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                      className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+                    >
+                      {page}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {/* Line 2 */}
+              <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
+                {["Blog", "Website Development"].map((page) => (
+                  <li
+                    key={page}
+                    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
+                  >
+                    <Link
+                      to={page === "Website Development" ? "/projects/website-development" : `/${page.toLowerCase()}`}
+                      className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+                    >
+                      {page}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {/* Line 3 */}
+              <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
+                {["Digital Marketing", "Contact"].map((page) => (
+                  <li
+                    key={page}
+                    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] text-[#999999] backdrop-blur sm:text-[12px]"
+                  >
+                    <Link
+                      to={page === "Digital Marketing" ? "/projects/digital-marketing" : `/${page.toLowerCase()}`}
+                      className="flex justify-center text-[#dddddd] transition hover:text-[#7B61FF]"
+                    >
+                      {page}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
         </div>
 
         {/* Connect With Us */}
@@ -99,23 +134,23 @@ function Footer() {
       </div>
 
       {/* Copyright Section */}
-      <div className="mx-auto w-[calc(100%-40px)] max-w-[1400px] border-t border-white/10 px-5 py-4 text-center sm:w-[calc(100%-80px)] md:px-10 lg:w-[calc(100%-200px)]">
+      <div className="mx-auto w-[calc(100%-40px)] max-w-[1400px] border-t border-white/10 px-5 py-4 text-center md:px-10">
         <p className="text-xs text-[#999999] sm:text-sm">
           © {currentYear} FrameGen. All rights reserved. 
           <span className="mx-2">|</span>
-          <a 
-            href="/privacy" 
+          <Link 
+            to="/privacy" 
             className="transition hover:text-[#cccccc] hover:underline"
           >
             Privacy Policy
-          </a>
+          </Link>
           <span className="mx-2">|</span>
-          <a 
-            href="/terms" 
+          <Link 
+            to="/terms" 
             className="transition hover:text-[#cccccc] hover:underline"
           >
             Terms of Service
-          </a>
+          </Link>
         </p>
       </div>
     </footer>

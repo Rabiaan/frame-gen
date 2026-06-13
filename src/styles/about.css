@@ -151,7 +151,7 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Syne', sans-serif; }
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 20px;
     backdrop-filter: blur(6px);
-    background-image: url('images/about_hero.jpg');
+    background-image: url('/images/about_hero.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

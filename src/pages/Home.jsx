@@ -781,7 +781,7 @@ function Home() {
               </p>
               <div className="hero-buttons flex flex-wrap gap-3 sm:gap-4">
                 <Link
-                  to="/digital-marketing"
+                  to="/projects/digital-marketing"
                   className="btn-primary bg-[#7B61FF] px-6 py-3 font-syne text-[12px] text-white transition hover:-translate-y-[2px] hover:shadow-[0_0_20px_rgba(123,97,255,0.28)] sm:px-[35px] sm:py-[15px] sm:text-[14px]"
                 >
                   Digital Marketing

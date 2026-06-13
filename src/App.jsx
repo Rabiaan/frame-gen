@@ -17,6 +17,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy.jsx'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService.jsx'));
 const Blog = lazy(() => import('./pages/Blog.jsx'));
 const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 // Scroll to top component
 function ScrollToTop() {
@@ -85,6 +86,7 @@ function AppContent() {
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>

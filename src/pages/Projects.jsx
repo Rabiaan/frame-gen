@@ -275,35 +275,38 @@ function Projects() {
 
         {/* Projects Grid - Mobile: 1 card | Tablet & Desktop: 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-10 max-w-[1500px] mx-auto">
-          {visibleProjects.map((p, index) => (
-            <a
-              key={index}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-reveal block rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.03] hover:border-[#7B61FF]"
-            >
-              <img
-                src={p.img}
-                alt={`${p.title} - ${p.category} project by FrameGen`}
-                className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
-                decoding="async"
-                loading="lazy"
-              />
+          {visibleProjects.map((p, index) => {
+            const CardTag = p.link === '#' ? 'div' : 'a';
+            const cardProps = p.link === '#' ? {} : { href: p.link, target: "_blank", rel: "noopener noreferrer" };
+            return (
+              <CardTag
+                key={index}
+                className="project-reveal block rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.03] hover:border-[#7B61FF]"
+                style={p.link === '#' ? { cursor: 'default' } : {}}
+                {...cardProps}
+              >
+                <img
+                  src={p.img}
+                  alt={`${p.title} - ${p.category} project by FrameGen`}
+                  className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
+                  decoding="async"
+                  loading="lazy"
+                />
 
-              <h3 className="mb-1 text-[19px] font-medium">
-                <span className="text-[#7B61FF] mr-2">•</span> {p.title}
-              </h3>
+                <h3 className="mb-1 text-[19px] font-medium">
+                  <span className="text-[#7B61FF] mr-2">•</span> {p.title}
+                </h3>
 
-              <div className="mb-2 text-[16px] font-bold text-white/90">{p.subtitle}</div>
+                <div className="mb-2 text-[16px] font-bold text-white/90">{p.subtitle}</div>
 
-              <p className="mb-3 text-[14.5px] leading-relaxed text-[#cccccc]">{p.text}</p>
+                <p className="mb-3 text-[14.5px] leading-relaxed text-[#cccccc]">{p.text}</p>
 
-              <span className="text-[12.5px] uppercase tracking-wider text-[#7B61FF] font-medium">
-                {p.category}
-              </span>
-            </a>
-          ))}
+                <span className="text-[12.5px] uppercase tracking-wider text-[#7B61FF] font-medium">
+                  {p.category}
+                </span>
+              </CardTag>
+            );
+          })}
         </div>
       </section>
     </div>

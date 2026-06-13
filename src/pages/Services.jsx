@@ -286,7 +286,7 @@ function Services() {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="faq-card relative rounded-xl border border-white/10 bg-[#121214]] p-6 text-white backdrop-blur-[20px] shadow-lg"
+              className="faq-card relative rounded-xl border border-white/10 bg-[#121214] p-6 text-white backdrop-blur-[20px] shadow-lg"
             >
               <h3 className="mb-3 text-[18px] font-semibold">{item.question}</h3>
               <p className="text-[15px] leading-relaxed text-[#cccccc]">{item.answer}</p>

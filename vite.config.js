@@ -3,10 +3,6 @@ import react from '@vitejs/plugin-react'
 import sitemap from 'vite-plugin-sitemap'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { createRequire } from 'module'
-
-const require = createRequire(import.meta.url)
-const prerender = require('vite-plugin-prerender')
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

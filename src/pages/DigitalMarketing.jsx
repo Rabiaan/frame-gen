@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
 import '../styles/projects.css';
 
@@ -353,12 +354,12 @@ function DigitalMarketing() {
         <p className="mb-8 mx-auto max-w-2xl text-[16px] text-[#aaaaaa]">
           Let's discuss how we can implement a data-driven marketing system for your business. No fluff, just results.
         </p>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="inline-block rounded-md bg-gradient-to-tr from-[#7B61FF] to-[#00F0FF] px-10 py-4 text-[15px] font-semibold text-white shadow-[0_0_20px_rgba(123,97,255,0.3)] transition hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(123,97,255,0.5)]"
         >
           Book a Strategic Consultation →
-        </a>
+        </Link>
       </section>
 
     </div>

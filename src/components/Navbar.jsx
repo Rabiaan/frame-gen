@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '/frame_gen.png';
 
@@ -6,6 +6,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [projectsDropdown, setProjectsDropdown] = useState(false);
   const location = useLocation();
+  const navRef = useRef(null);
 
   useEffect(() => {
     // Close mobile menu when route changes
@@ -16,8 +17,7 @@ function Navbar() {
   useEffect(() => {
     function handleClickOutside(e) {
       if (window.innerWidth <= 768) {
-        const nav = document.querySelector('nav');
-        if (nav && !nav.contains(e.target)) {
+        if (navRef.current && !navRef.current.contains(e.target)) {
           setOpen(false);
         }
       }
@@ -36,7 +36,7 @@ function Navbar() {
     path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
-    <nav className="fixed top-[30px] left-1/2 z-[9999] w-[calc(100%-40px)] max-w-[1400px] -translate-x-1/2 rounded-[20px] border border-white/5 bg-[rgba(10,10,10,0.6)] backdrop-blur-[14px] px-7 py-4">
+    <nav ref={navRef} className="fixed top-[30px] left-1/2 z-[9999] w-[calc(100%-40px)] max-w-[1400px] -translate-x-1/2 rounded-[20px] border border-white/5 bg-[rgba(10,10,10,0.6)] backdrop-blur-[14px] px-7 py-4">
       <div className="flex w-full items-center justify-between">
         <Link to="/" className="shrink-0 flex items-center gap-3">
           
