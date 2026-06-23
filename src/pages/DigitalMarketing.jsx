@@ -5,6 +5,13 @@ import '../styles/projects.css';
 
 const digitalProjectsData = [
   {
+    id: 17,
+    title: "University FYP 3D Video",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://player.vimeo.com/video/1203955908?badge=0&autopause=0&player_id=0&app_id=58479%2Fembed",
+    behanceUrl: "https://vimeo.com/1203955908"
+  },
+  {
     id: 0,
     title: "Cola Next",
     category: "Digital Marketing & Animation",
@@ -12,60 +19,11 @@ const digitalProjectsData = [
     behanceUrl: "https://www.behance.net/gallery/246967861/Cola-Next"
   },
   {
-    id: 1,
-    title: "Oreo Brand",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/245108345?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/245108345/Oreo"
-  },
-  {
-    id: 2,
-    title: "TUC Brand",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/242080387?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/242080387/TUC"
-  },
-  {
-    id: 3,
-    title: "Spotify",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/241789743?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/241789743/Spotify"
-  },
-  {
     id: 4,
     title: "DREAMTO",
     category: "Digital Marketing & Animation",
     embedUrl: "https://www.behance.net/embed/project/234347109?ilo0=1",
     behanceUrl: "https://www.behance.net/gallery/234347109/DREAMTO"
-  },
-  {
-    id: 5,
-    title: "McDonald's",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/233506297?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/233506297/McDonalds"
-  },
-  {
-    id: 6,
-    title: "Kingtox",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/219046293?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/219046293/Kingtox"
-  },
-  {
-    id: 7,
-    title: "KRONE",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/211855881?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/211855881/KRONE"
-  },
-  {
-    id: 8,
-    title: "Engro",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/221028855?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/221028855/Engro"
   },
   {
     id: 9,
@@ -82,45 +40,10 @@ const digitalProjectsData = [
     behanceUrl: "https://www.behance.net/gallery/160876375/Quice"
   },
   {
-    id: 11,
-    title: "National Foods",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7445135386613325824?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
-  },
-  {
-    id: 12,
-    title: "Tapal Danedar",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7442526485317382144?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
-  },
-  {
-    id: 13,
-    title: "Motion Design Work",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7437354859609120768?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
-  },
-  {
-    id: 14,
-    title: "Motion Graphics Showcase",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7434374901203099648?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
-  },
-  {
     id: 15,
     title: "Ferrari Edit",
     category: "Digital Marketing & Animation",
     embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7421466433840361472?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
-  },
-  {
-    id: 16,
-    title: "National Mayo",
-    category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7418905604255252480?compact=1",
     behanceUrl: "https://www.linkedin.com/feed/"
   },
 ];
