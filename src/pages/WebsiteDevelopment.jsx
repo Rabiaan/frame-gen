@@ -50,7 +50,7 @@ const projectsData = [
     subtitle: 'Streetora',
     text: 'E-commerce platform for street fashion with modern design and shopping cart functionality.',
     category: 'WORDPRESS',
-    link: 'https://streetora.store/',
+    link: 'https://dev-streetora-store.pantheonsite.io/',
   },
   {
     img: '/images/asiaglory.png',
