@@ -46,6 +46,20 @@ const digitalProjectsData = [
     embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7421466433840361472?compact=1",
     behanceUrl: "https://www.linkedin.com/feed/"
   },
+  {
+    id: 16,
+    title: "YOLO X Quetta Gladiators",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://player.vimeo.com/video/1204169144?badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1204169144"
+  },
+  {
+    id: 17,
+    title: "Pryze",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://player.vimeo.com/video/1204169143?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1204169143"
+  },
 ];
 
 function DigitalMarketing() {

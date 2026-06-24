@@ -9,7 +9,7 @@ import LoadingScreen, { loadingState } from './components/LoadingScreen.jsx';
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
-const Projects = lazy(() => import('./pages/Projects.jsx'));
+const Services = lazy(() => import('./pages/Services.jsx'));
 const WebsiteDevelopment = lazy(() => import('./pages/WebsiteDevelopment.jsx'));
 const DigitalMarketing = lazy(() => import('./pages/DigitalMarketing.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
@@ -75,11 +75,10 @@ function AppContent() {
           </div>
         }>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/website-development" element={<WebsiteDevelopment />} />
+<Route path="/" element={<Home />} />
+             <Route path="/about" element={<About />} />
+             <Route path="/services" element={<Services />} />
+             <Route path="/projects/website-development" element={<WebsiteDevelopment />} />
             <Route path="/projects/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
