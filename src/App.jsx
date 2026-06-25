@@ -9,7 +9,6 @@ import LoadingScreen, { loadingState } from './components/LoadingScreen.jsx';
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
-const Services = lazy(() => import('./pages/Services.jsx'));
 const WebsiteDevelopment = lazy(() => import('./pages/WebsiteDevelopment.jsx'));
 const DigitalMarketing = lazy(() => import('./pages/DigitalMarketing.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
