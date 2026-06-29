@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 40px rgba(123, 97, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/services_banner.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/services_banner.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
     .services-banner {
         min-height: 200px;
         padding: 30px 16px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/services_banner.jpg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/services_banner.jpeg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
