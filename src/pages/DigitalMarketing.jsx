@@ -5,7 +5,7 @@ import '../styles/projects.css';
 
 const digitalProjectsData = [
   {
-    id: 17,
+    id: 19,
     title: "University FYP 3D Video",
     category: "Digital Marketing & Animation",
     embedUrl: "https://player.vimeo.com/video/1203955908?badge=0&autopause=0&player_id=0&app_id=58479%2Fembed",
@@ -59,6 +59,13 @@ const digitalProjectsData = [
     category: "Digital Marketing & Animation",
     embedUrl: "https://player.vimeo.com/video/1204169143?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
     behanceUrl: "https://vimeo.com/1204169143"
+  },
+  {
+    id: 18,
+    title: "Free Fire X World Series",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://player.vimeo.com/video/1205422833?badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1205422833"
   },
 ];
 
