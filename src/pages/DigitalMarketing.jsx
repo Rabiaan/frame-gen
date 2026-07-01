@@ -29,8 +29,8 @@ const digitalProjectsData = [
     id: 9,
     title: "Stay Green",
     category: "Digital Marketing & Animation",
-    embedUrl: "https://www.behance.net/embed/project/234919057?ilo0=1",
-    behanceUrl: "https://www.behance.net/gallery/234919057/Stay-Green"
+    embedUrl: "https://player.vimeo.com/video/1206100469?badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1206100469"
   },
   {
     id: 10,
