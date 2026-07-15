@@ -75,6 +75,21 @@ export const projectsData = [
     colors: ['#003366', '#FFCC00', '#F2F2F2', '#FFFFFF']
   },
   {
+    id: 'biotech-sciences',
+    img: '/images/biotech-sciences.png',
+    logo: '/images/biotech-sciences.png',
+    title: 'E-commerce Storefront — Skincare & Cosmetics',
+    subtitle: 'Biotech Sciences',
+    text: 'Full-stack e-commerce platform for a pharmaceutical-grade skincare brand with admin dashboard, Supabase backend, and custom SPA routing.',
+    category: 'REACT',
+    link: 'https://biotech-sciences.vercel.app/',
+    images: ['/images/biotech-sciences.png', '/images/portfolio1.jpg', '/images/portfolio2.jpg'],
+    fontHeading: 'Plus Jakarta Sans',
+    fontBody: 'DM Sans',
+    fontBodyText: 'Biotech Sciences combines liposomal encapsulation technology with a modern e-commerce experience — Halal Certified, Pure Vegan, and Cruelty-Free skincare delivered across Pakistan.',
+    colors: ['#7C3AED', '#06B6D4', '#0F172A', '#FFFFFF']
+  },
+  {
     id: 'codehills',
     img: '/images/codehills.png',
     logo: '/images/codehills.png',

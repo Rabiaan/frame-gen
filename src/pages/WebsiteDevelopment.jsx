@@ -61,6 +61,14 @@ const projectsData = [
     link: 'https://asiagloryco.com/',
   },
   {
+    img: '/images/biotech-sciences.png',
+    title: 'E-commerce Storefront — Skincare & Cosmetics',
+    subtitle: 'Biotech Sciences',
+    text: 'Full-stack e-commerce platform for a pharmaceutical-grade skincare brand with admin dashboard, Supabase backend, and custom SPA routing.',
+    category: 'REACT',
+    link: 'https://biotech-sciences.vercel.app/',
+  },
+  {
     img: '/images/codehills.png',
     title: 'React Business Portfolio',
     subtitle: 'Code Hills',
