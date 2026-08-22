@@ -5,6 +5,13 @@ import '../styles/projects.css';
 
 const digitalProjectsData = [
   {
+    id: 20,
+    title: "Independence 14 August",
+    category: "Digital Marketing & Animation",
+    embedUrl: "https://player.vimeo.com/video/1220445044?badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1220445044"
+  },
+  {
     id: 19,
     title: "University FYP 3D Video",
     category: "Digital Marketing & Animation",
@@ -41,10 +48,10 @@ const digitalProjectsData = [
   },
   {
     id: 15,
-    title: "Ferrari Edit",
+    title: "Ferrari AI Edit",
     category: "Digital Marketing & Animation",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7421466433840361472?compact=1",
-    behanceUrl: "https://www.linkedin.com/feed/"
+    embedUrl: "https://player.vimeo.com/video/1220452993?badge=0&autopause=0&player_id=0&app_id=58479",
+    behanceUrl: "https://vimeo.com/1220452993"
   },
   {
     id: 16,

@@ -42,7 +42,7 @@ const projectsData = [
     subtitle: 'SamarTex',
     text: 'Professional ecommerce website with Wordpress.',
     category: 'WORDPRESS',
-     link: 'https://samartex.store/home/',
+     link: 'https://samartex.store',
   },
   {
     img: '/images/streetora.png',
