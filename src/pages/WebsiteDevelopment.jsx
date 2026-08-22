@@ -164,6 +164,14 @@ const projectsData = [
     category: 'HTML/CSS',
     link: '#',
   },
+  {
+    img: '/images/the_chemical_factory.png',
+    title: 'Product Catalog Website',
+    subtitle: 'The Chemical Factory',
+    text: 'Waterproofing chemical product catalog website to showcase products and services.',
+    category: 'HTML/CSS',
+    link: 'https://the-chemical-factory.vercel.app/',
+  },
   // {
   //   img: '/images/engineer-office.png',
   //   title: 'Product Showcase Website',
