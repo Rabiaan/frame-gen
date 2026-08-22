@@ -1,39 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
 import '../styles/projects.css';
 
 const projectsData = [
   {
-    img: '/images/arcvault.png',
-    title: 'React Construction Website',
-    subtitle: 'Arcvault',
-    text: 'React construction website with 3D scroll effects showcasing architectural projects and building services.',
-    category: 'REACT',
-    link: 'https://arcvault-livid.vercel.app/',
-  },
-  {
-    img: '/images/fitness-pro.png',
-    title: 'Full Stack Fitness Management App',
-    subtitle: 'Fitness Pro',
-    text: 'Comprehensive fitness management application with workout tracking, membership management, and progress analytics.',
-    category: 'TypeScript',
-    link: 'https://fitness-pro-production.up.railway.app/',
-  },
-  {
-    img: '/images/habibi-bites.png',
-    title: 'Full Stack Restaurant Management',
-    subtitle: 'Habibi Bites',
-    text: 'Complete restaurant management system with online ordering, table reservations, and inventory management.',
-    category: 'HTML/CSS',
-    link: 'https://habibi-bites.vercel.app/',
-  },
-  {
     img: '/images/ecommerce-store.png',
     title: 'Fullstack E-commerce Store',
     subtitle: 'React E-commerce Platform (In Progress)',
     text: 'Full-stack responsive e-commerce with React, Node.js & Firebase — auth, products, cart, and payments.',
-    category: 'FULLSTACK',
+    category: 'REACT',
     link: '#',
   },
   {
@@ -45,14 +20,6 @@ const projectsData = [
      link: 'https://samartex.store',
   },
   {
-    img: '/images/streetora.png',
-    title: 'E-commerce Platform',
-    subtitle: 'Streetora',
-    text: 'E-commerce platform for street fashion with modern design and shopping cart functionality.',
-    category: 'WORDPRESS',
-    link: 'https://dev-streetora-store.pantheonsite.io/',
-  },
-  {
     img: '/images/asiaglory.png',
     title: 'Cold Storage & Warehouse Service',
     subtitle: 'Asia Glory Company',
@@ -61,20 +28,12 @@ const projectsData = [
     link: 'https://asiagloryco.com/',
   },
   {
-    img: '/images/biotech-sciences.png',
-    title: 'E-commerce Storefront — Skincare & Cosmetics',
-    subtitle: 'Biotech Sciences',
-    text: 'Full-stack e-commerce platform for a pharmaceutical-grade skincare brand with admin dashboard, Supabase backend, and custom SPA routing.',
-    category: 'REACT',
-    link: 'https://biotech-sciences.vercel.app/',
-  },
-  {
     img: '/images/codehills.png',
     title: 'React Business Portfolio',
     subtitle: 'Code Hills',
     text: 'Interactive Business Portfolio displaying Company work.',
     category: 'REACT',
-    link: 'https://codehills.vercel.app/',
+    link: 'https://visionex.vercel.app/',
   },
   // {
   //   img: '/images/idtechpakistan.png',
@@ -90,7 +49,7 @@ const projectsData = [
   //   subtitle: 'Synthesis Engineering',
   //   text: '3D Business portfolio website built with Bootstrap with Animations.',
   //   category: 'HTML/CSS',
-  //   link: 'https://syneng.pk',
+  //   link: 'https://synthesis-eng.vercel.app/index.html',
   // },
   {
     img: '/images/nutaffair.png',
@@ -157,45 +116,21 @@ const projectsData = [
     link: 'https://raadalarabia.com/',
   },
   {
-    img: '../images/irs.png',
+    img: '/images/irs.png',
     title: 'E-commerce Webstore',
     subtitle: 'E-commerce store with custom Development',
     text: 'Real-time data visualization dashboard in React.',
     category: 'HTML/CSS',
     link: '#',
   },
-  {
-    img: '/images/the_chemical_factory.png',
-    title: 'Product Catalog Website',
-    subtitle: 'The Chemical Factory',
-    text: 'Waterproofing chemical product catalog website to showcase products and services.',
-    category: 'HTML/CSS',
-    link: 'https://the-chemical-factory.vercel.app/',
-  },
-  // {
-  //   img: '/images/engineer-office.png',
-  //   title: 'Product Showcase Website',
-  //   subtitle: 'Engineers Office',
-  //   text: 'Professional Bootstrap website showcasing engineering products and services with modern design.',
-  //   category: 'HTML/CSS',
-  //   link: 'https://engineersoffice.pk/',
-  // },
-  // {
-  //   img: '/images/tbhosters.png',
-  //   title: 'Domain & Hosting Services',
-  //   subtitle: 'TBHosters',
-  //   text: 'TypeScript and Bootstrap website for domain availability checking and hosting plan offers.',
-  //   category: 'TYPESCRIPT',
-  //   link: 'tbhosters.vercel.app',
-  // },
 
 ];
 
-function WebsiteDevelopment() {
+function Projects() {
   const [filter, setFilter] = useState('all');
 
-  // Reveal animations for project cards
   useEffect(() => {
+
     const options = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -251,23 +186,27 @@ function WebsiteDevelopment() {
     (p) => filter === 'all' || p.category.toLowerCase().replace('/', '-') === filter,
   );
 
-
-  const webDevSchema = {
+  const projectSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Enterprise Web Development & Custom Software',
-    provider: { '@type': 'MarketingAgency', name: 'FrameGen' },
-    description: 'Specializing in scalable React applications, custom WordPress ecosystems, and high-performance e-commerce solutions for global businesses.',
-    areaServed: 'Worldwide',
+    '@type': 'ItemList',
+    name: 'FrameGen Digital Portfolio',
+    description: 'A collection of high-performance websites, e-commerce stores, and digital marketing strategies by FrameGen.',
+    itemListElement: projectsData.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.title,
+      description: p.text,
+      url: p.link !== '#' ? p.link : undefined
+    }))
   };
 
   return (
     <div className="relative z-10 mx-auto mt-[150px] w-[calc(100%-40px)] max-w-[1400px] text-white">
       <SEO
-        title="Website Development Projects — Custom Solutions"
-        description="See how FrameGen builds high-performance React and Next.js web applications designed for business growth and scalability."
-        canonical="https://www.frame-gen.com/projects/website-development"
-        schema={webDevSchema}
+        title="Our Portfolio — Web Dev, 3D & Brand Projects"
+        description="Explore FrameGen's portfolio of successful projects, including custom web applications, photorealistic 3D visuals, and impactful brand identities."
+        canonical="https://www.frame-gen.com/projects"
+        schema={projectSchema}
       />
 
       {/* Hero with Spline background */}
@@ -282,9 +221,9 @@ function WebsiteDevelopment() {
 
         </div>
         <div className="hero-brand">
-          WEBSITE
+          OUR
           <br />
-          DEVELOPMENT
+          PROJECTS
         </div>
       </section>
 
@@ -294,37 +233,21 @@ function WebsiteDevelopment() {
         className="mb-20 rounded-[20px] border border-white/5 bg-white/5 px-6 py-12 text-left shadow-[0_0_40px_rgba(123,97,255,0.08)] backdrop-blur-[15px] md:px-20"
       >
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="w-full">
-            <h2 className="mb-2 text-[15px] uppercase tracking-wider text-[#7B61FF]">Engineering Excellence</h2>
+          <div className="max-w-[60%] md:max-w-[60%]">
+            <h2 className="mb-2 text-[15px] text-[#aaaaaa]">Our Work</h2>
             <h1
               id="projects-heading"
               className="mb-4 font-syne text-[40px] font-light leading-[1.06] md:text-[65px]"
             >
-              Enterprise Web Development
+              Showcasing Our
               <br />
-              & Scalable Architecture
+              Best Projects
             </h1>
-            <p className="mb-8 text-[17px] leading-[1.7] text-[#cccccc]">
-              We build more than just "sites." We engineer fast, secure, and scalable web ecosystems that empower business owners to dominate their markets. From React-driven enterprise apps to custom high-performance e-commerce, our solutions are built for global scale.
+            <p className="text-[14px] leading-[1.6] text-[#cccccc]">
+              Explore our portfolio of innovative projects built with cutting-edge technologies.
             </p>
-            
-            <div className="mb-12 grid gap-6 md:grid-cols-3">
-              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
-                <h3 className="mb-2 text-[18px] font-semibold text-white">Custom Engineering</h3>
-                <p className="text-[14px] text-[#aaaaaa]">React, Next.js, and Node.js solutions built specifically for your business logic.</p>
-              </div>
-              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
-                <h3 className="mb-2 text-[18px] font-semibold text-white">Global Performance</h3>
-                <p className="text-[14px] text-[#aaaaaa]">Optimized for loading speed across continents, ensuring a zero-lag user experience.</p>
-              </div>
-              <div className="rounded-[15px] border border-white/10 bg-white/5 p-6 backdrop-blur-[10px]">
-                <h3 className="mb-2 text-[18px] font-semibold text-white">Security First</h3>
-                <p className="text-[14px] text-[#aaaaaa]">Enterprise-grade security protocols to protect your data and your customers' trust.</p>
-              </div>
-            </div>
           </div>
         </div>
-
         {/* Divider */}
         <div className="mb-8 h-[1px] bg-white/20"></div>
 
@@ -335,8 +258,6 @@ function WebsiteDevelopment() {
             { key: 'wordpress', label: 'WordPress' },
             { key: 'html-css', label: 'HTML/CSS' },
             { key: 'react', label: 'React' },
-            { key: 'typescript', label: 'TypeScript' },
-            { key: 'fullstack', label: 'Fullstack' },
           ].map((btn) => (
             <button
               key={btn.key}
@@ -354,54 +275,42 @@ function WebsiteDevelopment() {
 
         {/* Projects Grid - Mobile: 1 card | Tablet & Desktop: 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-10 max-w-[1500px] mx-auto">
-          {visibleProjects.map((p, index) => (
-            <a
-              key={index}
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-reveal block rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.03] hover:border-[#7B61FF]"
-            >
-              <img
-                src={p.img}
-                alt={`${p.title} - Website Development project by FrameGen`}
-                className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
-                decoding="async"
-                loading="lazy"
-              />
+          {visibleProjects.map((p, index) => {
+            const CardTag = p.link === '#' ? 'div' : 'a';
+            const cardProps = p.link === '#' ? {} : { href: p.link, target: "_blank", rel: "noopener noreferrer" };
+            return (
+              <CardTag
+                key={index}
+                className="project-reveal block rounded-[10px] border border-white/10 bg-white/5 p-5 shadow-[0_0_20px_rgba(123,97,255,0.06)] transition-all hover:shadow-[0_0_30px_rgba(123,97,255,0.18)] hover:scale-[1.03] hover:border-[#7B61FF]"
+                style={p.link === '#' ? { cursor: 'default' } : {}}
+                {...cardProps}
+              >
+                <img
+                  src={p.img}
+                  alt={`${p.title} - ${p.category} project by FrameGen`}
+                  className="mb-4 h-[220px] w-full rounded-[10px] object-cover border border-white/5"
+                  decoding="async"
+                  loading="lazy"
+                />
 
-              <h3 className="mb-1 text-[19px] font-medium">
-                <span className="text-[#7B61FF] mr-2">•</span> {p.title}
-              </h3>
+                <h3 className="mb-1 text-[19px] font-medium">
+                  <span className="text-[#7B61FF] mr-2">•</span> {p.title}
+                </h3>
 
-              <div className="mb-2 text-[16px] font-bold text-white/90">{p.subtitle}</div>
+                <div className="mb-2 text-[16px] font-bold text-white/90">{p.subtitle}</div>
 
-              <p className="mb-3 text-[14.5px] leading-relaxed text-[#cccccc]">{p.text}</p>
+                <p className="mb-3 text-[14.5px] leading-relaxed text-[#cccccc]">{p.text}</p>
 
-              <span className="text-[12.5px] uppercase tracking-wider text-[#7B61FF] font-medium">
-                {p.category}
-              </span>
-            </a>
-          ))}
+                <span className="text-[12.5px] uppercase tracking-wider text-[#7B61FF] font-medium">
+                  {p.category}
+                </span>
+              </CardTag>
+            );
+          })}
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="mb-20 rounded-[20px] border border-[#7B61FF]/30 bg-[#7B61FF]/5 p-12 text-center backdrop-blur-[20px]">
-        <h2 className="mb-4 font-syne text-[32px] font-light">Build a Faster, Better Business Site</h2>
-        <p className="mb-8 mx-auto max-w-2xl text-[16px] text-[#aaaaaa]">
-          Whether you're looking for a simple business site or a complex web application, we have the technical expertise to deliver.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-block rounded-md bg-gradient-to-tr from-[#7B61FF] to-[#00F0FF] px-10 py-4 text-[15px] font-semibold text-white shadow-[0_0_20px_rgba(123,97,255,0.3)] transition hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(123,97,255,0.5)]"
-        >
-          Consult With an Engineer →
-        </Link>
-      </section>
-
     </div>
   );
 }
 
-export default WebsiteDevelopment;
+export default Projects;
