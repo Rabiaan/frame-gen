@@ -18,6 +18,7 @@ const projectsData = [
     subtitle: 'Fitness Pro',
     text: 'Comprehensive fitness management application with workout tracking, membership management, and progress analytics.',
     category: 'FULLSTACK',
+    tags: ['typescript'],
     link: 'https://fitness-pro-production.up.railway.app/',
   },
   {
@@ -34,6 +35,7 @@ const projectsData = [
     subtitle: 'React E-commerce Platform (In Progress)',
     text: 'Full-stack responsive e-commerce with React, Node.js & Firebase — auth, products, cart, and payments.',
     category: 'FULLSTACK',
+    tags: ['react'],
     link: '#',
   },
   {
@@ -66,6 +68,7 @@ const projectsData = [
     subtitle: 'Biotech Sciences',
     text: 'Full-stack e-commerce platform for a pharmaceutical-grade skincare brand with admin dashboard, Supabase backend, and custom SPA routing.',
     category: 'FULLSTACK',
+    tags: ['react'],
     link: 'https://biotech-sciences.vercel.app/',
   },
   {
@@ -248,7 +251,11 @@ function WebsiteDevelopment() {
   }, []);
 
   const visibleProjects = projectsData.filter(
-    (p) => filter === 'all' || p.category.toLowerCase().replace('/', '-') === filter,
+    (p) =>
+      filter === 'all' ||
+      [p.category, ...(p.tags || [])]
+        .map((c) => c.toLowerCase().replace('/', '-'))
+        .includes(filter),
   );
 
 
