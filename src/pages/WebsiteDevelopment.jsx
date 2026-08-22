@@ -17,7 +17,7 @@ const projectsData = [
     title: 'Full Stack Fitness Management App',
     subtitle: 'Fitness Pro',
     text: 'Comprehensive fitness management application with workout tracking, membership management, and progress analytics.',
-    category: 'TypeScript',
+    category: 'FULLSTACK',
     link: 'https://fitness-pro-production.up.railway.app/',
   },
   {
@@ -25,7 +25,7 @@ const projectsData = [
     title: 'Full Stack Restaurant Management',
     subtitle: 'Habibi Bites',
     text: 'Complete restaurant management system with online ordering, table reservations, and inventory management.',
-    category: 'HTML/CSS',
+    category: 'FULLSTACK',
     link: 'https://habibi-bites.vercel.app/',
   },
   {
@@ -65,7 +65,7 @@ const projectsData = [
     title: 'E-commerce Storefront — Skincare & Cosmetics',
     subtitle: 'Biotech Sciences',
     text: 'Full-stack e-commerce platform for a pharmaceutical-grade skincare brand with admin dashboard, Supabase backend, and custom SPA routing.',
-    category: 'REACT',
+    category: 'FULLSTACK',
     link: 'https://biotech-sciences.vercel.app/',
   },
   {
@@ -149,6 +149,14 @@ const projectsData = [
     link: 'https://jaw.devsphere.digital/',
   },
   {
+    img: '/images/the_chemical_factory.png',
+    title: 'Product Catalog Website',
+    subtitle: 'The Chemical Factory',
+    text: 'Waterproofing chemical product catalog website to showcase products and services.',
+    category: 'HTML/CSS',
+    link: 'https://the-chemical-factory.vercel.app/',
+  },
+  {
     img: '/images/raadalarabia.png',
     title: 'Product Portfolio',
     subtitle: 'Raad Al Arabia',
@@ -163,14 +171,6 @@ const projectsData = [
     text: 'Real-time data visualization dashboard in React.',
     category: 'HTML/CSS',
     link: '#',
-  },
-  {
-    img: '/images/the_chemical_factory.png',
-    title: 'Product Catalog Website',
-    subtitle: 'The Chemical Factory',
-    text: 'Waterproofing chemical product catalog website to showcase products and services.',
-    category: 'HTML/CSS',
-    link: 'https://the-chemical-factory.vercel.app/',
   },
   // {
   //   img: '/images/engineer-office.png',
